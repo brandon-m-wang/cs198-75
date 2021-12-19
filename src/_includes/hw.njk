@@ -94,13 +94,14 @@
             <p>To open this project in VSCode, run this bash command: <pre><code>code {{ title }}</code></pre>
             </p>
             {% for block in content %}
-                {% if block.widget == 'string' %}
-                    <h2>{{ block }}</h2>
-                {% elif block.widget == 'markdown' %}
-                    <p>{{ block }}</p>
-                {% elif block.widget == 'code' %}
-                    <pre><code></code></pre>
-                {% endif %}
+                {{ block }}
+                {# {% if block.widget == 'string' %}
+                                    <h2>{{ block }}</h2>
+                                {% elif block.widget == 'markdown' %}
+                                    <p>{{ block }}</p>
+                                {% elif block.widget == 'code' %}
+                                    <pre><code></code></pre>
+                                {% endif %} #}
             {% endfor %}
         </div>
         <script>
