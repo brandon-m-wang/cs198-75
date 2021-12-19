@@ -103,7 +103,7 @@
         <script>
             const imageBlocks = document.querySelectorAll('.inline-img-container');
             Array.from(imageBlocks).forEach(block => {
-                const link = block.innerHTML;
+                const link = block.innerHTML.replace(/\s/g, '');
                 block.innerHTML = '';
                 const image = document.createElement('img');
                 image.src = link
