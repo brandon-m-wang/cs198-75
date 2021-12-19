@@ -32,12 +32,15 @@ collections:
         name: "sections"
         widget: "list"
         types: 
-            - name: "Part Header Section"
+            - label: "Part Header Section"
+              name: "phs"
               widget: "object"
               field: { name: partheader, widget: string}
-            - name: "Paragraph Section"
+            - label: "Paragraph Section"
+              name: "ps"
               widget: "object"
               field: { name: paragraph, widget: markdown } 
-            - name: "Code Block Section"
+            - label: "Code Block Section"
+              name: "cbs"
               widget: "object"
               field: { name: codeblock, widget: code }
