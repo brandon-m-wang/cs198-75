@@ -38,6 +38,6 @@ collections:
             - name: "Paragraph Section"
               widget: "object"
               field: { name: Paragraph, widget: markdown } 
-            - name: "Code Block Section", 
-              widget: "object",
+            - name: "Code Block Section"
+              widget: "object"
               field: { name: Code Block, widget: code }
