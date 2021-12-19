@@ -5,16 +5,16 @@
         <meta charset="utf-8"/>
         <meta
         name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="./css/bootstrap.min.css" crossorigin="anonymous"/>
-        <link rel="stylesheet" href="./css/main.css" crossorigin="anonymous"/>
-        <link href="./css/open-iconic-bootstrap.min.css" rel="stylesheet"/>
-        <link href="./css/bootstrap-toc.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/css/bootstrap.min.css" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="/css/main.css" crossorigin="anonymous"/>
+        <link href="/css/open-iconic-bootstrap.min.css" rel="stylesheet"/>
+        <link href="/css/bootstrap-toc.min.css" rel="stylesheet"/>
         <link
         rel="shortcut icon" type="image/png" href="cubstart.ico"/>
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="./js/jquery.min.js" crossorigin="anonymous"></script>
-        <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="./js/bootstrap-toc.min.js"></script>
+        <script src="/js/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="/js/bootstrap-toc.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/github.min.css">
         <title>Cubstart | CS 198-75</title>
@@ -96,7 +96,13 @@
             <p>To open this project in VSCode, run this bash command: <pre><code>code {{ title }}</code></pre>
             </p>
             {% for type in sections %}
-                {{ type.partheader }}
+                {% if type.partheader %}
+                    <h2>{{ type.partheader }}</h2>
+                {% elif type.paragraph %}
+                    <p>{{ type.paragraph }}</p>
+                {% elif type.codeblock %}
+                    <pre><code>{{ type.codeblock }}</code></pre>
+                {% endif %}
             {% endfor %}
         </div>
         <script>
@@ -115,4 +121,4 @@
             })
         </script>
     </body>
-</html>
+</html></body></html>
