@@ -5,14 +5,16 @@
         <meta charset="utf-8"/>
         <meta
         name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="/assets/bootstrap.min.css" crossorigin="anonymous"/>
-        <link rel="stylesheet" href="/assets/main.css" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="./css/bootstrap.min.css" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="./css/main.css" crossorigin="anonymous"/>
+        <link href="./css/open-iconic-bootstrap.min.css" rel="stylesheet"/>
+        <link href="./css/bootstrap-toc.min.css" rel="stylesheet"/>
         <link
         rel="shortcut icon" type="image/png" href="cubstart.ico"/>
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="/assets/jquery.min.js" crossorigin="anonymous"></script>
-        <script src="/assets/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="/assets/bootstrap-toc.min.js"></script>
+        <script src="./js/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="./js/bootstrap-toc.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/github.min.css">
         <title>Cubstart | CS 198-75</title>
@@ -94,14 +96,15 @@
             <p>To open this project in VSCode, run this bash command: <pre><code>code {{ title }}</code></pre>
             </p>
             {% for type in sections %}
-                {{ type }}
-                {# {% if block.widget == 'string' %}
-                                                                                    <h2>{{ block }}</h2>
-                                                                                {% elif block.widget == 'markdown' %}
-                                                                                    <p>{{ block }}</p>
-                                                                                {% elif block.widget == 'code' %}
-                                                                                    <pre><code></code></pre>
-                                                                                {% endif %} #}
+                {{ type.name }}
+                {{ type.sections }}
+                {% if type.name == 'Part Header Section' %}
+                    <h2>{{ type.field.partheader }}</h2>
+                {% elif type.name == 'Paragraph Section' %}
+                    <p>{{ type.field.paragraph }}</p>
+                {% elif type.name == 'Code Block Section' %}
+                    <pre><code>{{ type.field.codeblock }}</code></pre>
+                {% endif %}
             {% endfor %}
         </div>
         <script>

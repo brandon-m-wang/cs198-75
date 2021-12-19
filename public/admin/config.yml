@@ -34,10 +34,10 @@ collections:
         types: 
             - name: "Part Header Section"
               widget: "object"
-              field: { name: Part Header, widget: string}
+              field: { name: partheader, widget: string}
             - name: "Paragraph Section"
               widget: "object"
-              field: { name: Paragraph, widget: markdown } 
+              field: { name: paragraph, widget: markdown } 
             - name: "Code Block Section"
               widget: "object"
-              field: { name: Code Block, widget: code }
+              field: { name: codeblock, widget: code }
