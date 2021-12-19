@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta
+        name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="./css/main.css" crossorigin="anonymous"/>
+        <link href="./css/open-iconic-bootstrap.min.css" rel="stylesheet"/>
+        <link href="./css/bootstrap-toc.min.css" rel="stylesheet"/>
+        <link
+        rel="shortcut icon" type="image/png" href="cubstart.ico"/>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="./js/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="./js/bootstrap-toc.min.js"></script>
+        <title>Cubstart | CS 198-75</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-light navbar-expand-md align-items-center">
+    <div class="container container-nav">
+        <img
+            src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/branding/cubstart.png"
+            style=" object-fit: none; transform: scale(0.11); transform-origin: left top; margin-bottom: -260px; margin-right:
+                -175px; "
+            height="300px"
+            width="205px"/>
+        <a class="navbar-brand brand-berkeley" href="/">
+            Cubstart DeCal</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#schedule">
+                        Schedule
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#staff">
+                        Staff
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#syllabus">
+                        Syllabus
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+        
+<div class="wrapper">
+  <div class="container" style="margin-top: 2rem;">
+    <h2 class="cubstart-color">CS 198-75 | Full Stack Web Development</h2>
+    <h5 class="text-muted">CS 198-75 @ UC Berkeley, Spring 2022</h5>
+    <p>
+      Lecture: Mondays 6:00pm-7:00pm @ Evans 60<br />
+      Lab: Thursdays 6:00pm-7:30pm @ Remote [Zoom]
+    </p>
+    <h2 class="subheader">Announcements</h2>
+    <p>
+      Whether you need relevant project experiences to kickstart
+      your resume, or if you have a burning desire to build but just don’t
+      know where to start, Cubstart is the course for you. We provide unique
+      weekly guided full-stack projects, mentorship, and technical
+      workshops. The final project of the semester will be dedicated to
+      applying your skills to develop a viable product/application with a
+      team. We encourage those with little or no CS experience
+      to join! If you are someone who’s passionate about learning and wants
+      to create unique projects from start to finish, Cubstart is the place
+      for you!
+    </p>
+    <p>Recommended prerequisites or taking concurrently: one of CS10, CS61A, DATA8, E7. If you’ve never coded before
+      and aren’t concurrently enrolled in a programming course, you might need to put in some
+      extra effort, but you should still be fine.
+    </p>
+    <h2 id="schedule" class="subheader">Schedule</h2>
+    <div class="table-responsive py-3">
+      <table class="table table-bordered" style="margin-bottom: 1.5rem">
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Date</th>
+            <th>Lecture</th>
+            <th>Lab Section</th>
+            <th>Homework/Project</th>
+          </tr>
+        </thead>
+        <tbody id="schedule-content"></tbody>
+      </table>
+      <h2 id="staff" class="subheader">Course Staff</h2>
+      <div class="course-staff">
+        <h3 class="cubstart-color" style="margin: 1.5rem 0 2.5rem">
+          Lecturers
+        </h3>
+        <div class="staff-section">
+          <div class="staff-member">
+            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/alexlu.jpg"
+              height="150px" width="auto" />
+            <h4>Alex Lu</h4>
+            <h5>alu@berkeley.edu</h5>
+            <h6>Lecturer</h6>
+            <p>Hi! My name is Alex, and I’m a 3rd year studying CS and Linguistics. In my free I enjoy knitting
+              pillows, trying new
+              foods, and running. Feel free to reach out about anything iOS :)</p>
+          </div>
+          <div class="staff-member">
+            <img src="https://bit.ly/30CBsqa" height="150px" width="auto" />
+            <h4>Brandon Wang</h4>
+            <h5>wangb@berkeley.edu</h5>
+            <h6>Lecturer</h6>
+            <p>Hi there, I'm glad to be teaching in-person this semester. I'm excited for you all to
+              experience the
+              projects I've designed. I'm a second-year CS and Data Science major. Ask me if you have
+              questions about the course, recruitment, or life.</p>
+          </div>
+        </div>
+        <h3 class="cubstart-color" style="margin: 1.5rem 0 2.5rem">
+          Teaching Assistants
+        </h3>
+        <div class="staff-section">
+          <div class="staff-member">
+            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/khushi.jpg"
+              height="150px" width="auto" />
+            <h4>Khushi Desai</h4>
+            <h5>khushipdesai@berkeley.edu</h5>
+            <h6>Lab TA</h6>
+            <p>Hi I'm Khushi, and I am a Junior with a Computer Science major and a Data Science minor. I love
+              teaching, painting,
+              cooking, hiking and recently started picking up the ukelele!</p>
+          </div>
+          <div class="staff-member">
+            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/tony.jpg"
+              style="object-fit: cover" height="150px" width="150px" />
+            <h4>Tony Hong</h4>
+            <h5>tshong@berkeley.edu</h5>
+            <h6>Lab TA</h6>
+            <p>Hello! I'm Tony and I'm currently a sophomore studying EECS. Some of my academic interests are mobile
+              development and
+              machine learning. I also enjoy playing badminton, watching kdramas/anime, and listening to music during
+              my free time.</p>
+          </div>
+          <div class="staff-member">
+            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/pranati.jpg"
+              height="150px" width="auto" />
+            <h4>Pranati Kuppa</h4>
+            <h5>pranatikuppa@berkeley.edu</h5>
+            <h6>Lab TA</h6>
+            <p>Hey! I'm Pranati, a junior studying CS. I’ve been helping teach iOS dev in Cubstart since my sophomore
+              year, so I’m
+              really happy to be back this semester! Feel free to reach out and chat anytime :-)</p>
+          </div>
+          <div class="staff-member">
+            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/jordan.jpg"
+              style="object-fit: cover; object-position: 40% 50%" height="150px" width="150px" />
+            <h4>Jordan Yee</h4>
+            <h5>jordantyee@berkeley.edu</h5>
+            <h6>Lab TA</h6>
+            <p>Hi! My name is Jordan. I'm a second year studying EECS and Business/Economics. I'll be helping in the
+              iOS labs this
+              semester. Excited to meet everyone! Feel free to shoot me an email if you have any questions!</p>
+          </div>
+          <div class="staff-member">
+            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/anshul.JPG"
+              height="150px" width="150px" style="object-fit:cover;" />
+            <h4>Anshul Paul</h4>
+            <h5>anshulpaul@berkeley.edu</h5>
+            <h6>Lab TA</h6>
+            <p>Hi! My name is Anshul. I'm a second year studying EECS and Business. I'll be helping in the
+              web labs this
+              semester. Excited to meet everyone! Feel free to shoot me an email if you have any questions!</p>
+          </div>
+        </div>
+      </div>
+      <h2 id="syllabus" class="subheader">Syllabus</h2>
+      <div class="syllabus-content">
+        <h3 class="cubstart-color" style="margin-top: 1.5rem">
+          Course Details
+        </h3>
+        <ul>
+          <li>
+            <span>Course Designation:</span>
+            CS 198-75
+          </li>
+          <li>
+            <span>
+              Facilitators: </span>
+            Brandon Wang, Lupe Paniagua
+          </li>
+          <li>
+            <span>EECS Dept. Sponsor: </span>
+            Joshua Hug
+          </li>
+          <li>
+            <span>Course Catalog: </span>
+            <a href="https://classes.berkeley.edu/content/2022-spring-compsci-198-075-grp-075" target="_blank">Spring
+              2022</a>
+          </li>
+        </ul>
+      </div>
+      <h3 class="cubstart-color" style="margin-top: 1.5rem">
+        Course Overview
+      </h3>
+      <p>
+        Central to many aspects of software engineering, full stack web development using modern tech stacks is often
+        overlooked by traditional course offerings. The difficulty of acquiring these developmental skillsets is
+        undeniable, especially for those with no prior/limited experience wanting to break into tech.
+        CS 198-75 provides unique
+        weekly guided full-stack projects, mentorship, and technical
+        workshops. The final project of the semester will be dedicated to
+        applying your skills to develop a viable product/application with a
+        team.
+      </p>
+      <h3 class="cubstart-color" style="margin-top: 1.5rem">
+        Course Material
+      </h3>
+      <p>The course content is split into lectures, optional labs, homework, and a final project. You are expected to
+        form teams of up to 4 at the start of the semester, who will be your group to navigate homework projects and
+        deliver a final project with.</p>
+      <h4>Lectures <span class="cubstart-color">(Monday 6-7pm PT)</span></h4>
+      <p>The weekly lectures are intended to give an introduction to the contents covered by the homework due the
+        following week. The general structure will be a conceptual overview of the highlighted topics, use cases, and
+        real-life examples. Lectures for this track, web, will be held in Evans 60. Attendance will be recorded.</p>
+      <h4>Labs <span class="cubstart-color">(Thursdays 6-7:30pm PT)</span></h4>
+      <p>The weekly labs serve as a means of introducing the homework assignment (that was assigned the previous week)
+        for those who are
+        struggling to grasp certain concepts or haven't gotten around to doing the assigned homework. Those who do
+        not wish to complete an assignment in its entirety for a certain week, can come to the lab section and attempt
+        the homework for the entire duration. You can receive full credit for the homework assignment regardless of
+        completion (based on effort, TAs will check you off). Labs will be held remotely, tentatively. <span
+          style="font-weight: 500">You do not need
+          to attend these labs if you feel comfortable that you can complete the homework assignment, or have already
+          completed it.</span></p>
+      <h4>Homeworks <span class="cubstart-color">(Assigned Mondays, Due the Next Friday)</span></h4>
+      <p>The weekly homeworks are mini-projects that have a detailed, step-by-step spec for you to follow. The way
+        these step-by-step projects have been designed is intended to achieve two things:
+      <ul class="cubstart-color">
+        <li><span style="font-weight: 500">Quality: </span>So that you may gain the working knowledge of the relevant
+          technologies</li>
+        <li><span style="font-weight: 500">Uniqueness: </span>So that you may have a stand-out project for your
+          resume/portfolio with many talking points</li>
+      </ul>
+      We understand that you have other obligations throughout the semester, which is why we have optional weekly labs
+      on Thursdays, so that you may receive credit for the project the day before it is due (Friday) if you can not
+      commit to a
+      project for a certain week. However, the project spec is instructional enough so that you can follow each step
+      without too much trouble all the way until the finished product, from which you are expected to add a few
+      creative
+      modifications for credit. You are allowed to collaborate your team on these projects, but you are expected to
+      submit these homeworks individually.
+      </p>
+      <h4>Final Project <span class="cubstart-color">(Assigned Monday, 4/4)</span></h4>
+      <p>The last 4 weeks will be dedicated to your final project, which is ideating and building a viable
+        product/application.
+        You’ll be expected to meet with your project team regularly to work towards meeting the checkpoints
+        throughout. You will have a chance to demo your project for industry experts and professionals as your final
+        at Demo Day, which will take place on Thursday, 5/5. We will be offering extensive Office Hours support as you
+        and your team take on this final project.
+      </p>
+      <h3 class="cubstart-color" style="margin-top: 1.5rem">
+        Learning Goals
+      </h3>
+      <ul>
+        <li>Buffing your resume with projects that are attractive to recruiters</li>
+        <li>Tackling detailed project specs</li>
+        <li>Project ideation and developing software in a team</li>
+        <li>Achieving full stack web development proficiency</li>
+      </ul>
+      <h3 class="cubstart-color" style="margin-top: 1.5rem">
+        Grading Breakdown
+      </h3>
+      <table class="table table-bordered" style="margin-bottom: 1.5rem; width: 50%">
+        <thead>
+          <tr>
+            <th>Points</th>
+            <th>Assignment</th>
+          </tr>
+        </thead>
+        <td>
+          15
+        </td>
+        <td>
+          Lecture Attendance
+        </td>
+        <tr></tr>
+        <td>
+          40
+        </td>
+        <td>
+          Weekly Homeworks (5 pts. each)
+        </td>
+        <tr></tr>
+        <td>5</td>
+        <td>Final Project Checkpoint: Design Mockup</td>
+        <tr></tr>
+        <td>
+          40
+        </td>
+        <td>
+          Final Project: Demo Day
+        </td>
+      </table>
+      <p>This course is fast-paced and highly cumulative. Your success will depend on your active and consistent
+        participation. However, we understand that emergencies and personal matters do come up, so you are allowed up
+        to 2 excused and 2 unexcused absences across lectures. Excused absences require at least 6 hours
+        notice; <span class="cubstart-color" style="font-weight: 500">please email cubstart@calhacks.io with the
+          subject line “[CUBSTART] EXCUSED ABSENCE REQUEST - YOUR FULL NAME.” In the body of the email, please include
+          the reason for the request. </span>Absences beyond our limit will automatically result in a grade of NP.
+      </p>
+      <h4>Late Work</h4>
+      <p>Each student is allowed up to 3 slip days throughout the semester. Slip days are applicable to the
+        homeworks. Each slip day is equivalent to a 24-hour extension. You
+        may use multiple slip days back-to-back. Using a slip day does not require any notice; they will simply be
+        applied at the end of the semester to maximize your overall grade. Slip days will be subtracted from each
+        student on the team at the same time. Outside of slip days, late work will receive a 10% grade deduction for
+        every day after the deadline that the work is submitted.
+      </p>
+      <h4>Academic Honesty</h4>
+      <p>You may only work with your teams on the projects. Respect licenses of libraries that you use, and do not
+        sabotage other students (there is no curve). Follow UC Berkeley’s Honor Code.</p>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  const schedule = [
+    {
+      week: 1,
+      date: "1/31",
+      lecture: "Introduction, HTML/CSS Basics, Document Object Model (DOM)",
+      lectureLink: "/",
+      slides: "/",
+      lab: "Team Formation Activities and VSCode/GitHub Set-up",
+      homework: "HW 1: Personal Portfolio",
+      due: "2/11",
+      homeworkLink: "/hw1",
+    },
+    {
+      week: 2,
+      date: "2/7",
+      lecture: "Targeting the DOM, JavaScript Foundations",
+      lectureLink: "",
+      slides: "",
+      lab: "Project OH/Checkoff: Personal Portfolio",
+      homework: "HW 2: Interactive Geocoding Map",
+      due: "2/18",
+      homeworkLink: "",
+    },
+    {
+      week: 3,
+      date: "2/14",
+      lecture: "HTTP, CRUD, Leveraging APIs",
+      lectureLink: "",
+      slides: "",
+      lab: "Project OH/Checkoff: Interactive Geocoding Map",
+      homework: "HW 3: Caption Generation with Computer Vision",
+      due: "2/25",
+      homeworkLink: "",
+    },
+    {
+      week: 4,
+      date: "2/21",
+      lecture: "(Async, Academic Holiday) Introduction to React.js",
+      lectureLink: "",
+      slides: "",
+      lab: "Project OH/Checkoff: Caption Generation with Computer Vision",
+      homework: "HW 4: Spectrum Waveform with Spotify Integration",
+      due: "3/4",
+      homeworkLink: "",
+    },
+    {
+      week: 5,
+      date: "2/28",
+      lecture: "States, Hooks, and Props in React.js",
+      lectureLink: "",
+      slides: "",
+      lab: "Project OH/Checkoff: Spectrum Waveform with Spotify Integration",
+      homework: "HW 5: Tree Traversal Visualizer",
+      due: "3/11",
+      homeworkLink: "",
+    },
+    {
+      week: 6,
+      date: "3/7",
+      lecture: "Node.js HTTP Servers, Routing and Rendering in Express",
+      lectureLink: "",
+      slides: "",
+      lab: "Project/OH Checkoff: Tree Traversal Visualizer",
+      homework: "HW 6: Video Streaming App",
+      due: "3/18",
+      homeworkLink: "",
+    },
+    {
+      week: 7,
+      date: "3/14",
+      lecture: "Middleware, Websockets, SocketIO",
+      lectureLink: "",
+      slides: "",
+      lab: "Project/OH Checkoff: Video Streaming App",
+      homework: "HW 7: Real-time Chat App",
+      due: "4/1",
+      homeworkLink: "",
+    },
+    {
+      week: 8,
+      date: "3/21",
+      lecture: "No Class (Spring Recess)",
+      lectureLink: "",
+      slides: "",
+      lab: "",
+      homework: "",
+      due: "",
+      homeworkLink: "",
+    },
+    {
+      week: 9,
+      date: "3/28",
+      lecture: "The Cloud, Firebase, Firestore",
+      lectureLink: "",
+      slides: "",
+      lab: "Project/OH Checkoff: Real-time Chat App",
+      homework: "HW 8: Build a Social Network",
+      due: "4/8",
+      homeworkLink: "",
+    },
+    {
+      week: 10,
+      date: "4/4",
+      lecture: "Deploying/Hosting Projects, Boosting Your Resume",
+      lectureLink: "",
+      slides: "",
+      lab: "Project/OH Checkoff: Build a Social Network",
+      homework: "Design Mockup - First Draft",
+      due: "4/15",
+      homeworkLink: "",
+    },
+    {
+      week: 11,
+      date: "4/11",
+      lecture: "Ideation, Design Fundamentals",
+      lectureLink: "",
+      slides: "",
+      lab: "Ideation, Final Project OH",
+      homework: "Final Project",
+      due: "4/29",
+      homeworkLink: "",
+    },
+    {
+      week: 12,
+      date: "4/18",
+      lecture: "Final Project OH",
+      lectureLink: "",
+      slides: "",
+      lab: "Final Project OH",
+      homework: "Final Project",
+      due: "4/29",
+      homeworkLink: "",
+    },
+    {
+      week: 13,
+      date: "4/25",
+      lecture: "Final Project OH",
+      lectureLink: "",
+      slides: "",
+      lab: "Final Project OH",
+      homework: "Prep for Demo Day",
+      due: "",
+      homeworkLink: "",
+    },
+    {
+      week: 14,
+      date: "5/2",
+      lecture: "",
+      lectureLink: "",
+      slides: "",
+      lab: "Demo Day",
+      homework: "",
+      due: "",
+      homeworkLink: "",
+    },
+  ];
+  const scheduleElement = document.getElementById("schedule-content");
+  schedule.forEach((entry) => {
+    let tr = document.createElement("tr");
+    let weekTh = document.createElement("th");
+    weekTh.rowSpan = "1";
+    weekTh.style = "text-align: center";
+    weekTh.id = "week" + entry.week;
+    weekTh.innerHTML = entry.week;
+    weekTh.appendChild(document.createElement("br"));
+    tr.appendChild(weekTh);
+
+    let dateTd = document.createElement("td");
+    dateTd.rowSpan = "1";
+    dateTd.appendChild(document.createTextNode("Mon"));
+    dateTd.appendChild(document.createElement("br"));
+    dateTd.appendChild(document.createTextNode(entry.date));
+    tr.appendChild(dateTd);
+
+    let lectureTd = document.createElement("td");
+    lectureTd.rowSpan = "1";
+    let lectureP = document.createElement("p");
+    lectureP.innerHTML = entry.lecture;
+    lectureTd.appendChild(lectureP);
+    if (entry.lectureLink) {
+      let lectureLinkSpan = document.createElement("span");
+      lectureLinkSpan.className = "badge badge-light main-badge";
+      let lectureLinkA = document.createElement("a");
+      lectureLinkA.href = entry.lectureLink;
+      lectureLinkA.target = "_blank";
+      lectureLinkA.innerHTML = "Recording";
+      lectureLinkSpan.appendChild(lectureLinkA);
+      lectureLinkSpan.style = "margin-right: 1rem; margin-bottom: 0.5rem";
+      lectureTd.appendChild(lectureLinkSpan);
+    }
+    if (entry.slides) {
+      let slideSpan = document.createElement("span");
+      slideSpan.className = "badge badge-light main-badge";
+      let slideA = document.createElement("a");
+      slideA.href = entry.slides;
+      slideA.target = "_blank";
+      slideA.innerHTML = "Slides";
+      slideSpan.appendChild(slideA);
+      lectureTd.appendChild(slideSpan);
+    }
+    let randomDiv = document.createElement("div");
+    randomDiv.style = "height:0.5rem";
+    lectureTd.appendChild(randomDiv);
+    tr.appendChild(lectureTd);
+
+    let sectionTd = document.createElement("td");
+    sectionTd.rowSpan = "1";
+    sectionTd.className = "table-td-sm";
+    let sectionP = document.createElement("p");
+    sectionP.innerHTML = entry.lab;
+    sectionTd.appendChild(sectionP);
+    sectionTd.appendChild(randomDiv);
+    tr.appendChild(sectionTd);
+
+    let homeworkTd = document.createElement("td");
+    homeworkTd.rowSpan = "1";
+    homeworkTd.style = "vertical-align: middle; text-align: center;";
+    let homeworkSpan = document.createElement("span");
+    if (entry.homework) {
+      homeworkSpan.className = "badge badge-light my-1 p-3 main-badge";
+      homeworkSpan.style = "width: 250px; word-break: break-word";
+    }
+    if (entry.homeworkLink) {
+      let homeworkLinkA = document.createElement("a");
+      let dueDateText = document.createTextNode("Due: Fri, " + entry.due);
+      let homeworkText = document.createTextNode(entry.homework);
+      let dueDateBr = document.createElement("br");
+      homeworkLinkA.appendChild(homeworkText);
+      homeworkLinkA.appendChild(dueDateBr);
+      homeworkLinkA.appendChild(dueDateText);
+      homeworkLinkA.href = entry.homeworkLink;
+      homeworkLinkA.target = "_blank";
+      homeworkLinkA.style = "margin-bottom: 0";
+      homeworkSpan.appendChild(homeworkLinkA);
+    } else {
+      let homeworkP = document.createElement("p");
+      let dueDateText = document.createTextNode("");
+      if (entry.due) {
+        dueDateText = document.createTextNode("Due: Fri, " + entry.due);
+      }
+      let homeworkText = document.createTextNode(entry.homework);
+      let dueDateBr = document.createElement("br");
+      homeworkP.appendChild(homeworkText);
+      homeworkP.appendChild(dueDateBr);
+      homeworkP.appendChild(dueDateText);
+      homeworkP.style = "margin-bottom: 0";
+      homeworkSpan.appendChild(homeworkP);
+    }
+    homeworkTd.appendChild(homeworkSpan);
+    tr.appendChild(homeworkTd);
+    scheduleElement.appendChild(tr);
+  });
+</script>
+        <footer class="page-footer" style="background: #F4F4F4; text-align: center">
+    <img
+        src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/branding/cubstart.png"
+        style=" object-fit: none; transform: scale(0.15); transform-origin: left top; margin-bottom: -250px; margin-right:
+            -165px; "
+        height="300px"
+        width="205px"/> Questions? Send us an email: cubstart@calhacks.io
+</footer>
+    </body>
+</html>

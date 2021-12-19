@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/bootstrap.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/assets/main.css" crossorigin="anonymous" />
+    <link href="/assets/open-iconic-bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/bootstrap-toc.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="cubstart.ico" />
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/assets/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="/assets/bootstrap-toc.min.js"></script>
+    <title>Cubstart | CS 198-93</title>
+</head>
+
+<body>
+    <script>
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        import { getAnalytics } from "firebase/analytics";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyB8yr04s0cw0OTzr-VCWtGpSC5OED6KgzM",
+            authDomain: "cubstart-1dd99.firebaseapp.com",
+            projectId: "cubstart-1dd99",
+            storageBucket: "cubstart-1dd99.appspot.com",
+            messagingSenderId: "168097665289",
+            appId: "1:168097665289:web:2e27dfad7018a55b1443d8",
+            measurementId: "G-7RVN7RCN2R"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <div class="wrapper">
+        <nav class="navbar navbar-light navbar-expand-md align-items-center">
+            <div class="container container-nav">
+                <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/branding/cubstart.png" style="
+              object-fit: none;
+              transform: scale(0.11);
+              transform-origin: left top;
+              margin-bottom: -260px;
+              margin-right: -175px;
+            " height="300px" width="205px" />
+                <a class="navbar-brand brand-berkeley" href="/"> Cubstart DeCal</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#schedule"> Schedule </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#staff"> Staff </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#syllabus"> Syllabus </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container" style="margin-top: 2rem;">
+            <h2 class="cubstart-color">CS 198-93 | Full Stack Web Development</h2>
+            <h5 class="text-muted">CS 198-93 @ UC Berkeley, Spring 2021</h5>
+            <p>
+                Lecture: Mondays 6:00pm-7:00pm @ Remote [Zoom]<br />
+                Lab: Thursdays 6:00pm-7:30pm @ Remote [Zoom]
+            </p>
+            <h2 class="subheader">Announcements</h2>
+            <p>
+                Whether you need relevant project experiences to kickstart
+                your resume, or if you have a burning desire to build but just don’t
+                know where to start, Cubstart is the course for you. We provide unique
+                mentorship and technical
+                workshops. The final project of the semester will be dedicated to
+                applying your skills to develop a viable product/application with a
+                team. We encourage those with little or no CS experience
+                to join! If you are someone who’s passionate about learning and wants
+                to create unique projects from start to finish, Cubstart is the place
+                for you!
+            </p>
+            <p>Recommended prerequisites or taking concurrently: one of CS10, CS61A, DATA8, E7. If you’ve never coded
+                before
+                and aren’t concurrently enrolled in a programming course, you might need to put in some
+                extra effort, but you should still be fine.
+            </p>
+            <a href="https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/live/Cubstart%20DeCal%20CPF-SIGNED.pdf"
+                target="_blank">Course Proposal Form</a><br>
+            <a href="https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/live/sp21.pdf" target="_blank">Associated
+                Dept. Syllabus</a><br>
+            <a href="https://calhacks.notion.site/Spring-2021-Syllabus-6794b4095e6a46d288dc2c82eac9b28f"
+                target="_blank">Course Notion</a><br>
+            <a href="https://piazza.com/class/ke922g45m566ir">Course Piazza</a>
+            <h2 id="schedule" class="subheader">Schedule</h2>
+            <div class="table-responsive py-3">
+                <table class="table table-bordered" style="margin-bottom: 1.5rem">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Date</th>
+                            <th>Lecture</th>
+                            <th>Lab Section</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-content"></tbody>
+                </table>
+                <h2 id="staff" class="subheader">Course Staff</h2>
+                <div class="course-staff">
+                    <h3 class="cubstart-color" style="margin: 1.5rem 0 2.5rem">
+                        Lecturers
+                    </h3>
+                    <div class="staff-section">
+                        <div class="staff-member">
+                            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/alexlu.jpg"
+                                height="150px" width="auto" />
+                            <h4>Alex Lu</h4>
+                            <h5>alu@berkeley.edu</h5>
+                            <h6>Lecturer</h6>
+                        </div>
+                        <div class="staff-member">
+                            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/terrance.png"
+                                height="150px" width="auto" />
+                            <h4>Terrance Li</h4>
+                            <h5>tyli@berkeley.edu</h5>
+                            <h6>Lecturer</h6>
+                        </div>
+                        <div class="staff-member">
+                            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/brandon.JPG"
+                                height="150px" width="auto" />
+                            <h4>Brandon Wang</h4>
+                            <h5>wangb@berkeley.edu</h5>
+                            <h6>Curriculum Developer</h6>
+                        </div>
+                    </div>
+                    <h3 class="cubstart-color" style="margin: 1.5rem 0 2.5rem">
+                        Teaching Assistants
+                    </h3>
+                    <div class="staff-section">
+                        <div class="staff-member">
+                            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/khushi.jpg"
+                                height="150px" width="auto" />
+                            <h4>Khushi Desai</h4>
+                            <h5>khushipdesai@berkeley.edu</h5>
+                            <h6>Lab TA</h6>
+                        </div>
+                        <div class="staff-member">
+                            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/pranati.jpg"
+                                height="150px" width="auto" />
+                            <h4>Pranati Kuppa</h4>
+                            <h5>pranatikuppa@berkeley.edu</h5>
+                            <h6>Lab TA</h6>
+                        </div>
+                        <div class="staff-member">
+                            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/ali.jpg"
+                                style="object-fit: cover" height="150px" width="150px" />
+                            <h4>Ali Huh</h4>
+                            <h5>alihuh@berkeley.edu</h5>
+                            <h6>Lab TA</h6>
+                        </div>
+                        <div class="staff-member">
+                            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/tiffany.jpg"
+                                style="object-fit: cover; object-position: 40% 50%" height="150px" width="150px" />
+                            <h4>Tiffany Wang</h4>
+                            <h5>tiffanywang@berkeley.edu</h5>
+                            <h6>Lab TA</h6>
+                        </div>
+                        <div class="staff-member">
+                            <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/profile_images/lupe.jpg"
+                                height="150px" width="150px" style="object-fit:cover;" />
+                            <h4>Lupe Paniagua</h4>
+                            <h5>lupepaniagua@berkeley.edu</h5>
+                            <h6>Lab TA</h6>
+                        </div>
+                    </div>
+                </div>
+                <h2 id="syllabus" class="subheader">Syllabus</h2>
+                <div class="syllabus-content">
+                    <h3 class="cubstart-color" style="margin-top: 1.5rem">
+                        Course Details
+                    </h3>
+                    <ul>
+                        <li>
+                            <span>Course Designation:</span>
+                            CS 198-93
+                        </li>
+                        <li>
+                            <span>
+                                Facilitators: </span>
+                            Saahil Chadha, Lupe Paniagua, Brandon Wang
+                        </li>
+                        <li>
+                            <span>EECS Dept. Sponsor: </span>
+                            Joshua Hug
+                        </li>
+                        <li>
+                            <span>Course Catalog: </span>
+                            <a href="https://classes.berkeley.edu/content/2021-spring-compsci-198-093-grp-093"
+                                target="_blank">Spring
+                                2021</a>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="cubstart-color" style="margin-top: 1.5rem">
+                    Course Overview
+                </h3>
+                <p>
+                    Cubstart is Cal Hacks’ course for beginner hackers. We provide mentorship for team building,
+                    ideation, basic hackathon
+                    skills, and technical workshops to encourage those with little or no CS experience to try out
+                    hackathons and coding! If
+                    you believe you are someone who is passionate about learning and wants to create a hackathon project
+                    from start to
+                    finish, Cubstart is the place for you.
+                </p>
+                <h3 class="cubstart-color" style="margin-top: 1.5rem">
+                    Course Material
+                </h3>
+                <p>Each week, you’ll attend a 1.5 hr online lecture over Zoom where the content for that week will be
+                    presented. The
+                    lecture will be supplemented with a weekly 2 hr lab section over Zoom where you’ll practice with the
+                    content covered in
+                    lecture. Outside of this, you’ll be expected to meet with your project team regularly (at least once
+                    a week but possibly
+                    more often) to work towards meeting each of the checkpoints throughout the semester.</p>
+                <h4>Lectures <span class="cubstart-color">(Monday 6-7pm PT)</span></h4>
+                <p>The weekly lectures are intended to give an introduction to the contents covered by the homework due
+                    the
+                    following week. The general structure will be a conceptual overview of the highlighted topics, use
+                    cases, and
+                    real-life examples. Lectures for this track, web, will be held remotely. Attendance will be
+                    recorded.</p>
+                <h3 class="cubstart-color" style="margin-top: 1.5rem">
+                    Learning Goals
+                </h3>
+                <ul>
+                    <li>Buffing your resume with projects that are attractive to recruiters</li>
+                    <li>Tackling detailed project specs</li>
+                    <li>Project ideation and developing software in a team</li>
+                    <li>Achieving full stack web development proficiency</li>
+                </ul>
+                <h3 class="cubstart-color" style="margin-top: 1.5rem">
+                    Grading Breakdown
+                </h3>
+                <table class="table table-bordered" style="margin-bottom: 1.5rem; width: 50%">
+                    <thead>
+                        <tr>
+                            <th>Points</th>
+                            <th>Assignment</th>
+                        </tr>
+                    </thead>
+                    <td>
+                        15
+                    </td>
+                    <td>
+                        Lecture Attendance
+                    </td>
+                    <tr></tr>
+                    <td>
+                        40
+                    </td>
+                    <td>
+                        Labs (5 pts. each)
+                    </td>
+                    <tr></tr>
+                    <td>5</td>
+                    <td>Final Project Checkpoint: Design Mockup</td>
+                    <tr></tr>
+                    <td>
+                        40
+                    </td>
+                    <td>
+                        Final Project: Demo Day
+                    </td>
+                </table>
+                <p>This course is fast-paced and highly cumulative. Your success will depend on your active and
+                    consistent
+                    participation. However, we understand that emergencies and personal matters do come up, so you are
+                    allowed up
+                    to 2 excused and 2 unexcused absences across lectures. Excused absences require at least 6 hours
+                    notice; <span class="cubstart-color" style="font-weight: 500">please email cubstart@calhacks.io with
+                        the
+                        subject line “[CUBSTART] EXCUSED ABSENCE REQUEST - YOUR FULL NAME.” In the body of the email,
+                        please include
+                        the reason for the request. </span>Absences beyond our limit will automatically result in a
+                    grade of NP.
+                </p>
+                <h4>Late Work</h4>
+                <p>Each student is allowed up to 3 slip days throughout the semester. Slip days are applicable to the
+                    homeworks. Each slip day is equivalent to a 24-hour extension. You
+                    may use multiple slip days back-to-back. Using a slip day does not require any notice; they will
+                    simply be
+                    applied at the end of the semester to maximize your overall grade. Slip days will be subtracted from
+                    each
+                    student on the team at the same time. Outside of slip days, late work will receive a 10% grade
+                    deduction for
+                    every day after the deadline that the work is submitted.
+                </p>
+                <h4>Academic Honesty</h4>
+                <p>You may only work with your teams on the projects. Respect licenses of libraries that you use, and do
+                    not
+                    sabotage other students (there is no curve). Follow UC Berkeley’s Honor Code.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="page-footer" style="background: #F4F4F4; text-align: center">
+        <img src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/branding/cubstart.png" style="
+                  object-fit: none;
+                  transform: scale(0.15);
+                  transform-origin: left top;
+                  margin-bottom: -250px;
+                  margin-right: -165px;
+                " height="300px" width="205px" />
+        Questions? Send us an email: cubstart@calhacks.io
+    </footer>
+</body>
+<script>
+    const schedule = [
+        {
+            week: 1,
+            date: "2/1",
+            lecture: "Course Expectations",
+            lectureLink: "",
+            slides: "https://docs.google.com/presentation/d/1U8Wt0NG3AIzrszlrwt0QIVIq6V675A0LW8N2IBl4bRE/edit#slide=id.p",
+            lab: "Lab 1: Ideation + Building Technical Grit",
+        },
+        {
+            week: 2,
+            date: "2/8",
+            lecture: "Design Fundamentals",
+            lectureLink: "",
+            slides: "https://docs.google.com/presentation/d/1S02lf-w8CU4-41ECvsXifM-YNu3bY3ocGuhF3iHsGMo/edit#slide=id.g8242f6ec29_1_81",
+            lab: "Lab 2: Playing w/ Git",
+        },
+        {
+            week: 3,
+            date: "2/15",
+            lecture: "No Class",
+            lectureLink: "",
+            slides: "",
+            lab: "",
+        },
+        {
+            week: 4,
+            date: "2/22",
+            lecture: "HTML",
+            lectureLink: "",
+            slides: "https://docs.google.com/presentation/d/1jzscbwr5szpMNyyt5TY0Zyyh7Wa0nlgLp8qD-0ddWzo/edit#slide=id.g8242f6ec29_1_81",
+            lab: "Lab 4: HTML Practice",
+        },
+        {
+            week: 5,
+            date: "2/29",
+            lecture: "CSS",
+            lectureLink: "",
+            slides: "https://docs.google.com/presentation/d/1ge58zGc6iu0lTbn21CMK6U5TYnFsVXyYLnbN7Aa-bYQ/edit#slide=id.g8242f6ec29_1_81",
+            lab: "Lab 5: CSS Practice",
+        },
+        {
+            week: 6,
+            date: "3/10",
+            lecture: "JavaScript",
+            lectureLink: "",
+            slides: "https://docs.google.com/presentation/d/1hrIrCtQiMJ2kPyK5Vv6gzU_8toZ1VsvFYAEByq_y1RE/edit#slide=id.g8242f6ec29_1_81",
+            lab: "Lab 6: JavaScript Practice",
+        },
+        {
+            week: 7,
+            date: "3/15",
+            lecture: "No Class",
+            lectureLink: "",
+            slides: "",
+            lab: "",
+        },
+        {
+            week: 8,
+            date: "3/22",
+            lecture: "No Class (Spring Recess)",
+            lectureLink: "",
+            slides: "",
+            lab: "",
+        },
+        {
+            week: 9,
+            date: "3/29",
+            lecture: "Deploying",
+            lectureLink: "",
+            slides: "https://docs.google.com/presentation/d/13twVjv5DuipT6v2DpKccIKvhopwvPwgI_6sTiAXFsJc/edit#slide=id.g9ba67a7dc3_1_9",
+            lab: "Lab 7: Deploying to the Web",
+        },
+        {
+            week: 10,
+            date: "4/5",
+            lecture: "Network Requests + APIs",
+            lectureLink: "",
+            slides: "https://docs.google.com/presentation/d/1P85pMCQtvXtKXGrKTmmGn1LxNrq-15ocwpQ6UhjwI2k/edit#slide=id.p",
+            lab: "Lab 9: APIs",
+        },
+        {
+            week: 11,
+            date: "4/12",
+            lecture: "Firebase",
+            lectureLink: "",
+            slides: "",
+            lab: "Lab 9: Firebase",
+        },
+        {
+            week: 12,
+            date: "4/19",
+            lecture: "Flask and Backend",
+            lectureLink: "",
+            slides: "",
+            lab: "Lab 10: Flask",
+        },
+        {
+            week: 13,
+            date: "4/26",
+            lecture: "Oh, the Places You'll Go!",
+            lectureLink: "",
+            slides: "",
+            lab: "Lab 11: Worksesh",
+        },
+        {
+            week: 14,
+            date: "5/2",
+            lecture: "",
+            lectureLink: "",
+            slides: "",
+            lab: "Demo Day",
+        },
+    ];
+    const scheduleElement = document.getElementById("schedule-content");
+    schedule.forEach((entry) => {
+        let tr = document.createElement("tr");
+        let weekTh = document.createElement("th");
+        weekTh.rowSpan = "1";
+        weekTh.style = "text-align: center";
+        weekTh.id = "week" + entry.week;
+        weekTh.innerHTML = entry.week;
+        weekTh.appendChild(document.createElement("br"));
+        tr.appendChild(weekTh);
+
+        let dateTd = document.createElement("td");
+        dateTd.rowSpan = "1";
+        dateTd.appendChild(document.createTextNode("Mon"));
+        dateTd.appendChild(document.createElement("br"));
+        dateTd.appendChild(document.createTextNode(entry.date));
+        tr.appendChild(dateTd);
+
+        let lectureTd = document.createElement("td");
+        lectureTd.rowSpan = "1";
+        let lectureP = document.createElement("p");
+        lectureP.innerHTML = entry.lecture;
+        lectureTd.appendChild(lectureP);
+        if (entry.lectureLink) {
+            let lectureLinkSpan = document.createElement("span");
+            lectureLinkSpan.className = "badge badge-light main-badge";
+            let lectureLinkA = document.createElement("a");
+            lectureLinkA.href = entry.lectureLink;
+            lectureLinkA.target = "_blank";
+            lectureLinkA.innerHTML = "Recording";
+            lectureLinkSpan.appendChild(lectureLinkA);
+            lectureLinkSpan.style = "margin-right: 1rem; margin-bottom: 0.5rem";
+            lectureTd.appendChild(lectureLinkSpan);
+        }
+        if (entry.slides) {
+            let slideSpan = document.createElement("span");
+            slideSpan.className = "badge badge-light main-badge";
+            let slideA = document.createElement("a");
+            slideA.href = entry.slides;
+            slideA.target = "_blank";
+            slideA.innerHTML = "Slides";
+            slideSpan.appendChild(slideA);
+            lectureTd.appendChild(slideSpan);
+        }
+        let randomDiv = document.createElement("div");
+        randomDiv.style = "height:0.5rem";
+        lectureTd.appendChild(randomDiv);
+        tr.appendChild(lectureTd);
+
+        let sectionTd = document.createElement("td");
+        sectionTd.rowSpan = "1";
+        sectionTd.className = "table-td-sm";
+        let sectionP = document.createElement("p");
+        sectionP.innerHTML = entry.lab;
+        sectionTd.appendChild(sectionP);
+        sectionTd.appendChild(randomDiv);
+        tr.appendChild(sectionTd);
+
+        // let homeworkTd = document.createElement("td");
+        // homeworkTd.rowSpan = "1";
+        // homeworkTd.style = "vertical-align: middle; text-align: center;";
+        // let homeworkSpan = document.createElement("span");
+        // if (entry.homework) {
+        //     homeworkSpan.className = "badge badge-light my-1 p-3 main-badge";
+        //     homeworkSpan.style = "width: 250px; word-break: break-word";
+        // }
+        // if (entry.homeworkLink) {
+        //     let homeworkLinkA = document.createElement("a");
+        //     let dueDateText = document.createTextNode("Due: Fri, " + entry.due);
+        //     let homeworkText = document.createTextNode(entry.homework);
+        //     let dueDateBr = document.createElement("br");
+        //     homeworkLinkA.appendChild(homeworkText);
+        //     homeworkLinkA.appendChild(dueDateBr);
+        //     homeworkLinkA.appendChild(dueDateText);
+        //     homeworkLinkA.href = entry.homeworkLink;
+        //     homeworkLinkA.target = "_blank";
+        //     homeworkLinkA.style = "margin-bottom: 0";
+        //     homeworkSpan.appendChild(homeworkLinkA);
+        // } else {
+        //     let homeworkP = document.createElement("p");
+        //     let dueDateText = document.createTextNode("");
+        //     if (entry.due) {
+        //         dueDateText = document.createTextNode("Due: Fri, " + entry.due);
+        //     }
+        //     let homeworkText = document.createTextNode(entry.homework);
+        //     let dueDateBr = document.createElement("br");
+        //     homeworkP.appendChild(homeworkText);
+        //     homeworkP.appendChild(dueDateBr);
+        //     homeworkP.appendChild(dueDateText);
+        //     homeworkP.style = "margin-bottom: 0";
+        //     homeworkSpan.appendChild(homeworkP);
+        // }
+        // homeworkTd.appendChild(homeworkSpan);
+        // tr.appendChild(homeworkTd);
+        scheduleElement.appendChild(tr);
+    });
+</script>
+
+</html>
