@@ -124,8 +124,8 @@
                 })
             const paragraphs = mainContent.getElementsByTagName('p');
             Array.from(paragraphs).forEach(paragraph => {
-                console.log(paragraph.firstChild)
-                const convertedInnerHTML = stringToHTML(paragraph.firstChild.innerHTML)
+                console.log(paragraph.querySelector('body'))
+                const convertedInnerHTML = stringToHTML(paragraph.querySelector('body').innerHTML)
                 console.log(convertedInnerHTML)
                 paragraph.innerHTML = ""
                 paragraph.appendChild(convertedInnerHTML)
