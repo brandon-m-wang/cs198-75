@@ -28,22 +28,16 @@ collections:
       - label: "Skeleton Repo"
         name: "skeleton"
         widget: "string"
-      - label: "Content"
-        name: "content"
+      - label: "Sections"
+        name: "Sections"
         widget: "list"
         types: 
-          - { 
-              label: "Part Header",
-              name: "subheader", 
-              widget: "string",
-            } 
-          - { 
-              label: "Paragraph", 
-              name: "paragraph", 
-              widget: "markdown",
-            } 
-          - { 
-              label: "Code Block", 
-              name: "codeblock", 
-              widget: "code",
-            }
+            - name: "Part Header Section"
+              widget: "object"
+              field: { name: Part Header, widget: string}
+            - name: "Paragraph Section"
+              widget: "object"
+              field: { name: Paragraph, widget: markdown } 
+            - name: "Code Block Section", 
+              widget: "object",
+              field: { name: Code Block, widget: code }
