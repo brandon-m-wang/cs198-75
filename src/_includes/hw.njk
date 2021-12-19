@@ -124,6 +124,7 @@
                 })
             const paragraphs = mainContent.getElementsByTagName('p');
             Array.from(paragraphs).forEach(paragraph => {
+                console.log(paragraph)
                 const convertedInnerHTML = stringToHTML(paragraph.innerHTML)
                 console.log(convertedInnerHTML)
                 paragraph.innerHTML = ""
