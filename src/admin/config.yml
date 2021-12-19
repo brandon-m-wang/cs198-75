@@ -16,8 +16,4 @@ collections:
       - { label: "Introduction", name: "introduction", widget: "markdown" }
       - { label: "Set-up", name: "setup", widget: "markdown" }
       - { label: "Skeleton Repo", name: "skeleton", widget: "string"}
-      - { label: "Content", name: "content", widget: "list", fields: 
-          - { label: "Part Header", name: "subheader", widget: "string" }
-          - { label: "Paragraph", name: "paragraph", widget: "markdown" }
-          - { label: "Code Block", name: "code", widget: "code", output_code_only: "false" }
-        }
+      - { label: "Content", name: "content", widget: "list", fields: - { label: "Part Header", name: "subheader", widget: "string" } - { label: "Paragraph", name: "paragraph", widget: "markdown" } - { label: "Code Block", name: "code", widget: "code", output_code_only: "false" }}
