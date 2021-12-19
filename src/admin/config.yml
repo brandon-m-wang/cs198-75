@@ -30,23 +30,20 @@ collections:
         widget: "string"
       - label: "Content"
         name: "content"
-        widget: "list"
+        widget: "object"
         fields: 
           - { 
-              label: "Part Headers",
-              name: "subheaders", 
-              widget: "list",
-              field: { label: "Part Header", name: "subheader", widget: "string" }
+              label: "Part Header",
+              name: "subheader", 
+              widget: "string"
             } 
           - { 
-              label: "Paragraphs", 
-              name: "paragraphs", 
-              widget: "list",
-              field: { label: "Paragraph", name: "paragraph", widget: "markdown"} 
+              label: "Paragraph",
+              name: "paragraph", 
+              widget: "markdown",
             } 
           - { 
-              label: "Code Blocks", 
-              name: "codeblocks", 
-              widget: "list",
-              field: { label: "Code Block", name: "codeblock", widget: "code", output_code_only: false} 
+              label: "Code Block", 
+              name: "codeblock", 
+              widget: "code",
             }
