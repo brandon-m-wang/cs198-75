@@ -93,15 +93,15 @@
             </p>
             <p>To open this project in VSCode, run this bash command: <pre><code>code {{ title }}</code></pre>
             </p>
-            {% for section in sections %}
-                {{ section }}
+            {% for type in sections %}
+                {{ type }}
                 {# {% if block.widget == 'string' %}
-                                                                    <h2>{{ block }}</h2>
-                                                                {% elif block.widget == 'markdown' %}
-                                                                    <p>{{ block }}</p>
-                                                                {% elif block.widget == 'code' %}
-                                                                    <pre><code></code></pre>
-                                                                {% endif %} #}
+                                                                                    <h2>{{ block }}</h2>
+                                                                                {% elif block.widget == 'markdown' %}
+                                                                                    <p>{{ block }}</p>
+                                                                                {% elif block.widget == 'code' %}
+                                                                                    <pre><code></code></pre>
+                                                                                {% endif %} #}
             {% endfor %}
         </div>
         <script>
