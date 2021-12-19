@@ -29,7 +29,7 @@ collections:
         name: "skeleton"
         widget: "string"
       - label: "Sections"
-        name: "Sections"
+        name: "sections"
         widget: "list"
         types: 
             - name: "Part Header Section"
