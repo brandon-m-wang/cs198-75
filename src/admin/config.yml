@@ -31,20 +31,22 @@ collections:
       - label: "Content"
         name: "content"
         widget: "list"
-        field: 
+        fields: 
           - { 
-              label: "Part Header",
-              name: "subheader", 
-              widget: "string" 
+              label: "Part Headers",
+              name: "subheaders", 
+              widget: "list",
+              field: { label: "Part Header", name: "subheader", widget: "string" }
             } 
           - { 
-              label: "Paragraph", 
-              name: "paragraph", 
-              widget: "markdown" 
+              label: "Paragraphs", 
+              name: "paragraphs", 
+              widget: "list",
+              field: { label: "Paragraph", name: "paragraph", widget: "markdown"} 
             } 
           - { 
-              label: "Code Block", 
-              name: "codeblock", 
-              widget: "code", 
-              output_code_only: false
+              label: "Code Blocks", 
+              name: "codeblocks", 
+              widget: "list",
+              field: { label: "Code Block", name: "codeblock", widget: "code", output_code_only: false} 
             }
