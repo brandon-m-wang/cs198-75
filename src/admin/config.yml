@@ -41,3 +41,5 @@ collections:
             - name: "Code Block Section"
               widget: "object"
               field: { name: Code Block, widget: code }
+            - name: "Test"
+              widget: "string"
