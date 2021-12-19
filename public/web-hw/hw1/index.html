@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta
+        name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="./css/main.css" crossorigin="anonymous"/>
+        <link href="./css/open-iconic-bootstrap.min.css" rel="stylesheet"/>
+        <link href="./css/bootstrap-toc.min.css" rel="stylesheet"/>
+        <link
+        rel="shortcut icon" type="image/png" href="cubstart.ico"/>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="./js/jquery.min.js" crossorigin="anonymous"></script>
+        <script src="./js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="./js/bootstrap-toc.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/github.min.css">
+        <title>Cubstart | CS 198-75</title>
+    </head>
+    <body>
+        <nav
+            class="navbar navbar-light navbar-expand-md align-items-center"
+            style="background: #307c9c; position: fixed; width: 100%; z-index: 100">
+            <div class="container container-nav">
+                <img
+                    src="https://calhacks-sierra.s3-us-west-2.amazonaws.com/assets/branding/cubstart.png"
+                    style=" object-fit: none; transform: scale(0.11); transform-origin: left top; margin-bottom: -260px; margin-right:
+                        -175px; "
+                    height="300px"
+                    width="205px"/>
+                <a class="navbar-brand brand-berkeley" href="/" style="color: #f2f2f2">
+                    Cubstart DeCal</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#schedule" style="color: #f2f2f2">
+                                Schedule
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#staff" style="color: #f2f2f2">
+                                Staff
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/#syllabus" style="color: #f2f2f2">
+                                Syllabus
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="side-nav" class="side-nav">
+            <h6>Navigation</h6>
+            <div
+                id="nav-topics"><!-- Dynamically generate the a tags for headers -->
+            </div>
+        </div>
+        <div id="main" class="main-content">
+            <h1>Project 1 xd
+                <span class="cubstart-color">12/21/21</span>
+            </h1>
+            <hr>
+            <h2 id="introduction">Introduction</h2>
+            <p>Hallo XD</p>
+            <h2 id="project-set-up">Project Set-up</h2>
+            <p>Heallo XD</p>
+            <p>To fetch the skeleton, you will git clone the skeleton repository into your
+                <mark>
+                    <code>cubstart</code>
+                </mark>
+                directory. While at your
+                <mark>
+                    <code>cubstart</code>
+                </mark>
+                directory, run the following bash command: <pre><code>git clone --depth=1 --branch=master https://www.linkedin.com/in/brandon-m-wang hw1 && rm -rf ./hw1/.git</code></pre>
+                You should now see a new
+                <mark>
+                    <code>hw1</code>
+                </mark>
+                folder in the directory. Accessing it includes all the contents of the project.
+            </p>
+            <p>To open this project in VSCode, run this bash command: <pre><code>code hw1</code></pre>
+            </p>
+            
+        </div>
+        <script>
+            hljs.highlightAll();
+        </script>
+        <script>
+            const sideNav = document.getElementById("nav-topics");
+            const mainContent = document.getElementById("main");
+            const topics = mainContent.getElementsByTagName('h2');
+            Array.from(topics).forEach(topic => {
+                console.log(topic)
+                const sideHeader = document.createElement('a');
+                sideHeader.innerHTML = topic.innerHTML
+                sideHeader.href = '#' + topic.id
+                sideNav.appendChild(sideHeader)
+            })
+        </script>
+    </body>
+</html>
