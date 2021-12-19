@@ -263,6 +263,7 @@ pre code.hljs {
 .inline-img {
   border: 2px solid #307c9c;
   border-radius: 10px;
+  max-height: 400px;
   filter: brightness(0.97);
 }
 
