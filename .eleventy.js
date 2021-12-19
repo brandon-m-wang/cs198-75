@@ -4,14 +4,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/js");
   eleventyConfig.addPassthroughCopy('./src/admin');
 
-  let markdownIt = require("markdown-it");
-  let options = {
-    html: true,
-    breaks: true,
-    linkify: true
-  };
-  eleventyConfig.setLibrary("md", markdownIt(options));
-  
+  eleventyConfig.addPairedShortcode("myShortcode", function(content) {
+    return `<div>${content}</div>`;
+  });
   return {
     dir: {
       input: "src",
