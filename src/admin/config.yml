@@ -43,4 +43,4 @@ collections:
             - label: "Code Block Section"
               name: "cbs"
               widget: "object"
-              field: { name: codeblock, widget: code }
+              field: { name: codeblock, widget: code, output_code_only: true }

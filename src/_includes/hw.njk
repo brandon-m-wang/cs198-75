@@ -71,7 +71,7 @@
         </div>
         <div id="main" class="main-content">
             <h1>{{ header }}
-                <span class="cubstart-color">{{ due }}</span>
+                <span class="cubstart-color">(Due {{ due }} @ 11:59pm)</span>
             </h1>
             <hr>
             <h2 id="introduction">Introduction</h2>
@@ -112,13 +112,23 @@
             const sideNav = document.getElementById("nav-topics");
             const mainContent = document.getElementById("main");
             const topics = mainContent.getElementsByTagName('h2');
-            Array.from(topics).forEach(topic => {
-                console.log(topic)
-                const sideHeader = document.createElement('a');
-                sideHeader.innerHTML = topic.innerHTML
-                sideHeader.href = '#' + topic.id
-                sideNav.appendChild(sideHeader)
-            })
+            Array
+                .from(topics)
+                .forEach(topic => {
+                    const covertedInnerHTML = topic
+                        .innerHTML
+                        .replace(/\s+/g, '-')
+                        .toLowerCase();
+                    topic.id = convertedInnerHTML
+                })
+                Array
+                .from(topics)
+                .forEach(topic => {
+                    const sideHeader = document.createElement('a');
+                    sideHeader.innerHTML = topic.innerHTML
+                    sideHeader.href = '#' + topic.id
+                    sideNav.appendChild(sideHeader)
+                })
         </script>
     </body>
-</html></body></html>
+</html>
