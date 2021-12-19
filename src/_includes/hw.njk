@@ -97,6 +97,11 @@
             hljs.highlightAll();
         </script>
         <script>
+            var stringToHTML = function (str) {
+	            var parser = new DOMParser();
+	            var doc = parser.parseFromString(str, 'text/html');
+	            return doc.body;
+            };
             const sideNav = document.getElementById("nav-topics");
             const mainContent = document.getElementById("main");
             const topics = mainContent.getElementsByTagName('h2');
@@ -117,6 +122,12 @@
                     sideHeader.href = '#' + topic.id
                     sideNav.appendChild(sideHeader)
                 })
+            const paragraphs = mainContent.getElementsByTagName('p');
+            Array.from(paragraphs).forEach(paragraph => {
+                const convertedInnerHTML = stringToHTML(paragraph.innerHTML)
+                paragraph.innerHTML = ""
+                paragraph.appendChild(convertedInnerHTML)
+            })
         </script>
     </body>
 </html>
