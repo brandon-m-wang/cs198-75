@@ -102,6 +102,11 @@
 	            var doc = parser.parseFromString(str, 'text/html');
 	            return doc.body;
             };
+            function decodeHtml(html) {
+                var txt = document.createElement("textarea");
+                txt.innerHTML = html;
+                return txt.value;
+            }
             const sideNav = document.getElementById("nav-topics");
             const mainContent = document.getElementById("main");
             const topics = mainContent.getElementsByTagName('h2');
@@ -124,8 +129,8 @@
                 })
             const paragraphs = mainContent.getElementsByTagName('p');
             Array.from(paragraphs).forEach(paragraph => {
-                console.log(paragraph.querySelector('body'))
-                const convertedInnerHTML = stringToHTML(paragraph.querySelector('body').innerHTML)
+                console.log(paragraph)
+                const convertedInnerHTML = stringToHTML(decodeHtml(paragraph))
                 console.log(convertedInnerHTML)
                 paragraph.innerHTML = ""
                 paragraph.appendChild(convertedInnerHTML)
