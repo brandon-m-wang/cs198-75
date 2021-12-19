@@ -44,3 +44,7 @@ collections:
               name: "cbs"
               widget: "object"
               field: { name: codeblock, widget: code, output_code_only: true }
+            - label: "Image Block Section"
+              name: "ibs"
+              widget: "object"
+              field: { name: imageblock, widget: image }

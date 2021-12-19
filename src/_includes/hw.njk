@@ -90,11 +90,28 @@
                     <p>{{ type.paragraph }}</p>
                 {% elif type.codeblock %}
                     <pre><code>{{ type.codeblock }}</code></pre>
+                {% elif type.imageblock %}
+                    <div class="inline-img-container">
+                        {{ type.imageblock }}
+                    </div>
                 {% endif %}
             {% endfor %}
         </div>
         <script>
             hljs.highlightAll();
+        </script>
+        <script>
+            const imageBlocks = document.querySelectorAll('.inline-img-container');
+            Array.from(imageBlocks).forEach(block => {
+                const link = block.innerHTML;
+                block.innerHTML = '';
+                const image = document.createElement('img');
+                image.src = link
+                image.class = 'inline-img';
+                image.height = '150px';
+                image.width = 'auto';
+                block.appendChild(image);
+            })
         </script>
         <script>
             var stringToHTML = function (str) {
