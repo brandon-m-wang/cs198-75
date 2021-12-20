@@ -31,10 +31,6 @@ sections:
     paragraph: Add a title for your website, and link your stylesheet in the
       enclosing head tags. The corresponding tags are referenced for your
       convenience.
-  - type: cbs
-    codeblock: |-
-      <link rel="" href="">
-      <title>Your Name</title>
   - type: phs
     partheader: "Part 2: HTML Tags and Attributes"
   - type: ps
@@ -51,8 +47,6 @@ sections:
       navigation, and other buttons. Think about how a header like this is laid
       out across the top of a page. What kinds of orientation would you need for
       its elements?
-  - type: cbs
-    codeblock: <header class="header center">
   - type: ps
     paragraph: >-
       Within the <mark><code>styles.css</code></mark> file, you'll find a class
@@ -79,18 +73,6 @@ sections:
   - type: ps
     paragraph: "You will now create a simple underline animation with CSS. You will
       notice that the styles in this section have a strange selector:"
-  - type: cbs
-    codeblock: |-
-      .link::before {
-          content: "";
-          display: inline;
-          width: 0%;
-          height: 0.2em;
-          position: absolute;
-          bottom: 0;
-          background-color: var(--clr-primary);
-          /* transition: */
-      }
   - type: ps
     paragraph: The <mark><code>::before</code></mark> selector is called a
       "pseudo-selector," which essentially just refers to a pseudo-element that
@@ -109,19 +91,12 @@ sections:
       instance hover (mouse over) and focus (selected). The property changes can
       be defined by <mark><code>:hover</code></mark> and
       <mark><code>:focus</code></mark> selectors as such:"
-  - type: cbs
-    codeblock: |-
-      .link:hover::before, .link:focus::before {
-          width: 100%;
-      }
   - type: ps
     paragraph: Observe that the way the underline appears. When the link is either
       hovered or selected, the width of the pseudo-element
       <mark><code>.link::before</code></mark> changes to 100%, else it is 0 when
       it isn't hovered/selected. We want to animate this change. Fill in the
       transition style so that we achieve a smooth animation.
-  - type: cbs
-    codeblock: "transition: [property] [duration] [timing-function];"
   - type: ps
     paragraph: In the property section, you will want to target
       <code><mark>width</mark></code> as mentioned previously. As for the
@@ -134,19 +109,8 @@ sections:
     paragraph: Some homework parts will involve analyzing parts of the skeleton
       code, so that you can understand its use cases. Answer the questions in
       the commented margins.
-  - type: cbs
-    codeblock: |-
-      <button type="button" aria-label="toggle theme" class="btn btn--icon">
-          <i id="btn-theme" class="fas fa-moon"></i>
-      </button>
   - type: ps
     paragraph: "5.1: What does this button tag correspond to on the site?"
-  - type: cbs
-    codeblock: >-
-      <button type="button" aria-label="toggle navigation" class="btn btn--icon
-      nav__hamburger">
-          <i class="fas fa-bars"></i>
-      </button>
   - type: ps
     paragraph: "5.2: Try Ctrl-F in styles.css and look the class 'nav__hamburger'.
       You'll notice that it appears in 2 places. Why is one of the rules

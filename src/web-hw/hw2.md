@@ -8,7 +8,6 @@ skeleton: testing
 sections:
   - type: cbs
     codeblock:
-      code: eleventyConfig.addJavaScriptFunction("makeUppercase", function(value) { …
-        });
+      code: eleventyConfig.addJavaScriptFunction("makeUppercase", function(value) { … });
       lang: javascript
 ---
