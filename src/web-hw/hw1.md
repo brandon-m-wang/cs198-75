@@ -193,4 +193,134 @@ sections:
                       A <code><mark>p</mark></code> tag for your bio, with the class of <mark><code>about__desc</code></mark>.
                   </li>
               </ul>
+  - type: phs
+    partheader: "Part 7: Fixing the About Section Layout"
+  - type: ps
+    paragraph: "Right now, your about section doesn't look to be entirely correct on
+      the webpage. This is due to an issue with styling, namely how the flex
+      display is oriented. Notice how your about section outer-div again has two
+      classes: \"about\" and \"center.\" Recall that the \"center\" class is the
+      same class from the previous part, where it essentially sets
+      <mark><code>display: flex;</code></mark> and vertically centers the
+      contents within the flex-box. Our about section, however, needs some
+      additional formatting to display correctly. This will be done in the
+      <mark><code>about</code></mark> class. Fill in this style so that the
+      contents in this flex-box are arranged in a vertical fashion. Add a
+      <code><mark>margin-top</mark></code> if you'd like."
+  - type: phs
+    partheader: "Part 8: Project Section"
+  - type: ps
+    paragraph: For your project section, the skeleton code has created a
+      <mark><code>div</code></mark> with class <mark><code>project</code></mark>
+      which represents a card that describes each of your projects, including
+      name, tech stack, and description. Try creating multiple copies of this
+      div one after the other, and see how it displays on the browser. We want
+      to preserve this "card" aspect to these project divs, and not have them
+      stack in a long rectangular fashion repeatedly. To do so, we'll use
+      something called a grid layout.
+  - type: phs
+    partheader: "Part 9: CSS Grid Layout"
+  - type: ps
+    paragraph: "Given the following starter styles:"
+  - type: cbs
+    codeblock:
+      code: |-
+        .projects__grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            /* display: */
+            /* grid-template-columns: */
+            /* grid-gap: */
+        }
+      lang: css
+  - type: ps
+    paragraph: Fill in the missing styles to create a grid-like layout of the
+      project cards. The style names should be fairly intuitive, but if you get
+      stuck, it is always okay to look up CSS reference. No matter how
+      experienced the developer, no one realistically knows every style by
+      memory. Try different values for
+      <mark><code>grid-template-columns</code></mark> to see how this style
+      works. You will notice that this style does not have a set number of
+      arguments, but will take as many as you want columns. This can result in
+      redundant code, so you can try using these CSS functions
+      <mark><code>repeat()</code></mark> and <mark><code>calc()</code></mark> to
+      handle this style, breaking the grid into rows of 3s. What is happening is
+      essentially repeating a fixed calculation of width for each column in the
+      grid. This calculation is derived from 1/3 of the parent div's width
+      subtracted from your chosen <mark><code>grid-gap</code></mark>*2/3 (since
+      you will have 2 gaps between 3 cards in each row).
+  - type: cbs
+    codeblock:
+      code: "grid-template-columns: repeat(auto-fit, calc(100% / 3 - [your chosen
+        grid-gap value] * 2 / 3));"
+      lang: css
+  - type: phs
+    partheader: "Part 10: Skills Section"
+  - type: ps
+    paragraph: For this section, feel free to just fill in each
+      <mark><code>li</code></mark> item with your skills and add more as you see
+      fit.</p>
+  - type: phs
+    partheader: "Part 11: More CSS Flex Layout"
+  - type: ps
+    paragraph: "You may find it strange that we are applying a flex display to a
+      list element. This is an acceptable use case of a flex-box layout, as a
+      <mark><code>ul</code></mark> element is simply another container element
+      for smaller <mark><code>li</code></mark> elements. Fill in the styling for
+      the <mark><code>skills__list</code></mark> class selector given the
+      following skeleton:"
+  - type: cbs
+    codeblock:
+      code: |-
+        .skills__list {
+            max-width: 450px;
+            width: 95%;
+            margin: 0 auto;
+            /* display: */
+            /* flex-wrap: */
+            /* justify-content: */
+        }
+      lang: css
+  - type: ps
+    paragraph: Recall that <mark><code>justify-content</code></mark> refers to
+      orienting flex-box items horizontally, so we want to center these items.
+      Further, take a look at the <mark><code>flex-wrap</code></mark> attribute.
+      This style can allow for a flex-box's child elements to wrap around into a
+      new row (or column depending on the
+      <code><mark>flex-direction</mark></code>) if the width of the combined
+      child elements exceeds that of the flex-box.
+  - type: ps
+    paragraph: Now that the skills are oriented correctly, there are still some
+      issues with the look of the skills section. The blocks seem too cramped,
+      so we need to give them spacing between. You may remember that we used
+      <mark><code>justify-content</code></mark> to accomplish this task in the
+      past. However, in this case, we want to control the amount of space
+      between each element explicitly, and not rely on preset spacing. As such,
+      we can simply manipulate each child element to have additional margins.
+      Fill in the styling for the <mark><code>skills__list-item</code></mark>
+      class selector.
+  - type: phs
+    partheader: "Part 12: Add a Footer"
+  - type: ps
+    paragraph: "You have already been provided a footer with styling (feel free to
+      analyze the styling in <mark><code>styles.css</code></mark>):"
+  - type: cbs
+    codeblock:
+      code: |-
+        <a href="/" class="link footer__link">
+            Created By Your Name
+        </a>
+      lang: html
+  - type: ps
+    paragraph: Your task is to add some additional information on the footer and
+      style it so it looks natural with the rest of the page and footer.
+  - type: phs
+    partheader: "Part 13: Creativity Requirement"
+  - type: ps
+    paragraph: Congratulations! You've successfully built out the core requirements
+      and design for your very own personal portfolio website with a clean and
+      sleek look. Now, your final task is to add three of your own personal
+      touches to the project as a standout measure. Be sure to document these
+      three personal touches in your README.md so graders can easily determine
+      your modifications. These modifications will be graded on effort.
 ---
