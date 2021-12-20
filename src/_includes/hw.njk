@@ -89,7 +89,7 @@
                 {% elif type.paragraph %}
                     <p>{{ type.paragraph }}</p>
                 {% elif type.codeblock %}
-                    {{ handleCodeBlock type.codeblock }}
+                    {% handleCodeBlock type.codeblock %}
                 {% elif type.imageblock %}
                     <div class="inline-img-container">
                         {{ type.imageblock }}
