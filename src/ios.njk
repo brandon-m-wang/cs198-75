@@ -194,96 +194,103 @@ layout: 'base-ios.njk'
         other students (there is no curve). Follow UC Berkeley’s Honor Code.</p>
     </div>
   </div>
-</div> < script > const schedule = []
-const scheduleElement = document.getElementById("schedule-content");
-schedule.forEach((entry) => {
-  let tr = document.createElement("tr");
-  let weekTh = document.createElement("th");
-  weekTh.rowSpan = "1";
-  weekTh.style = "text-align: center";
-  weekTh.id = "week" + entry.week;
-  weekTh.innerHTML = entry.week;
-  weekTh.appendChild(document.createElement("br"));
-  tr.appendChild(weekTh);
-  let dateTd = document.createElement("td");
-  dateTd.rowSpan = "1";
-  dateTd.appendChild(document.createTextNode("Mon"));
-  dateTd.appendChild(document.createElement("br"));
-  dateTd.appendChild(document.createTextNode(entry.date));
-  tr.appendChild(dateTd);
-  let lectureTd = document.createElement("td");
-  lectureTd.rowSpan = "1";
-  let lectureP = document.createElement("p");
-  lectureP.innerHTML = entry.lecture;
-  lectureTd.appendChild(lectureP);
-  if (entry.lectureLink) {
-    let lectureLinkSpan = document.createElement("span");
-    lectureLinkSpan.className = "badge badge-light main-badge";
-    let lectureLinkA = document.createElement("a");
-    lectureLinkA.href = entry.lectureLink;
-    lectureLinkA.target = "_blank";
-    lectureLinkA.innerHTML = "Recording";
-    lectureLinkSpan.appendChild(lectureLinkA);
-    lectureLinkSpan.style = "margin-right: 1rem; margin-bottom: 0.5rem";
-    lectureTd.appendChild(lectureLinkSpan);
-  }
-  if (entry.slides) {
-    let slideSpan = document.createElement("span");
-    slideSpan.className = "badge badge-light main-badge";
-    let slideA = document.createElement("a");
-    slideA.href = entry.slides;
-    slideA.target = "_blank";
-    slideA.innerHTML = "Slides";
-    slideSpan.appendChild(slideA);
-    lectureTd.appendChild(slideSpan);
-  }
-  let randomDiv = document.createElement("div");
-  randomDiv.style = "height:0.5rem";
-  lectureTd.appendChild(randomDiv);
-  tr.appendChild(lectureTd);
-  let sectionTd = document.createElement("td");
-  sectionTd.rowSpan = "1";
-  sectionTd.className = "table-td-sm";
-  let sectionP = document.createElement("p");
-  sectionP.innerHTML = entry.lab;
-  sectionTd.appendChild(sectionP);
-  sectionTd.appendChild(randomDiv);
-  tr.appendChild(sectionTd);
-  let homeworkTd = document.createElement("td");
-  homeworkTd.rowSpan = "1";
-  homeworkTd.style = "vertical-align: middle; text-align: center;";
-  let homeworkSpan = document.createElement("span");
-  if (entry.homework) {
-    homeworkSpan.className = "badge badge-light my-1 p-3 main-badge";
-    homeworkSpan.style = "width: 250px; word-break: break-word";
-  }
-  if (entry.homeworkLink) {
-    let homeworkLinkA = document.createElement("a");
-    let dueDateText = document.createTextNode("Due: Fri, " + entry.due);
-    let homeworkText = document.createTextNode(entry.homework);
-    let dueDateBr = document.createElement("br");
-    homeworkLinkA.appendChild(homeworkText);
-    homeworkLinkA.appendChild(dueDateBr);
-    homeworkLinkA.appendChild(dueDateText);
-    homeworkLinkA.href = entry.homeworkLink;
-    homeworkLinkA.target = "_blank";
-    homeworkLinkA.style = "margin-bottom: 0";
-    homeworkSpan.appendChild(homeworkLinkA);
-  } else {
-    let homeworkP = document.createElement("p");
-    let dueDateText = document.createTextNode("");
-    if (entry.due) {
-      dueDateText = document.createTextNode("Due: Fri, " + entry.due);
+</div>
+<script>
+  const schedule = [];
+  const scheduleElement = document.getElementById("schedule-content");
+  schedule.forEach((entry) => {
+    let tr = document.createElement("tr");
+    let weekTh = document.createElement("th");
+    weekTh.rowSpan = "1";
+    weekTh.style = "text-align: center";
+    weekTh.id = "week" + entry.week;
+    weekTh.innerHTML = entry.week;
+    weekTh.appendChild(document.createElement("br"));
+    tr.appendChild(weekTh);
+
+    let dateTd = document.createElement("td");
+    dateTd.rowSpan = "1";
+    dateTd.appendChild(document.createTextNode("Mon"));
+    dateTd.appendChild(document.createElement("br"));
+    dateTd.appendChild(document.createTextNode(entry.date));
+    tr.appendChild(dateTd);
+
+    let lectureTd = document.createElement("td");
+    lectureTd.rowSpan = "1";
+    let lectureP = document.createElement("p");
+    lectureP.innerHTML = entry.lecture;
+    lectureTd.appendChild(lectureP);
+    if (entry.lectureLink) {
+      let lectureLinkSpan = document.createElement("span");
+      lectureLinkSpan.className = "badge badge-light main-badge";
+      let lectureLinkA = document.createElement("a");
+      lectureLinkA.href = entry.lectureLink;
+      lectureLinkA.target = "_blank";
+      lectureLinkA.innerHTML = "Recording";
+      lectureLinkSpan.appendChild(lectureLinkA);
+      lectureLinkSpan.style = "margin-right: 1rem; margin-bottom: 0.5rem";
+      lectureTd.appendChild(lectureLinkSpan);
     }
-    let homeworkText = document.createTextNode(entry.homework);
-    let dueDateBr = document.createElement("br");
-    homeworkP.appendChild(homeworkText);
-    homeworkP.appendChild(dueDateBr);
-    homeworkP.appendChild(dueDateText);
-    homeworkP.style = "margin-bottom: 0";
-    homeworkSpan.appendChild(homeworkP);
-  } homeworkTd.appendChild(homeworkSpan);
-  tr.appendChild(homeworkTd);
-  scheduleElement.appendChild(tr);
-});
-</script></html>
+    if (entry.slides) {
+      let slideSpan = document.createElement("span");
+      slideSpan.className = "badge badge-light main-badge";
+      let slideA = document.createElement("a");
+      slideA.href = entry.slides;
+      slideA.target = "_blank";
+      slideA.innerHTML = "Slides";
+      slideSpan.appendChild(slideA);
+      lectureTd.appendChild(slideSpan);
+    }
+    let randomDiv = document.createElement("div");
+    randomDiv.style = "height:0.5rem";
+    lectureTd.appendChild(randomDiv);
+    tr.appendChild(lectureTd);
+
+    let sectionTd = document.createElement("td");
+    sectionTd.rowSpan = "1";
+    sectionTd.className = "table-td-sm";
+    let sectionP = document.createElement("p");
+    sectionP.innerHTML = entry.lab;
+    sectionTd.appendChild(sectionP);
+    sectionTd.appendChild(randomDiv);
+    tr.appendChild(sectionTd);
+
+    let homeworkTd = document.createElement("td");
+    homeworkTd.rowSpan = "1";
+    homeworkTd.style = "vertical-align: middle; text-align: center;";
+    let homeworkSpan = document.createElement("span");
+    if (entry.homework) {
+      homeworkSpan.className = "badge badge-light my-1 p-3 main-badge";
+      homeworkSpan.style = "width: 250px; word-break: break-word";
+    }
+    if (entry.homeworkLink) {
+      let homeworkLinkA = document.createElement("a");
+      let dueDateText = document.createTextNode("Due: Fri, " + entry.due);
+      let homeworkText = document.createTextNode(entry.homework);
+      let dueDateBr = document.createElement("br");
+      homeworkLinkA.appendChild(homeworkText);
+      homeworkLinkA.appendChild(dueDateBr);
+      homeworkLinkA.appendChild(dueDateText);
+      homeworkLinkA.href = entry.homeworkLink;
+      homeworkLinkA.target = "_blank";
+      homeworkLinkA.style = "margin-bottom: 0";
+      homeworkSpan.appendChild(homeworkLinkA);
+    } else {
+      let homeworkP = document.createElement("p");
+      let dueDateText = document.createTextNode("");
+      if (entry.due) {
+        dueDateText = document.createTextNode("Due: Fri, " + entry.due);
+      }
+      let homeworkText = document.createTextNode(entry.homework);
+      let dueDateBr = document.createElement("br");
+      homeworkP.appendChild(homeworkText);
+      homeworkP.appendChild(dueDateBr);
+      homeworkP.appendChild(dueDateText);
+      homeworkP.style = "margin-bottom: 0";
+      homeworkSpan.appendChild(homeworkP);
+    }
+    homeworkTd.appendChild(homeworkSpan);
+    tr.appendChild(homeworkTd);
+    scheduleElement.appendChild(tr);
+  });
+</script>
