@@ -11,7 +11,9 @@ module.exports = function (eleventyConfig) {
   }
 
   eleventyConfig.addShortcode("handleCodeBlock", function (cb) {
-    return `<pre><code class=language-${cb.lang}>${entityEncoder(cb.code)}</code></pre>`;
+    return `<pre><code class=language-${
+      cb.lang
+    }>${entityEncoder(cb.code)}</code></pre>`;
   });
 
   return {
