@@ -9,11 +9,20 @@ introduction: >-
   finished product you'll achieve:
 
 
-  <iframe width="420" height="315"
+  <br>
+
+
+  <div style="display: flex; justify-content: center">
+
+
+  <iframe width="600" height="350"
 
   src="https://www.youtube.com/embed/tgbNymZ7vqY">
 
   </iframe>
+
+
+  </div>
 setup: Placeholder
 skeleton: Placeholder
 sections:
@@ -38,6 +47,8 @@ sections:
     paragraph: Within your new cluster, hit "Create Database" and enter the
       following information. Your database will be named "hw8" for this project
       with 2 eventual collections - "users" and "posts."
+  - type: ibs
+    imageblock: public/assets/images/screen-shot-2022-01-09-at-2.43.35-am.png
   - type: phs
     partheader: "Part 3: Configuring your Node.js Webserver and Middleware"
   - type: phs
