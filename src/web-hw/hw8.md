@@ -35,11 +35,10 @@ sections:
   - type: phs
     partheader: "Part 2: Creating your MongoDB Atlas Database"
   - type: ps
-    paragraph: Navigate to <mark><a
-      href="https://account.mongodb.com/account/register"
-      target="_blank">https://account.mongodb.com/account/register</a></mark>
-      and create a MongoDB account. After MongoDB generates your first project,
-      go to "Databases" and hit "Create" to create a new cluster. Choose to
+    paragraph: Navigate to <a href="https://account.mongodb.com/account/register"
+      target="_blank">https://account.mongodb.com/account/register</a> and
+      create a MongoDB account. After MongoDB generates your first project, go
+      to "Databases" and hit "Create" to create a new cluster. Choose to
       authenticate with username and password, and create a them.
   - type: ibs
     imageblock: https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/cubstart/Screen+Shot+2022-01-09+at+2.58.21+AM.png
