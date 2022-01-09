@@ -75,6 +75,18 @@ sections:
       environment variable accessible across all project files.
   - type: phs
     partheader: "Part 3: Configuring your Node.js Webserver and Middleware"
+  - type: ps
+    paragraph: "We'll begin setting up our Node.js webserver in
+      <mark><code>index.js</code></mark>. The <mark><code>index.js</code></mark>
+      file is what we defined to be our endpoint (in
+      <mark><code>package.json</code></mark>) and is also where our API routes
+      are going to be defined. We need to load the contents of the
+      <mark><code>.env</code></mark> file in, and to do so insert the following
+      line:"
+  - type: cbs
+    codeblock:
+      code: dotenv.config();
+      lang: javascript
   - type: phs
     partheader: "Part 4: Creating your MongoDB Models"
   - type: phs
