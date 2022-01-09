@@ -19,8 +19,19 @@ skeleton: Placeholder
 sections:
   - type: phs
     partheader: "Part 1: Backend Dependencies and Environment Set-up"
+  - type: ps
+    paragraph: Open a terminal and navigate to the
+      <mark><code>node-rest-api</code></mark> folder. Run <mark><code>npm
+      install</code></mark> which will install all the necessary dependencies
+      for the backend component of this project. Under this same directory,
+      create a file called <mark><code>.env</code></mark>. We'll come back to
+      this later.
   - type: phs
     partheader: "Part 2: Creating your MongoDB Atlas Database"
+  - type: ps
+    paragraph: Navigate to <mark>https://account.mongodb.com/account/register</mark>
+      and create a MongoDB account. After MongoDB generates your first project,
+      go to "Databases" and hit "Create" to create a new cluster.
   - type: phs
     partheader: "Part 3: Configuring your Node.js Webserver and Middleware"
   - type: phs
