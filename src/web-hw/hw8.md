@@ -60,7 +60,7 @@ sections:
     paragraph: Hit "Connect," and then choose to "Connect your application." Copy
       the connection string given to you.
   - type: ibs
-    imageblock: /assets/images/screen-shot-2022-01-09-at-2.55.24-am.png
+    imageblock: public/assets/images/screen-shot-2022-01-09-at-2.55.24-am.png
   - type: ibs
     imageblock: /assets/images/screen-shot-2022-01-09-at-3.08.21-am.png
   - type: ps
