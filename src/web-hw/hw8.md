@@ -105,6 +105,45 @@ sections:
           }
         );
       lang: javascript
+  - type: ps
+    paragraph: >-
+      Some additional middleware you'll be implementing in this project are:
+
+
+      * express.json() - to give a clean json format on HTTP response
+
+      * helmet() - to secure your HTTP response headers
+
+      * morgan("common") - to log timestamps, errors, and other helpful HTTP request data
+
+
+      You don't need to understand the underlying abstraction of this technologies, just knowing what they are and what they do is enough. Notice that the const <mark><code>app</code></mark> is defined as your Express application instance. To incorporate this middleware into your Express app you do:
+  - type: cbs
+    codeblock:
+      code: |-
+        app.use(express.json());
+        app.use(helmet());
+        app.use(morgan("common"));
+      lang: javascript
+  - type: ps
+    paragraph: "Now, we'll define some routes for your API endpoints. Because this
+      application is attempting to recreate a microservices approach to building
+      functionality, each endpoint handles a function independent of the others.
+      The three endpoints you'll be building handle users, posts, and
+      authentication. For now, you can tell Express to route them to their
+      respective files in the <code><mark>./routes</mark></code> folder,
+      pointing all requests to the webserver on \"/api/<endpoint>\" to that
+      endpoint (e.g. http://localhost:8800/api/users). To do so, follow the
+      format defined below for the authentication route, and do the remaining
+      two for users and posts (hint: all route files are loaded in at the top of
+      the file with require):"
+  - type: cbs
+    codeblock:
+      code: |-
+        app.use("/api/auth", authRoute);
+        // "/api/posts"
+        // "/api/users"
+      lang: javascript
   - type: phs
     partheader: "Part 4: Creating your MongoDB Models"
   - type: phs
