@@ -40,15 +40,36 @@ sections:
   - type: ps
     paragraph: Navigate to <mark>https://account.mongodb.com/account/register</mark>
       and create a MongoDB account. After MongoDB generates your first project,
-      go to "Databases" and hit "Create" to create a new cluster.
+      go to "Databases" and hit "Create" to create a new cluster. Choose to
+      authenticate with username and password, and create a them.
   - type: ibs
-    imageblock: public/assets/images/screen-shot-2022-01-09-at-2.39.51-am.png
+    imageblock: /assets/images/screen-shot-2022-01-09-at-2.58.21-am.png
   - type: ps
-    paragraph: Within your new cluster, hit "Create Database" and enter the
-      following information. Your database will be named "hw8" for this project
-      with 2 eventual collections - "users" and "posts."
+    paragraph: For the allowed connections, enter the following IP address to allow
+      all IP addresses to modify the database (for convenience, you may secure
+      your database however you want).
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-01-09-at-3.00.17-am.png
+  - type: ps
+    paragraph: Within your new cluster, hit "Create Database" (or "Add My Own Data")
+      and enter the following information. Your database will be named "hw8" for
+      this project with 2 eventual collections - "users" and "posts."
   - type: ibs
     imageblock: public/assets/images/screen-shot-2022-01-09-at-2.43.35-am.png
+  - type: ps
+    paragraph: Hit "Connect," and then choose to "Connect your application." Copy
+      the connection string given to you.
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-01-09-at-2.55.24-am.png
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-01-09-at-3.08.21-am.png
+  - type: ps
+    paragraph: "Make the necessary replacements, and insert the connection string in
+      one line into your <mark><code>.env</code></mark> file as such:"
+  - type: cbs
+    codeblock:
+      code: MONGO_URL = your_string
+      lang: markdown
   - type: phs
     partheader: "Part 3: Configuring your Node.js Webserver and Middleware"
   - type: phs
