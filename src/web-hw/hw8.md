@@ -68,6 +68,10 @@ sections:
     codeblock:
       code: MONGO_URL = your_string
       lang: cpp
+  - type: ps
+    paragraph: The purpose of this file is to simplify the development process when
+      we need to reference the database URL repeatedly, assigning it to an
+      environment variable accessible across all project files.
   - type: phs
     partheader: "Part 3: Configuring your Node.js Webserver and Middleware"
   - type: phs
