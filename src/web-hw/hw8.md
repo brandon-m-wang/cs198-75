@@ -67,7 +67,7 @@ sections:
   - type: cbs
     codeblock:
       code: MONGO_URL = your_string
-      lang: ags
+      lang: cpp
   - type: phs
     partheader: "Part 3: Configuring your Node.js Webserver and Middleware"
   - type: phs
