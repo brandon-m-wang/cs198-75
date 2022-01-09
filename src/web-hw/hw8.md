@@ -87,6 +87,24 @@ sections:
     codeblock:
       code: dotenv.config();
       lang: javascript
+  - type: ps
+    paragraph: "Next, in order to connect to our MongoDB, we'll be using mongoose, a
+      middleware designed to simplify access to our MongoDB data through
+      \"models,\" which are defined as schemas that determine the structure of
+      our documents within our \"posts\" and \"users\" collections. Connect the
+      mongoose middleware as such, and write in helpful console log string for
+      your own development purposes:"
+  - type: cbs
+    codeblock:
+      code: >-
+        mongoose.connect(
+          process.env.MONGO_URL,
+          { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
+          () => {
+            console.log("");
+          }
+        );
+      lang: javascript
   - type: phs
     partheader: "Part 4: Creating your MongoDB Models"
   - type: phs
