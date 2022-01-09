@@ -9,10 +9,7 @@ introduction: >-
   finished product you'll achieve:
 
 
-  <br>
-
-
-  <div style="display: flex; justify-content: center">
+  <div style="display: flex; justify-content: center; margin-top: 2rem">
 
 
   <iframe width="600" height="350"
@@ -69,7 +66,7 @@ sections:
   - type: cbs
     codeblock:
       code: MONGO_URL = your_string
-      lang: markdown
+      lang: bibtex
   - type: phs
     partheader: "Part 3: Configuring your Node.js Webserver and Middleware"
   - type: phs
