@@ -43,26 +43,26 @@ sections:
       go to "Databases" and hit "Create" to create a new cluster. Choose to
       authenticate with username and password, and create a them.
   - type: ibs
-    imageblock: /assets/images/screen-shot-2022-01-09-at-2.58.21-am.png
+    imageblock: https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/cubstart/Screen+Shot+2022-01-09+at+2.58.21+AM.png
   - type: ps
     paragraph: For the allowed connections, enter the following IP address to allow
       all IP addresses to modify the database (for convenience, you may secure
       your database however you want).
   - type: ibs
-    imageblock: /assets/images/screen-shot-2022-01-09-at-3.00.17-am.png
+    imageblock: https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/cubstart/Screen+Shot+2022-01-09+at+3.00.17+AM.png
   - type: ps
     paragraph: Within your new cluster, hit "Create Database" (or "Add My Own Data")
       and enter the following information. Your database will be named "hw8" for
       this project with 2 eventual collections - "users" and "posts."
   - type: ibs
-    imageblock: public/assets/images/screen-shot-2022-01-09-at-2.43.35-am.png
+    imageblock: https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/cubstart/Screen+Shot+2022-01-09+at+2.43.35+AM.png
   - type: ps
     paragraph: Hit "Connect," and then choose to "Connect your application." Copy
       the connection string given to you.
   - type: ibs
-    imageblock: public/assets/images/screen-shot-2022-01-09-at-2.55.24-am.png
+    imageblock: https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/cubstart/Screen+Shot+2022-01-09+at+2.55.24+AM.png
   - type: ibs
-    imageblock: /assets/images/screen-shot-2022-01-09-at-3.08.21-am.png
+    imageblock: https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/cubstart/Screen+Shot+2022-01-09+at+3.08.21+AM.png
   - type: ps
     paragraph: "Make the necessary replacements, and insert the connection string in
       one line into your <mark><code>.env</code></mark> file as such:"
