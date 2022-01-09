@@ -32,6 +32,12 @@ sections:
     paragraph: Navigate to <mark>https://account.mongodb.com/account/register</mark>
       and create a MongoDB account. After MongoDB generates your first project,
       go to "Databases" and hit "Create" to create a new cluster.
+  - type: ibs
+    imageblock: public/assets/images/screen-shot-2022-01-09-at-2.39.51-am.png
+  - type: ps
+    paragraph: Within your new cluster, hit "Create Database" and enter the
+      following information. Your database will be named "hw8" for this project
+      with 2 eventual collections - "users" and "posts."
   - type: phs
     partheader: "Part 3: Configuring your Node.js Webserver and Middleware"
   - type: phs
