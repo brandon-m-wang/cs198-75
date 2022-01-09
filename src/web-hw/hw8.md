@@ -68,7 +68,7 @@ sections:
   - type: cbs
     codeblock:
       code: MONGO_URL = your_string
-      lang: bibtex
+      lang: dockerfile
   - type: phs
     partheader: "Part 3: Configuring your Node.js Webserver and Middleware"
   - type: phs
