@@ -439,8 +439,28 @@ sections:
         res.status(200).json(posts);
       lang: javascript
   - type: ps
-    paragraph: a
+    paragraph: "In order to generate a user's timeline, you'll need to consider two
+      things: the current user's posts, and the posts of all of their friends.
+      This is a fairly rudimentary means of generating a timeline, but for the
+      purposes of this project it will do. To do so, you'll rely on request
+      parameters again (\"timeline/:userId\"), where userId is the current
+      user's id. Retrieve the current user's object by finding by id in your
+      users collection, and then fetch every post authored by the current user
+      in your posts collection. You'll repeat this for each friend in the user's
+      friends list using <code><mark>Promise.all()</mark></code> which in short,
+      resolves all data fetching procedures in a loop before proceeding. Then
+      you'll concatenate both in a joint list of posts, and return them in the
+      response. Within the try block of // GET TIMELINE:"
   - type: cbs
     codeblock:
-      code: a
+      code: |-
+        const currentUser = await User.findById(req.params.userId);
+        const userPosts = await Post.find({ userId: currentUser._id });
+        const friendPosts = await Promise.all(
+          currentUser.following.map((friendId) => {
+            return Post.find({ userId: friendId });
+          })
+        );
+        res.status(200).json(userPosts.concat(...friendPosts));
+      lang: javascript
 ---
