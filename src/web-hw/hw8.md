@@ -313,8 +313,9 @@ sections:
     paragraph: "Now you need to save the user into the DB. Recall that the user
       model you defined exports as a mongoose Model giving you a means to
       manipulate your DB directly. This is now saved into your variable
-      <code><mark>newUser</mark></code>. To save the user in your DB, simply
-      apply the following lines under // SAVE USER INTO MONGODB:"
+      <code><mark>newUser</mark></code>. To save the user in your DB and to give
+      a successful response (HTTP 200) with the user object, simply apply the
+      following lines under // SAVE USER INTO MONGODB:"
   - type: cbs
     codeblock:
       code: |-
