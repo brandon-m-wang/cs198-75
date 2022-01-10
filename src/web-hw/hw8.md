@@ -74,7 +74,7 @@ sections:
       we need to reference the database URL repeatedly, assigning it to an
       environment variable accessible across all project files.
   - type: phs
-    partheader: "Part 3: Configuring your Node.js Webserver and Middleware"
+    partheader: "Part 3: Configuring your Node.js Webserver, Routes, and Middleware"
   - type: ps
     paragraph: "We'll begin setting up our Node.js webserver in
       <mark><code>index.js</code></mark>. The <mark><code>index.js</code></mark>
