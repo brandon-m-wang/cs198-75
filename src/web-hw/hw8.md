@@ -323,7 +323,7 @@ sections:
         res.status(200).json(user);
       lang: javascript
   - type: ps
-    paragraph: "Now, for the login endpoint, you'll notice a similar structure as
+    paragraph: "For the login endpoint, you'll notice a similar structure as
       registering, just some different logic within the async function. Try to
       understand the code that's already there: <mark><code>user</code></mark>
       is assigned to the user in the DB if it exists, otherwise it will be null.
