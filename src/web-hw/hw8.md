@@ -322,6 +322,23 @@ sections:
         const user = await newUser.save();
         res.status(200).json(user);
       lang: javascript
+  - type: ps
+    paragraph: "Now, for the login endpoint, you'll notice a similar structure as
+      registering, just some different logic within the async function. Try to
+      understand the code that's already there: <mark><code>user</code></mark>
+      is assigned to the user in the DB if it exists, otherwise it will be null.
+      The <mark><code>findOne()</code></mark> method accepts an object as a
+      search parameter, in this case search by email, since your primary user
+      login/registration mechanism is by email + password. Then, if the user is
+      null, give a 404 via the response  (res) object and break out of the
+      function. If there is a user by the given email, proceed to the next step:
+      password validation. Now there is an
+      <mark><code>attemptPassword</code></mark> variable which represents a
+      boolean, true if the password if the given password matches that user's
+      password, and false otherwise. Your job is to validate this password. You
+      want to give a 400 response (bad request) if the password is wrong before
+      the line with the 200 response (login successful). Write this underneath
+      // VALIDATE PASSWORD."
   - type: phs
     partheader: "Part 7: Posts Endpoints"
   - type: phs
