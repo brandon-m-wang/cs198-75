@@ -196,8 +196,8 @@ sections:
     paragraph: "Moving onto your user document schema, a similar process. What kind
       of information would you need for each user? Username, e-mail, password,
       profile photo, where they're from, bio, etc. All the information necessary
-      for our project is defined below, simply repeat the process as you did for
-      your post schema:"
+      for your project is defined below, simply repeat the process as you did
+      for your post schema:"
   - type: cbs
     codeblock:
       code: |-
