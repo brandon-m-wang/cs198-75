@@ -445,28 +445,6 @@ sections:
       used in this project spec.
   - type: phs
     partheader: "Part 8: Users Endpoints"
-  - type: phs
-    partheader: "Part 9: API Endpoint Testing with Postman and User Generation"
-  - type: phs
-    partheader: "Part 10: Frontend Dependencies and Environment Set-up"
-  - type: phs
-    partheader: "Part 11: User Context"
-  - type: phs
-    partheader: "Part 12: Topbar Component"
-  - type: phs
-    partheader: "Part 13: Post Component"
-  - type: phs
-    partheader: "Part 14: Feed Component"
-  - type: phs
-    partheader: "Part 15: Share Component"
-  - type: phs
-    partheader: "Part 16: Rightbar Component"
-  - type: phs
-    partheader: "Part 17: Sidebar Component"
-  - type: phs
-    partheader: "Part 18: Putting the Pages Together"
-  - type: phs
-    partheader: "Part 19: React Routing"
   - type: ps
     paragraph: "Finally, your users endpoint. You'll have five main functionalities:
       updating a user, getting a user by id or username, get a user's following
@@ -571,4 +549,26 @@ sections:
   - type: ps
     paragraph: For a bit of a challenge, try to implement the unfollow endpoint
       within // UNFOLLOW USER. It's nearly identical to the follow endpoint.
+  - type: phs
+    partheader: "Part 9: API Endpoint Testing with Postman and User Generation"
+  - type: phs
+    partheader: "Part 10: Frontend Dependencies and Environment Set-up"
+  - type: phs
+    partheader: "Part 11: User Context"
+  - type: phs
+    partheader: "Part 12: Topbar Component"
+  - type: phs
+    partheader: "Part 13: Post Component"
+  - type: phs
+    partheader: "Part 14: Feed Component"
+  - type: phs
+    partheader: "Part 15: Share Component"
+  - type: phs
+    partheader: "Part 16: Rightbar Component"
+  - type: phs
+    partheader: "Part 17: Sidebar Component"
+  - type: phs
+    partheader: "Part 18: Putting the Pages Together"
+  - type: phs
+    partheader: "Part 19: React Routing"
 ---
