@@ -192,36 +192,6 @@ sections:
       offers a convenient "model" function which returns a document-like class
       that can be instantiated by passing in a similar object with post
       information. You'll get to see this later.
-  - type: phs
-    partheader: "Part 5: Routing in Express"
-  - type: phs
-    partheader: "Part 6: Authentication Endpoints"
-  - type: phs
-    partheader: "Part 7: Posts Endpoints"
-  - type: phs
-    partheader: "Part 8: Users Endpoints"
-  - type: phs
-    partheader: "Part 9: API Endpoint Testing with Postman and User Generation"
-  - type: phs
-    partheader: "Part 10: Frontend Dependencies and Environment Set-up"
-  - type: phs
-    partheader: "Part 11: User Context"
-  - type: phs
-    partheader: "Part 12: Topbar Component"
-  - type: phs
-    partheader: "Part 13: Post Component"
-  - type: phs
-    partheader: "Part 14: Feed Component"
-  - type: phs
-    partheader: "Part 15: Share Component"
-  - type: phs
-    partheader: "Part 16: Rightbar Component"
-  - type: phs
-    partheader: "Part 17: Sidebar Component"
-  - type: phs
-    partheader: "Part 18: Putting the Pages Together"
-  - type: phs
-    partheader: "Part 19: React Routing"
   - type: ps
     paragraph: "Moving onto your user document schema, a similar process. What kind
       of information would you need for each user? Username, e-mail, password,
@@ -282,4 +252,34 @@ sections:
           enum: [1, 2, 3],
         },
       lang: javascript
+  - type: phs
+    partheader: "Part 5: Routing in Express"
+  - type: phs
+    partheader: "Part 6: Authentication Endpoints"
+  - type: phs
+    partheader: "Part 7: Posts Endpoints"
+  - type: phs
+    partheader: "Part 8: Users Endpoints"
+  - type: phs
+    partheader: "Part 9: API Endpoint Testing with Postman and User Generation"
+  - type: phs
+    partheader: "Part 10: Frontend Dependencies and Environment Set-up"
+  - type: phs
+    partheader: "Part 11: User Context"
+  - type: phs
+    partheader: "Part 12: Topbar Component"
+  - type: phs
+    partheader: "Part 13: Post Component"
+  - type: phs
+    partheader: "Part 14: Feed Component"
+  - type: phs
+    partheader: "Part 15: Share Component"
+  - type: phs
+    partheader: "Part 16: Rightbar Component"
+  - type: phs
+    partheader: "Part 17: Sidebar Component"
+  - type: phs
+    partheader: "Part 18: Putting the Pages Together"
+  - type: phs
+    partheader: "Part 19: React Routing"
 ---
