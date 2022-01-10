@@ -520,15 +520,55 @@ sections:
         res.status(200).json(other);
       lang: javascript
   - type: ps
-    paragraph: a
+    paragraph: "For getting a user's following/friends, you will fetch the friends
+      of the user whose id is specified in the request parameter \":userId.\" To
+      do so, retrieve the user object by userId, then for each friend you
+      retrieve the friend's user object by friendId, keeping only the necessary
+      information (id, username, profile picture), and returning this list in
+      the response. Within // GET FOLLOWING/FRIENDS:"
   - type: cbs
     codeblock:
-      code: a
+      code: |-
+        const user = await User.findById(req.params.userId);
+        const friends = await Promise.all(
+          user.following.map((friendId) => {
+            return User.findById(friendId);
+          })
+        );
+        let friendsList = [];
+        friends.map((friend) => {
+          const { _id, username, profilePicture } = friend;
+          // Only unpack the properties we need, then push
+          friendsList.push({ _id, username, profilePicture });
+        });
+        res.status(200).json(friendsList);
+      lang: javascript
   - type: ps
-    paragraph: a
+    paragraph: "Now the follow user endpoint. Within the request parameters, you
+      have \":id\" which represents the user to be followed. First it needs to
+      be verified that the user to be followed can not be the current user
+      (can't follow yourself). Then, to handle the following procedure, you'll
+      just have to append the current user to the user to be followed's follower
+      list. Try to really understand the code's inner workings, since you have
+      seen this type of architecture so many times now. Within // FOLLOW USER:"
   - type: cbs
     codeblock:
-      code: a
+      code: >-
+        const user = await User.findById(req.params.id);
+
+        const currentUser = await User.findById(req.body.userId);
+
+        // If not already following
+
+        if (!user.followers.includes(req.body.userId)) {
+          await user.updateOne({ $push: { followers: req.body.userId } }); // Update both users involved using $push syntax
+          await currentUser.updateOne({ $push: { following: req.params.id } }); // Update both users involved
+          res.status(200).json("Followed user");
+        } else {
+          res.status(403).json("Already following");
+        }
+      lang: javascript
   - type: ps
-    paragraph: a
+    paragraph: For a bit of a challenge, try to implement the unfollow endpoint
+      within // UNFOLLOW USER. It's nearly identical to the follow endpoint.
 ---
