@@ -110,11 +110,15 @@ sections:
       Some additional middleware you'll be implementing in this project are:
 
 
-      * express.json() - to give a clean json format on HTTP response
+      <ul>
 
-      * helmet() - to secure your HTTP response headers
+      <li>express.json() - to give a clean json format on HTTP response</li>
 
-      * morgan("common") - to log timestamps, errors, and other helpful HTTP request data
+      <li>helmet() - to secure your HTTP response headers</li>
+
+      <li>morgan("common") - to log timestamps, errors, and other helpful HTTP request data</li>
+
+      </ul>
 
 
       You don't need to understand the underlying abstraction of this technologies, just knowing what they are and what they do is enough. Notice that the const <mark><code>app</code></mark> is defined as your Express application instance. To incorporate this middleware into your Express app you do:
