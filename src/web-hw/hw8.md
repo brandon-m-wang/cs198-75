@@ -254,6 +254,23 @@ sections:
       lang: javascript
   - type: phs
     partheader: "Part 5: Routing in Express"
+  - type: ps
+    paragraph: >+
+      A router object is an isolated instance of middleware and routes. You can
+      think of it as a “mini-application,” capable only of performing middleware
+      and routing functions. Every Express application has a built-in app
+      router. Once you’ve created a router object, you can add middleware and
+      HTTP method routes (such as get, put, post, and so on) to it just like an
+      application.
+
+  - type: ps
+    paragraph: Create an express router instance with the following line of code.
+      You'll need to do this across all of your router files in the folder (a
+      total of 3).
+  - type: cbs
+    codeblock:
+      code: const router = express.Router();
+      lang: javascript
   - type: phs
     partheader: "Part 6: Authentication Endpoints"
   - type: phs
