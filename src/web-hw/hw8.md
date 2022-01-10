@@ -344,30 +344,6 @@ sections:
       router for use in other areas of your application.
   - type: phs
     partheader: "Part 7: Posts Endpoints"
-  - type: phs
-    partheader: "Part 8: Users Endpoints"
-  - type: phs
-    partheader: "Part 9: API Endpoint Testing with Postman and User Generation"
-  - type: phs
-    partheader: "Part 10: Frontend Dependencies and Environment Set-up"
-  - type: phs
-    partheader: "Part 11: User Context"
-  - type: phs
-    partheader: "Part 12: Topbar Component"
-  - type: phs
-    partheader: "Part 13: Post Component"
-  - type: phs
-    partheader: "Part 14: Feed Component"
-  - type: phs
-    partheader: "Part 15: Share Component"
-  - type: phs
-    partheader: "Part 16: Rightbar Component"
-  - type: phs
-    partheader: "Part 17: Sidebar Component"
-  - type: phs
-    partheader: "Part 18: Putting the Pages Together"
-  - type: phs
-    partheader: "Part 19: React Routing"
   - type: ps
     paragraph: "Moving into the posts endpoint, you'll have five main
       functionalities: creating a post, liking/unliking a post, getting a post,
@@ -463,4 +439,32 @@ sections:
         );
         res.status(200).json(userPosts.concat(...friendPosts));
       lang: javascript
+  - type: ps
+    paragraph: For your convenience and additional learning, the endpoints for
+      updating and deleting posts are included as well, however they will not be
+      used in this project spec.
+  - type: phs
+    partheader: "Part 8: Users Endpoints"
+  - type: phs
+    partheader: "Part 9: API Endpoint Testing with Postman and User Generation"
+  - type: phs
+    partheader: "Part 10: Frontend Dependencies and Environment Set-up"
+  - type: phs
+    partheader: "Part 11: User Context"
+  - type: phs
+    partheader: "Part 12: Topbar Component"
+  - type: phs
+    partheader: "Part 13: Post Component"
+  - type: phs
+    partheader: "Part 14: Feed Component"
+  - type: phs
+    partheader: "Part 15: Share Component"
+  - type: phs
+    partheader: "Part 16: Rightbar Component"
+  - type: phs
+    partheader: "Part 17: Sidebar Component"
+  - type: phs
+    partheader: "Part 18: Putting the Pages Together"
+  - type: phs
+    partheader: "Part 19: React Routing"
 ---
