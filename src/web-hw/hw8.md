@@ -273,6 +273,41 @@ sections:
       lang: javascript
   - type: phs
     partheader: "Part 6: Authentication Endpoints"
+  - type: ps
+    paragraph: "Now, you'll be building your authentication endpoint. There'll be
+      two requests you need to handle: one for logging in and one for
+      registering a new user. For registration, notice that the
+      <mark><code>router.post()</code></mark> method is being utilized, as
+      registering a new user is best suited to being a POST request. The
+      endpoint is defined at \"/api/auth/register\" as you previously specified
+      the route to endpoints in this file as beginning with \"/api/auth.\" The
+      second parameter is an asynchronous function taking in a request (req) and
+      response (res) object which you'll manipulate to produce the correct
+      response."
+  - type: ps
+    paragraph: "You'll notice that async functions are going to be crucial to every
+      aspect of this project, as this is how you can avoid null errors when
+      JavaScript runs lines without waiting for data to finish resolving. You
+      can ignore the // PASSWORD ENCRYPTION contents, as it's a simple method to
+      encrypt user passwords to be held in the DB. You want the request object
+      (req) to contain properties fitting our User model, so it is safe to
+      assume that it does so (when you eventually write the code for utilizing
+      this endpoint on the front-end). As such, you can instantiate your user
+      model using the properties of the request body as follows (don't forget to
+      use the encrypted password):"
+  - type: cbs
+    codeblock:
+      code: |
+        const newUser = await new User({
+          username: req.body.username,
+          email: req.body.email,
+          password: hashedPassword,
+          description: req.body.description,
+          city: req.body.city,
+          from: req.body.from,
+          relationship: req.body.relationship,
+        });
+      lang: javascript
   - type: phs
     partheader: "Part 7: Posts Endpoints"
   - type: phs
