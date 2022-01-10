@@ -222,4 +222,64 @@ sections:
     partheader: "Part 18: Putting the Pages Together"
   - type: phs
     partheader: "Part 19: React Routing"
+  - type: ps
+    paragraph: "Moving onto your user document schema, a similar process. What kind
+      of information would you need for each user? Username, e-mail, password,
+      profile photo, where they're from, bio, etc. All the information necessary
+      for our project is defined below, simply repeat the process as you did for
+      your post schema:"
+  - type: cbs
+    codeblock:
+      code: |-
+        username: {
+          type: String,
+          require: true,
+          min: 3,
+          max: 20,
+          unique: true,
+        },
+        email: {
+          type: String,
+          required: true,
+          max: 50,
+          unique: true,
+        },
+        password: {
+          type: String,
+          required: true,
+          min: 6,
+        },
+        profilePicture: {
+          type: String,
+          default: "",
+        },
+        coverPicture: {
+          type: String,
+          default: "",
+        },
+        followers: {
+          type: Array,
+          default: [],
+        },
+        following: {
+          type: Array,
+          default: [],
+        },
+        description: {
+          type: String,
+          max: 50,
+        },
+        city: {
+          type: String,
+          max: 50,
+        },
+        from: {
+          type: String,
+          max: 50,
+        },
+        relationship: {
+          type: Number,
+          enum: [1, 2, 3],
+        },
+      lang: javascript
 ---
