@@ -368,4 +368,64 @@ sections:
     partheader: "Part 18: Putting the Pages Together"
   - type: phs
     partheader: "Part 19: React Routing"
+  - type: ps
+    paragraph: "Moving into the posts endpoint, you'll have five main
+      functionalities: creating a post, liking/unliking a post, getting a post,
+      getting all of one user's posts, and getting a \"timeline.\""
+  - type: ps
+    paragraph: "To start, the post creation endpoint is very similar to what you've
+      done in authentication, you create a new post model from the request body,
+      and simply save it and give it a successful response status. Within the
+      try block of // CREATE POST:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const newPost = new Post(req.body);
+        const savedPost = await newPost.save();
+        res.status(200).json(savedPost);
+      lang: javascript
+  - type: ps
+    paragraph: "As for your post liking endpoint, you'll notice that the endpoint is
+      defined to be \"/:id/like.\" You can think of the colon as denoting a sort
+      of wildcard, accepting any valid string and assigning it the name \"id\"
+      within request parameters. Request parameters are accessed similar to the
+      request body with <mark><code>req.params</code></mark>. To handle
+      like/unlike functionality, you need to first fetch this post information.
+      To do so, the \"id\" request parameter will represent the post's id! This
+      makes it simple to retrieve from your DB, as you have a posts collection
+      in MongoDB. Using your post model (to communicate with our DB), you can
+      use the method <mark><code>findById()</code></mark> and pass in your
+      request parameter \"id\" to retrieve your post. Then you'll check to see
+      if the current user has already liked the post, and like or unlike the
+      post accordingly. The \"$push\" and \"$pull\" options tells the post model
+      to either insert or delete the current user's id (included in the request
+      body) from the post's \"likes\" array. Within the try block of // CREATE
+      POST:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const post = await Post.findById(req.params.id);
+        if (!post.likes.includes(req.body.userId)) {
+          await post.updateOne({ $push: { likes: req.body.userId } });
+          res.status(200).json("Post liked");
+        } else {
+          await post.updateOne({ $pull: { likes: req.body.userId } });
+          res.status(200).json("Post unliked");
+        }
+      lang: javascript
+  - type: ps
+    paragraph: a
+  - type: ps
+    paragraph: a
+  - type: cbs
+    codeblock:
+      code: a
+  - type: cbs
+    codeblock:
+      code: a
+  - type: cbs
+    codeblock:
+      code: a
+  - type: ps
+    paragraph: a
 ---
