@@ -339,6 +339,9 @@ sections:
       want to give a 400 response (bad request) if the password is wrong before
       the line with the 200 response (login successful). Write this underneath
       // VALIDATE PASSWORD."
+  - type: ps
+    paragraph: Of course, at the end of the file, you export the Express router for
+      use in other areas of your application.
   - type: phs
     partheader: "Part 7: Posts Endpoints"
   - type: phs
