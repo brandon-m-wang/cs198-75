@@ -154,6 +154,37 @@ sections:
       a console message displayed as well.
   - type: phs
     partheader: "Part 4: Creating your MongoDB Models"
+  - type: ps
+    paragraph: "Navigate to the <mark><code>models</code></mark> folder, and into
+      <mark><code>Post.js</code></mark>. Here, you'll define your schema for
+      post data documents. On paper, try thinking about what kinds of data you
+      need for any given post; you'll probably need to know which user posted
+      it, the contents of the post, and who liked it. Notice that mongoose
+      allows you to create a schema using two parameters. The second parameter
+      is for options (e.g. timestamping when an object is put into the DB), and
+      the first is the actual structure of your documents in the \"posts\"
+      collection. Fill in the first parameter object using the following guiding
+      schema:"
+  - type: cbs
+    codeblock:
+      code: |-
+        userId: {
+          type: String,
+          required: true,
+        },
+        description: {
+          type: String,
+          max: 500,
+          required: true,
+        },
+        image: {
+          type: String,
+        },
+        likes: {
+          type: Array,
+          default: [],
+        }
+      lang: javascript
   - type: phs
     partheader: "Part 5: Routing in Express"
   - type: phs
