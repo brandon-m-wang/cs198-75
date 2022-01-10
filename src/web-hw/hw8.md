@@ -467,4 +467,68 @@ sections:
     partheader: "Part 18: Putting the Pages Together"
   - type: phs
     partheader: "Part 19: React Routing"
+  - type: ps
+    paragraph: "Finally, your users endpoint. You'll have five main functionalities:
+      updating a user, getting a user by id or username, get a user's following
+      list (friends), following a user, and unfollowing a user."
+  - type: ps
+    paragraph: "For updating a user, only the current user should be able to update
+      their own page. To ensure this, both request body and request parameters
+      will be utilized. The request body will contain the user id making the
+      update request, the parameter is simply the user to be updated. After
+      verifying that both match up, proceed with updating. Password updating is
+      a bit more convoluted as it involves hashing again, so it has been done
+      already for your convenience. The objective of the update is to set all
+      fields in the user document equal to the affected fields in the request
+      body. Within // UPDATE USER:"
+  - type: cbs
+    codeblock:
+      code: |-
+        await User.findByIdAndUpdate(req.body.userId, {
+          $set: req.body,
+        });
+        res.status(200).json("Account has been updated");
+      lang: javascript
+  - type: ps
+    paragraph: "For the next endpoint you'll be getting users by either userId or
+      username. This is crucial, as the way users are fetched from a profile
+      page (e.g. /profile/bob) need to retrieve the user object from our DB only
+      by username, since in this case we have no access to bob's user id. To do
+      so, request queries are utilized. You know of request body and request
+      parameters already, so this should be fairly intuitive. Request queries
+      are appended onto the end of an endpoint's url. In this case, our endpoint
+      is \"/api/users,\" so a query would be something like
+      \"/api/users?username=bob.\" You can retrieve data from request queries
+      with <mark><code>req.query</code></mark>. With that in mind, retrieving a
+      user by either userId or username becomes trivial. You check if the query
+      contains either a userId or username, and retrieve the user object
+      accordingly from your DB. Within // GET USER BY ID OR USERNAME:"
+  - type: cbs
+    codeblock:
+      code: >-
+        const userId = req.query.userId;
+
+        const username = req.query.username;
+
+        const user = userId
+          ? await User.findById(userId)
+          : await User.findOne({ username: username });
+        const { password, updatedAt, ...other } = user._doc;
+
+        // _doc carries the entire document object in MongoDB. need to remove password and other extranneous information from the response.
+
+        res.status(200).json(other);
+      lang: javascript
+  - type: ps
+    paragraph: a
+  - type: cbs
+    codeblock:
+      code: a
+  - type: ps
+    paragraph: a
+  - type: cbs
+    codeblock:
+      code: a
+  - type: ps
+    paragraph: a
 ---
