@@ -30,7 +30,7 @@ sections:
       <mark><code>node-rest-api</code></mark> folder. Run <mark><code>npm
       install</code></mark> which will install all the necessary dependencies
       for the backend component of this project. Under this same directory,
-      create a file called <mark><code>.env</code></mark>. We'll come back to
+      create a file called <mark><code>.env</code></mark>. You'll come back to
       this later.
   - type: phs
     partheader: "Part 2: Creating your MongoDB Atlas Database"
@@ -71,16 +71,16 @@ sections:
       lang: cpp
   - type: ps
     paragraph: The purpose of this file is to simplify the development process when
-      we need to reference the database URL repeatedly, assigning it to an
+      you need to reference the database URL repeatedly, assigning it to an
       environment variable accessible across all project files.
   - type: phs
     partheader: "Part 3: Configuring your Node.js Webserver, Routes, and Middleware"
   - type: ps
-    paragraph: "We'll begin setting up our Node.js webserver in
+    paragraph: "You'll begin setting up your Node.js webserver in
       <mark><code>index.js</code></mark>. The <mark><code>index.js</code></mark>
-      file is what we defined to be our endpoint (in
-      <mark><code>package.json</code></mark>) and is also where our API routes
-      are going to be defined. We need to load the contents of the
+      file is what is defined to be your endpoint (in
+      <mark><code>package.json</code></mark>) and is also where your API routes
+      are going to be defined. You need to load the contents of the
       <mark><code>.env</code></mark> file in, and to do so insert the following
       line:"
   - type: cbs
@@ -88,12 +88,12 @@ sections:
       code: dotenv.config();
       lang: javascript
   - type: ps
-    paragraph: "Next, in order to connect to our MongoDB, we'll be using mongoose, a
-      middleware designed to simplify access to our MongoDB data through
+    paragraph: "Next, in order to connect to your MongoDB, you'll be using mongoose,
+      a middleware designed to simplify access to your MongoDB data through
       \"models,\" which are defined as schemas that determine the structure of
-      our documents within our \"posts\" and \"users\" collections. Connect the
-      mongoose middleware as such, and write in helpful console log string for
-      your own development purposes:"
+      your documents within your \"posts\" and \"users\" collections. Connect
+      the mongoose middleware as such, and write in helpful console log string
+      for your own development purposes:"
   - type: cbs
     codeblock:
       code: >-
@@ -130,7 +130,7 @@ sections:
         app.use(morgan("common"));
       lang: javascript
   - type: ps
-    paragraph: "Now, we'll define some routes for your API endpoints. Because this
+    paragraph: "Now, you'll define some routes for your API endpoints. Because this
       application is attempting to recreate a microservices approach to building
       functionality, each endpoint handles a function independent of the others.
       The three endpoints you'll be building handle users, posts, and
