@@ -291,7 +291,7 @@ sections:
       JavaScript runs lines without waiting for data to finish resolving. You
       can ignore the // PASSWORD ENCRYPTION contents, as it's a simple method to
       encrypt user passwords to be held in the DB. You want the request object
-      (req) to contain properties fitting our User model, so it is safe to
+      (req) to contain properties fitting your User model, so it is safe to
       assume that it does so (when you eventually write the code for utilizing
       this endpoint on the front-end). As such, you can instantiate your user
       model using the properties of the request body as follows (don't forget to
@@ -369,7 +369,7 @@ sections:
       like/unlike functionality, you need to first fetch this post information.
       To do so, the \"id\" request parameter will represent the post's id! This
       makes it simple to retrieve from your DB, as you have a posts collection
-      in MongoDB. Using your post model (to communicate with our DB), you can
+      in MongoDB. Using your post model (to communicate with your DB), you can
       use the method <mark><code>findById()</code></mark> and pass in your
       request parameter \"id\" to retrieve your post. Then you'll check to see
       if the current user has already liked the post, and like or unlike the
@@ -470,12 +470,12 @@ sections:
   - type: ps
     paragraph: "For the next endpoint you'll be getting users by either userId or
       username. This is crucial, as the way users are fetched from a profile
-      page (e.g. /profile/bob) need to retrieve the user object from our DB only
-      by username, since in this case we have no access to bob's user id. To do
-      so, request queries are utilized. You know of request body and request
-      parameters already, so this should be fairly intuitive. Request queries
-      are appended onto the end of an endpoint's url. In this case, our endpoint
-      is \"/api/users,\" so a query would be something like
+      page (e.g. /profile/bob) need to retrieve the user object from your DB
+      only by username, since in this case we have no access to bob's user id.
+      To do so, request queries are utilized. You know of request body and
+      request parameters already, so this should be fairly intuitive. Request
+      queries are appended onto the end of an endpoint's url. In this case, your
+      endpoint is \"/api/users,\" so a query would be something like
       \"/api/users?username=bob.\" You can retrieve data from request queries
       with <mark><code>req.query</code></mark>. With that in mind, retrieving a
       user by either userId or username becomes trivial. You check if the query
