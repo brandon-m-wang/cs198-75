@@ -191,7 +191,8 @@ sections:
       require() when loading in resources from your models. Again, mongoose
       offers a convenient "model" function which returns a document-like class
       that can be instantiated by passing in a similar object with post
-      information. You'll get to see this later.
+      information. This class connects you to the MongoDB, and allows you to
+      interact directly with document collections. You'll get to see this later.
   - type: ps
     paragraph: "Moving onto your user document schema, a similar process. What kind
       of information would you need for each user? Username, e-mail, password,
@@ -307,6 +308,18 @@ sections:
           from: req.body.from,
           relationship: req.body.relationship,
         });
+      lang: javascript
+  - type: ps
+    paragraph: "Now you need to save the user into the DB. Recall that the user
+      model you defined exports as a mongoose Model giving you a means to
+      manipulate your DB directly. This is now saved into your variable
+      <code><mark>newUser</mark></code>. To save the user in your DB, simply
+      apply the following lines under // SAVE USER INTO MONGODB:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const user = await newUser.save();
+        res.status(200).json(user);
       lang: javascript
   - type: phs
     partheader: "Part 7: Posts Endpoints"
