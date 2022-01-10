@@ -148,6 +148,10 @@ sections:
         // "/api/posts"
         // "/api/users"
       lang: javascript
+  - type: ps
+    paragraph: The webserver will be served locally on port 8080 as defined by the
+      last bit of code. Every time you start your webserver locally, you'll get
+      a console message displayed as well.
   - type: phs
     partheader: "Part 4: Creating your MongoDB Models"
   - type: phs
