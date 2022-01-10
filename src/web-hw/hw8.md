@@ -185,6 +185,13 @@ sections:
           default: [],
         }
       lang: javascript
+  - type: ps
+    paragraph: The following line containing
+      <mark><code>module.exports</code></mark> indicates the return value of
+      require() when loading in resources from your models. Again, mongoose
+      offers a convenient "model" function which returns a document-like class
+      that can be instantiated by passing in a similar object with post
+      information. You'll get to see this later.
   - type: phs
     partheader: "Part 5: Routing in Express"
   - type: phs
