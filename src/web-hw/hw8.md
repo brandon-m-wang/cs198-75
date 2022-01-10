@@ -399,8 +399,8 @@ sections:
       if the current user has already liked the post, and like or unlike the
       post accordingly. The \"$push\" and \"$pull\" options tells the post model
       to either insert or delete the current user's id (included in the request
-      body) from the post's \"likes\" array. Within the try block of // CREATE
-      POST:"
+      body) from the post's \"likes\" array. Within the try block of //
+      LIKE/UNLIKE POST:"
   - type: cbs
     codeblock:
       code: |-
@@ -414,18 +414,33 @@ sections:
         }
       lang: javascript
   - type: ps
-    paragraph: a
+    paragraph: "To get a post, you'll need to rely on using request parameters again
+      (\"/:id\"). The functionality is simple, you find the post in your posts
+      collection by its id, and give a successful response with the post. Within
+      the try block of // GET POST:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const post = await Post.findById(req.params.id);
+        res.status(200).json(post);
+      lang: javascript
+  - type: ps
+    paragraph: "To get all of one specific user's posts, the logic is quite similar.
+      Again relying on request parameters (\"/profile/:username\") where
+      username is the user's username, you can utilize the mongoose model's
+      powerful methods again to first search for the user by username in your
+      users collection, then find every post by the user's id in your posts
+      collection. Within the try block of // GET ALL OF ONE USER'S POST:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const user = await User.findOne({ username: req.params.username });
+        const posts = await Post.find({ userId: user._id });
+        res.status(200).json(posts);
+      lang: javascript
   - type: ps
     paragraph: a
   - type: cbs
     codeblock:
       code: a
-  - type: cbs
-    codeblock:
-      code: a
-  - type: cbs
-    codeblock:
-      code: a
-  - type: ps
-    paragraph: a
 ---
