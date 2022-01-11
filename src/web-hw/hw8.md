@@ -632,7 +632,6 @@ sections:
       \"UPDATE_PROFILE,\" and the payload is the hashed file name of the user's
       uploaded profile photo. It's all fairly intuitive:"
   - type: cbs
-    paragraph: a
     codeblock:
       code: |-
         export const LoginStart = (userCredentials) => ({
@@ -659,10 +658,7 @@ sections:
           payload: userId,
         });
       lang: javascript
-  - type: ps
-    paragraph: aa
   - type: cbs
-    paragraph: a
     codeblock:
       code: |-
         case "LOGIN_START":
@@ -702,9 +698,4 @@ sections:
             },
           };
       lang: javascript
-  - type: ps
-    paragraph: a
-  - type: cbs
-    codeblock:
-      code: a
 ---
