@@ -622,11 +622,43 @@ sections:
       user, etc.), and the actions are these sets of performed actions to act
       on."
   - type: ps
-    paragraph: "First up, your actions. "
+    paragraph: "First up, your actions. Navigate to your
+      </mark></code>src/context</code></mark> folder. Under AuthActions.js,
+      you'll want to build the actions here. Each action is an exported function
+      taking some parameter and returning a JavaScript object with the type of
+      action it's associated with and its payload as a result of enacting the
+      action. For instance, LoginSuccess is of type \"LOGIN_SUCCESS,\" and it
+      gives the logged in user as a result. UpdateProfile is of type
+      \"UPDATE_PROFILE,\" and the payload is the hashed file name of the user's
+      uploaded profile photo. It's all fairly intuitive:"
   - type: cbs
     paragraph: a
     codeblock:
-      code: a
+      code: |-
+        export const LoginStart = (userCredentials) => ({
+          type: "LOGIN_START",
+        });
+
+        export const LoginSuccess = (user) => ({
+          type: "LOGIN_SUCCESS",
+          payload: user,
+        });
+
+        export const LoginFailure = (error) => ({
+          type: "LOGIN_FAILURE",
+          payload: error,
+        });
+
+        export const Follow = (userId) => ({
+          type: "FOLLOW",
+          payload: userId,
+        });
+
+        export const Unfollow = (userId) => ({
+          type: "UNFOLLOW",
+          payload: userId,
+        });
+      lang: javascript
   - type: ps
     paragraph: a
   - type: cbs
