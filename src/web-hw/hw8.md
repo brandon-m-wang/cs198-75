@@ -566,6 +566,18 @@ sections:
       work properly before moving on.
   - type: phs
     partheader: "Part 10: Frontend Dependencies and Environment Set-up"
+  - type: ps
+    paragraph: "Open a terminal and navigate to the
+      <mark><code>react-client</code></mark> folder. Run <mark><code>npm
+      install</code></mark> which will install all the necessary dependencies
+      for the frontend component of this project. Under this same directory,
+      create a file called <mark><code>.env</code></mark>. Inside, include the
+      following line to specify your public folder directory (where all assets
+      will be stored within your Node.js webserver):"
+  - type: cbs
+    codeblock:
+      code: REACT_APP_PUBLIC_FOLDER = http://localhost:8800/images/
+      lang: html
   - type: phs
     partheader: "Part 11: User Context"
   - type: phs
