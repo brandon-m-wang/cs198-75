@@ -596,4 +596,46 @@ sections:
     partheader: "Part 18: Putting the Pages Together"
   - type: phs
     partheader: "Part 19: React Routing"
+  - type: ibs
+    imageblock: https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/cubstart/Screen+Shot+2022-01-10+at+6.22.37+PM.png
+  - type: ps
+    paragraph: The entire frontend parent-child component relationships are depicted
+      here. You can see that this tree can become quite convoluted when you need
+      to track something that is globally required to interact with each
+      individual component on this tree, regardless of its hierarchy; namely,
+      user authentication. To validate whether a certain user is signed in
+      across all components would normally require a prop, say "user", that gets
+      passed down across every single component down the tree. This is not
+      sustainable for larger scale apps like this one. Luckily, there is the
+      Context API in React.js that allows you to define these "global props."
+      Context provides a way to pass data through the component tree without
+      having to pass props down manually at every level.
+  - type: ps
+    paragraph: "There are three main components to your user context: the provider,
+      reducer, and actions. The provider is what provides the context at each
+      component level. Your context can be thought of as a stateful value (your
+      authenticated user can change while using the app: making a post,
+      following another user, etc.), with a setter function
+      <mark><code>dispatch</code></mark>. <mark><code>dispatch</code></mark>
+      uses a reducer to modify your current user state. A reducer updates the
+      user according a performed action (e.g. logging in, following another
+      user, etc.), and the actions are these sets of performed actions to act
+      on."
+  - type: ps
+    paragraph: "First up, your actions. "
+  - type: cbs
+    paragraph: a
+    codeblock:
+      code: a
+  - type: ps
+    paragraph: a
+  - type: cbs
+    paragraph: a
+    codeblock:
+      code: a
+  - type: ps
+    paragraph: a
+  - type: cbs
+    codeblock:
+      code: a
 ---
