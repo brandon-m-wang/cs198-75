@@ -551,6 +551,19 @@ sections:
       within // UNFOLLOW USER. It's nearly identical to the follow endpoint.
   - type: phs
     partheader: "Part 9: API Endpoint Testing with Postman and User Generation"
+  - type: ps
+    paragraph: In order to verify the correctness of your endpoints, you'll be using
+      Postman. Visit <a href="https://www.postman.com/downloads/"
+      target="_blank">https://www.postman.com/downloads/</a> to install Postman.
+      Go ahead and get started with a workspace on within the app.
+  - type: ibs
+    imageblock: https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/cubstart/Screen+Shot+2022-01-10+at+6.11.25+PM.png
+  - type: ps
+    paragraph: Within your workspace, choose to import. The file you'll be choosing
+      is named <mark><code>hw8.postman_collection.json</code></mark>. This will
+      give you access to all the different HTTP requests you should test. Play
+      around with the tool with the correct parameters, and ensure that they all
+      work properly before moving on.
   - type: phs
     partheader: "Part 10: Frontend Dependencies and Environment Set-up"
   - type: phs
