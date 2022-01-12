@@ -790,7 +790,8 @@ sections:
   - type: ps
     paragraph: Now, for the actual frontend components. Because you've done plenty
       of React.js work in the past, this will be fairly short in terms of
-      explanations, mostly just code that you should implement.
+      explanations, mostly just code that you should implement. Navigate to
+      "src/components."
   - type: ps
     paragraph: "First, your top bar component. In the top right, there's supposed to
       be the profile photo of the current user that links to the current user's
@@ -828,6 +829,26 @@ sections:
       lang: jsx
   - type: phs
     partheader: "Part 13: Post Component"
+  - type: ps
+    paragraph: "Your post component has one prop: the post data itself. There are
+      some hooks for liking/unliking already done. Feel free to explore any
+      parts that are not explained within the codebase. You need to build the
+      mechanism to retrieve the post author's user data (to display their
+      profile photo and username on the post). To do so, you'll use axios and
+      the <code><mark>useEffect()</mark></code> hook. Take note of how
+      everything else falls into place using asynchronous functions, and the
+      stateful values within the JSX return value."
+  - type: cbs
+    codeblock:
+      code: |-
+        useEffect(() => {
+          const fetchUser = async () => {
+            const res = await axios.get(`/users?userId=${post.userId}`);
+            setUser(res.data);
+          };
+          fetchUser();
+        }, [post.userId]);
+      lang: javascript
   - type: phs
     partheader: "Part 14: Feed Component"
   - type: phs
