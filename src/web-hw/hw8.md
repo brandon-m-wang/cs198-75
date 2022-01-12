@@ -659,6 +659,21 @@ sections:
           payload: userId,
         });
       lang: javascript
+  - type: ps
+    paragraph: "Your reducer needs to understand how to act on certain actions,
+      namely the actions you defined previously. Within the switch statement,
+      you'll handle every action case. The return value is the updated context
+      state, which is an object with three properties: user, isFetching, and
+      error. With this, the reducer hook can correctly update our user state.
+      When you start the log in process, you define the user to be null (no user
+      fetched yet), isFetching to be true, and error to be false (no error
+      encountered yet). If the login is a success, you define the user to be the
+      retrieved user (from the action payload), isFetching to be false (done
+      fetching), and error to be false (no error). Login failure follows a
+      similar line of logic. For the follow and unfollow actions, all that needs
+      to be done is the update the current user object's following list to
+      include/exclude the other user being followed/unfollowed. With a little
+      spread syntax, the following script accomplishes this task:"
   - type: cbs
     codeblock:
       code: |-
@@ -699,6 +714,4 @@ sections:
             },
           };
       lang: javascript
-  - type: ps
-    paragraph: a
 ---
