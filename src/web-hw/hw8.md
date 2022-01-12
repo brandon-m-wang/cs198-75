@@ -581,22 +581,6 @@ sections:
       lang: html
   - type: phs
     partheader: "Part 11: User Context"
-  - type: phs
-    partheader: "Part 12: Topbar Component"
-  - type: phs
-    partheader: "Part 13: Post Component"
-  - type: phs
-    partheader: "Part 14: Feed Component"
-  - type: phs
-    partheader: "Part 15: Share Component"
-  - type: phs
-    partheader: "Part 16: Rightbar Component"
-  - type: phs
-    partheader: "Part 17: Sidebar Component"
-  - type: phs
-    partheader: "Part 18: Putting the Pages Together"
-  - type: phs
-    partheader: "Part 19: React Routing"
   - type: ibs
     imageblock: https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/cubstart/Screen+Shot+2022-01-10+at+6.22.37+PM.png
   - type: ps
@@ -793,4 +777,20 @@ sections:
       wrap your App in "index.js" with your
       <mark><code>AuthContextProvider</code></mark> (it's already been imported
       for you).
+  - type: phs
+    partheader: "Part 12: Topbar Component"
+  - type: phs
+    partheader: "Part 13: Post Component"
+  - type: phs
+    partheader: "Part 14: Feed Component"
+  - type: phs
+    partheader: "Part 15: Share Component"
+  - type: phs
+    partheader: "Part 16: Rightbar Component"
+  - type: phs
+    partheader: "Part 17: Sidebar Component"
+  - type: phs
+    partheader: "Part 18: Putting the Pages Together"
+  - type: phs
+    partheader: "Part 19: React Routing"
 ---
