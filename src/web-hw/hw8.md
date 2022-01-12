@@ -788,4 +788,9 @@ sections:
           }
         };
       lang: javascript
+  - type: ps
+    paragraph: Finally, it's time to give your app this context. To do so, simply
+      wrap your App in "index.js" with your
+      <mark><code>AuthContextProvider</code></mark> (it's already been imported
+      for you).
 ---
