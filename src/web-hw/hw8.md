@@ -916,5 +916,6 @@ sections:
       user is, it can determine whether or not to redirect users back to the
       login/registration screen at every route. Congratulations, you've now
       built the core functionality end-to-end of an extremely involved MERN
-      stack social network application!
+      stack social network application! Try using the app as a normal user, and
+      create fake users to interact with!
 ---
