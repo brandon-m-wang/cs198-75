@@ -761,4 +761,31 @@ sections:
           );
         };
       lang: javascript
+  - type: ps
+    paragraph: "Navigate to \"src/loginCalls.js.\" Here, you'll find that a library
+      \"axios\" is imported. Axios is a convenient tool that allows you to make
+      HTTP requests with ease. In this file, you'll define the behavior of your
+      user context when a user logs in. Recall that dispatch is the setter
+      function, and initiates the actions and workflows defined in your actions
+      and reducer. First, the function must dispatch the \"LOGIN_START\" action.
+      Then, you'll get a response from making a POST request to your
+      authentication login endpoint, with your request body being the user's
+      input credentials. If all goes well without error, that means the user's
+      input credentials were valid, so dispatch \"LOGIN_SUCCESS\" with the
+      user's info grabbed from the DB as its payload. Otherwise, if an error is
+      caught, dispatch \"LOGIN_FAILURE,\" and the payload is now the error
+      instead:"
+  - type: cbs
+    codeblock:
+      code: |-
+        export const loginCall = async (userCredentials, dispatch) => {
+          dispatch({ type: "LOGIN_START" });
+          try {
+            const res = await axios.post("/auth/login", userCredentials);
+            dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+          } catch (error) {
+            dispatch({ type: "LOGIN_FAILURE", payload: error });
+          }
+        };
+      lang: javascript
 ---
