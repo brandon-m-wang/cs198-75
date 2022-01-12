@@ -851,10 +851,33 @@ sections:
       lang: javascript
   - type: phs
     partheader: "Part 14: Feed Component"
+  - type: ps
+    paragraph: "The feed component is essentially a rendered view of some collection
+      of posts. There are two use cases for this component: 1) for a user's
+      timeline (which you defined in an endpoint) and 2) display all posts from
+      one user (as it would be in viewing someones profile). The relevant state
+      hook is already defined for you, and the current user has been derived
+      from your context. Implement the following, and try to understand what
+      each line is doing with its requests to your endpoints:"
+  - type: cbs
+    codeblock:
+      code: |-
+        useEffect(() => {
+          const fetchPosts = async () => {
+            const res = username
+              ? await axios.get(`/posts/profile/${username}`)
+              : await axios.get(`/posts/timeline/${user._id}`);
+            setPosts(
+              res.data.sort((p1, p2) => {
+                return new Date(p2.createdAt) - new Date(p1.createdAt);
+              })
+            );
+          };
+          fetchPosts();
+        }, [username, user._id]);
+      lang: javascript
   - type: phs
-    partheader: "Part 15: Share Component"
-  - type: phs
-    partheader: "Part 16: Rightbar Component"
+    partheader: "Part 15: Rightbar Component"
   - type: ps
     paragraph: "The rightbar component should handle friends lists in two settings:
       the home page, and the profile page. When on the home page, the current
@@ -884,9 +907,9 @@ sections:
       following/unfollowing, but they are all very similar in implementation.
       Feel free to navigate them and ask questions if needed.
   - type: phs
-    partheader: "Part 17: Sidebar Component"
+    partheader: "Part 16: Sidebar Component"
   - type: phs
-    partheader: "Part 18: Putting the Pages Together"
+    partheader: "Part 17: Putting the Pages Together"
   - type: phs
-    partheader: "Part 19: React Routing"
+    partheader: "Part 18: React Routing"
 ---
