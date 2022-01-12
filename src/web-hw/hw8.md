@@ -14,7 +14,7 @@ introduction: >-
 
   <iframe width="600" height="350"
 
-  src="https://www.youtube.com/watch?v=hbGyETFQJdw">
+  src="https://www.youtube.com/embed/hbGyETFQJdw">
 
   </iframe>
 
