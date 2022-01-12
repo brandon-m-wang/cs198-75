@@ -793,4 +793,12 @@ sections:
     partheader: "Part 18: Putting the Pages Together"
   - type: phs
     partheader: "Part 19: React Routing"
+  - type: ps
+    paragraph: Open two additional terminals, one at
+      <mark><code>react-client/</code></mark>, one at
+      <mark><code>node-rest-api/</code></mark>. Do "npm start" on both terminals
+      to start both your frontend environment and backend webserver. As you make
+      changes, they will be reflected on your frontend environment. Sometimes a
+      runtime error will cause either environment to crash -- just start it up
+      again.
 ---
