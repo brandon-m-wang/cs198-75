@@ -907,9 +907,14 @@ sections:
       following/unfollowing, but they are all very similar in implementation.
       Feel free to navigate them and ask questions if needed.
   - type: phs
-    partheader: "Part 16: Sidebar Component"
-  - type: phs
-    partheader: "Part 17: Putting the Pages Together"
-  - type: phs
-    partheader: "Part 18: React Routing"
+    partheader: "Part 16: React Routing"
+  - type: ps
+    paragraph: Lastly, take a look at "src/App.js." This is the top level of your
+      entire application, and thus where your React Routes go. Each Route
+      component dictates what needs to be rendered at what route. Because your
+      context tells the entire application level what the status of your current
+      user is, it can determine whether or not to redirect users back to the
+      login/registration screen at every route. Congratulations, you've now
+      built the core functionality end-to-end of an extremely involved MERN
+      stack social network application!
 ---
