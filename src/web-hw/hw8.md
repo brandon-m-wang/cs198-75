@@ -20,8 +20,8 @@ introduction: >-
 
 
   </div>
-setup: Placeholder
-skeleton: Placeholder
+setup: Get started by pulling from the skeleton repository.
+skeleton: https://github.com/brandon-m-wang/cubstart-hw8-skeleton.git
 sections:
   - type: phs
     partheader: "Part 1: Backend Dependencies and Environment Set-up"
