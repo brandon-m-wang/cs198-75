@@ -568,6 +568,14 @@ sections:
   - type: phs
     partheader: "Part 10: Frontend Dependencies and Environment Set-up"
   - type: ps
+    paragraph: Open two additional terminals, one at
+      <mark><code>react-client/</code></mark>, one at
+      <mark><code>node-rest-api/</code></mark>. Do "npm start" on both terminals
+      to start both your frontend environment and backend webserver. As you make
+      changes, they will be reflected on your frontend environment. Sometimes a
+      runtime error will cause either environment to crash -- just start it up
+      again.
+  - type: ps
     paragraph: "Open a terminal and navigate to the
       <mark><code>react-client</code></mark> folder. Run <mark><code>npm
       install</code></mark> which will install all the necessary dependencies
@@ -793,12 +801,4 @@ sections:
     partheader: "Part 18: Putting the Pages Together"
   - type: phs
     partheader: "Part 19: React Routing"
-  - type: ps
-    paragraph: Open two additional terminals, one at
-      <mark><code>react-client/</code></mark>, one at
-      <mark><code>node-rest-api/</code></mark>. Do "npm start" on both terminals
-      to start both your frontend environment and backend webserver. As you make
-      changes, they will be reflected on your frontend environment. Sometimes a
-      runtime error will cause either environment to crash -- just start it up
-      again.
 ---
