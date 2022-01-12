@@ -660,20 +660,21 @@ sections:
         });
       lang: javascript
   - type: ps
-    paragraph: "Your reducer needs to understand how to act on certain actions,
-      namely the actions you defined previously. Within the switch statement,
-      you'll handle every action case. The return value is the updated context
-      state, which is an object with three properties: user, isFetching, and
-      error. With this, the reducer hook can correctly update our user state.
-      When you start the log in process, you define the user to be null (no user
-      fetched yet), isFetching to be true, and error to be false (no error
-      encountered yet). If the login is a success, you define the user to be the
-      retrieved user (from the action payload), isFetching to be false (done
-      fetching), and error to be false (no error). Login failure follows a
-      similar line of logic. For the follow and unfollow actions, all that needs
-      to be done is the update the current user object's following list to
-      include/exclude the other user being followed/unfollowed. With a little
-      spread syntax, the following script accomplishes this task:"
+    paragraph: "Navigate to \"AuthReducer.js.\" Your reducer needs to understand how
+      to act on certain actions, namely the actions you defined previously.
+      Within the switch statement, you'll handle every action case. The return
+      value is the updated context state, which is an object with three
+      properties: user, isFetching, and error. With this, the reducer hook can
+      correctly update your user state. When you start the log in process, you
+      define the user to be null (no user fetched yet), isFetching to be true,
+      and error to be false (no error encountered yet). If the login is a
+      success, you define the user to be the retrieved user (from the action
+      payload), isFetching to be false (done fetching), and error to be false
+      (no error). Login failure follows a similar line of logic. For the follow
+      and unfollow actions, all that needs to be done is the update the current
+      user object's following list to include/exclude the other user being
+      followed/unfollowed. With a little spread syntax, the following script
+      accomplishes this task:"
   - type: cbs
     codeblock:
       code: |-
@@ -713,5 +714,51 @@ sections:
               ),
             },
           };
+      lang: javascript
+  - type: ps
+    paragraph: 'Navigate to "AuthContext.js." Notice that the initial state of your
+      context has some interesting syntax in its "user" field. This simply
+      checks to see if there is already a user that exists in the current
+      session, uses it if there is, and assigns null if not. First, you need to
+      create a context with this initial state:'
+  - type: cbs
+    codeblock:
+      code: export const AuthContext = createContext(INITIAL_STATE);
+      lang: javascript
+  - type: ps
+    paragraph: "Next, to establish your provider, you must first initialize the
+      <mark><code>useReducer()</code></mark> hook. The first parameter is the
+      reducer which you defined earlier, and the second parameter is the initial
+      state to be used. The \"state\" variable is our context state, and the
+      \"dispatch\" is the setter function as mentioned earlier. You'll utilize
+      the <mark><code>useEffect()</code></mark> hook as well to push the current
+      user to local session storage at every action (e.g. logging in). The
+      return value of this component is the provider generated from your
+      \"AuthContext\" variable which you initialized above. It has the context
+      state object as its prop, and can accept children to which it gives this
+      context all the way down the nested hierarchy:"
+  - type: cbs
+    codeblock:
+      code: |-
+        export const AuthContextProvider = ({ children }) => {
+          const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
+
+          useEffect(() => {
+            localStorage.setItem("user", JSON.stringify(state.user));
+          }, [state.user]);
+
+          return (
+            <AuthContext.Provider
+              value={{
+                user: state.user,
+                isFetching: state.isFetching,
+                error: state.error,
+                dispatch,
+              }}
+            >
+              {children}
+            </AuthContext.Provider>
+          );
+        };
       lang: javascript
 ---
