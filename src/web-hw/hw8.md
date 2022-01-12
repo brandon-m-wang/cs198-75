@@ -855,6 +855,34 @@ sections:
     partheader: "Part 15: Share Component"
   - type: phs
     partheader: "Part 16: Rightbar Component"
+  - type: ps
+    paragraph: "The rightbar component should handle friends lists in two settings:
+      the home page, and the profile page. When on the home page, the current
+      user should see their friends on the rightbar. When on any profile page,
+      the current user should see the friends of that profile's user. The
+      currentFriends fetching (for home page usage) is already done. You'll need
+      to implement a similar friends fetching (for profile page usage), in a
+      very similar fashion. Note that the relevant stateful value here is
+      \"friends,\" and the setter is \"setFriends.\""
+  - type: cbs
+    codeblock:
+      code: >-
+        useEffect(() => {
+          const getFriends = async () => {
+            try {
+              const friendsList = await axios.get(`/users/friends/${user?._id}`);
+              setFriends(friendsList.data);
+            } catch (error) {
+              console.log(error);
+            }
+          };
+          getFriends();
+        }, [user?._id]);
+      lang: javascript
+  - type: ps
+    paragraph: There is additional functionality in the codebase, including
+      following/unfollowing, but they are all very similar in implementation.
+      Feel free to navigate them and ask questions if needed.
   - type: phs
     partheader: "Part 17: Sidebar Component"
   - type: phs
