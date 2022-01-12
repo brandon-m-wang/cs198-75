@@ -787,6 +787,45 @@ sections:
       for you).
   - type: phs
     partheader: "Part 12: Topbar Component"
+  - type: ps
+    paragraph: Now, for the actual frontend components. Because you've done plenty
+      of React.js work in the past, this will be fairly short in terms of
+      explanations, mostly just code that you should implement.
+  - type: ps
+    paragraph: "First, your top bar component. In the top right, there's supposed to
+      be the profile photo of the current user that links to the current user's
+      profile. You'll need access to 1) the user, and 2) the public folder in
+      which all assets are stored on your webserver. Retrieve them as such:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const { user } = useContext(AuthContext);
+        const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+      lang: javascript
+  - type: ps
+    paragraph: "Now for the JSX in the returned document. The Link component in
+      React allows you to perform a similar action to a tags in HTML, except the
+      DOM is virtually updated and the page is not actually refreshed. This is
+      very convenient and allows for a smoother UI. Implement this Link tag
+      associated with the user's profile photo as such. The
+      \"person/noAvatar.jpg\" asset is just a default profile photo. You'll use
+      a ternary operator to determine whether or not the user actually has
+      uploaded a profile photo or not. You'll see this pretty often:"
+  - type: cbs
+    codeblock:
+      code: |-
+        <Link to={`/profile/${user.username}`}>
+          <img
+            src={
+              user.profilePicture
+                ? PF + user.profilePicture
+                : PF + "person/noAvatar.png"
+            }
+            alt=""
+            className="topbarImg"
+          />
+        </Link>
+      lang: jsx
   - type: phs
     partheader: "Part 13: Post Component"
   - type: phs
