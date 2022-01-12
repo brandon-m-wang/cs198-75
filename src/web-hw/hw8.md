@@ -563,7 +563,8 @@ sections:
       is named <mark><code>hw8.postman_collection.json</code></mark>. This will
       give you access to all the different HTTP requests you should test. Play
       around with the tool with the correct parameters, and ensure that they all
-      work properly before moving on.
+      work properly with the intended behavior in your MongoDB documents before
+      moving on.
   - type: phs
     partheader: "Part 10: Frontend Dependencies and Environment Set-up"
   - type: ps
@@ -698,4 +699,6 @@ sections:
             },
           };
       lang: javascript
+  - type: ps
+    paragraph: a
 ---
