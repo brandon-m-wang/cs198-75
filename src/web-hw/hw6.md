@@ -53,12 +53,25 @@ sections:
 
       ```
   - type: ps
-    paragraph: Now, we'll head over to `app.js`. The first thing you might notice is
-      the `videosMetadata` array. In this project, we're going to use
+    paragraph: >-
+      Now, we'll head over to `app.js`. The first thing you might notice is the
+      `videosMetadata` array. In this project, we're going to use
       `videosMetadata` to represent useful information about our videos. In a
       more complex application, we'd probably fetch this data from a database in
       order to create this array. However, we'll keep things simple in this
-      project.
+      project. Each item in the array is described as follows: 
+
+
+      ```
+
+      {
+        id: ID of the video file. Corresponds to the file name.
+        thumbnail: Path to generate the thumbnail of the video/
+        description: Short blurb about the video.
+        name: Name of the video.
+      }
+
+      ```
   - type: ps
     paragraph: >-
       With that, it's time to create our first endpoint! It would be quite
@@ -115,4 +128,22 @@ sections:
 
 
       > Route parameters are named URL segments that are used to capture the values specified at their position in the URL. The captured values are populated in the `req.params` object, with the name of the route parameter specified in the path as their respective keys.
+  - type: ps
+    paragraph: >-
+      In our application, sending a GET request to `video/:id` should return the
+      video with file name `:id.mp4` piece by piece. We've taken care of the
+      more technical aspects of the callback function, but we need you to
+      initialize the constant `path` to the appropriate path for `:id.mp4`.
+
+
+      **Q3: Initialize `path `to the correct value.**
+  - type: ps
+    paragraph: .
+  - type: ps
+    paragraph: Great! Now you should be able to watch the stream of any video.
+      Notice that this works because in `Home.js`, each Link's location is
+      `/player/${video.id}`, where `video.id` comes from, if you trace far back
+      enough, `videosMetadata` in `server/app.js`. Because of our route with a
+      URL parameter in `client/src/App.js`, our client knows which video it
+      wants to stream!
 ---
