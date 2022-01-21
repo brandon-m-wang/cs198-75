@@ -138,7 +138,24 @@ sections:
 
       **Q3: Initialize `path `to the correct value.**
   - type: ps
-    paragraph: .
+    paragraph: >-
+      In our application, sending a GET request to `video/:id` should return the
+      video with file name `:id.mp4` piece by piece. We've taken care of the
+      more technical aspects of the callback function, but we need you to
+      initialize the constant `path` to the appropriate path for `:id.mp4`.
+
+
+      **Q4: Create the `/video/:id/data` route.**
+
+
+      Hint: How can we get an object from an array of objects by value of a property in JS? A Google search might help.
+  - type: ps
+    paragraph: |-
+      With that, let's build out `Player.js`. 
+
+
+
+      Q5:
   - type: ps
     paragraph: Great! Now you should be able to watch the stream of any video.
       Notice that this works because in `Home.js`, each Link's location is
