@@ -12,11 +12,12 @@ setup: Get started by pulling from the skeleton repository below.
 skeleton: https://github.com/brandon-m-wang/cubstart-hw1-skeleton.git
 sections:
   - type: phs
-    partheader: "Part 1: Setting Up the Server"
+    partheader: "Part 1: Setting Up our Parts"
   - type: ps
-    paragraph: We'll first be tackling the task of setting up our Node.js server.
-      Open a terminal and navigate to the `server` folder. Run `npm i` to
-      install all the required dependencies.
+    paragraph: We'll first take care of the task of installing all our required
+      dependencies. Open a terminal and navigate to the `server` folder. Run
+      `npm i` to install the Node modules we need. Then, do the same for the
+      `client` folder.
   - type: phs
     partheader: "Part 2: Creating Our Endpoints"
   - type: ps
@@ -45,4 +46,14 @@ sections:
       more complex application, we'd probably fetch this data from a database in
       order to create this array. However, we'll keep things simple in this
       project.
+  - type: ps
+    paragraph: >-
+      With that, it's time to create our first endpoint! It would be quite
+      useful to have one that, with a GET request, returns a JSON response with
+      the `videosMetadata` array, as we can then use that information in our
+      client. We've already given you the overall skeleton for this endpoint;
+      how can our callback function 
+
+
+      Hint: A certain method found in the Express API reference [here](https://expressjs.com/en/api.html#res) might be useful.
 ---
