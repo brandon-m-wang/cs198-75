@@ -50,9 +50,9 @@ sections:
     paragraph: >-
       With that, it's time to create our first endpoint! It would be quite
       useful to have one that, with a GET request, returns a JSON response with
-      the `videosMetadata` array, as we can then use that information in our
-      client. We've already given you the overall skeleton for this endpoint;
-      how can our callback function 
+      the `videosMetadata` array, as we can then use that in our client. We've
+      already given you the overall skeleton for this endpoint; what can we
+      return in our callback function to get the correct information?
 
 
       Hint: A certain method found in the Express API reference [here](https://expressjs.com/en/api.html#res) might be useful.
