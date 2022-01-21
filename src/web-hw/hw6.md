@@ -21,7 +21,16 @@ sections:
       client with `npm start`. Note that our server can be reached from
       `localhost:4000` and our client from `localhost:3000`.
   - type: ps
-    paragraph: We'll also need to install FFmpeg, a tool
+    paragraph: We'll also need to install FFmpeg, a tool for processing video and
+      audio. This will be necessary later for generating thumbnails. For Windows
+      users, download the essentials build from
+      [here](https://github.com/GyanD/codexffmpeg/releases/tag/2022-01-19-git-dd17c86aa1).
+      For MacOS users, download the release build from
+      [here](https://evermeet.cx/ffmpeg/). For Linux users, go to the [FFmpeg
+      website](https://www.ffmpeg.org/download.html) and download the
+      appropriate package for your distro. Once you've unzipped the download,
+      set your system's `FFMPEG_PATH` environment variable to the path of the
+      ffmpeg executable.
   - type: phs
     partheader: "Part 2: Our First Endpoint"
   - type: ps
