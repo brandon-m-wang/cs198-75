@@ -20,6 +20,8 @@ sections:
       `npm run dev`. Then, do the same for the `client` folder. Start up your
       client with `npm start`. Note that our server can be reached from
       `localhost:4000` and our client from `localhost:3000`.
+  - type: ps
+    paragraph: We'll also need to install FFmpeg, a tool
   - type: phs
     partheader: "Part 2: Our First Endpoint"
   - type: ps
@@ -53,9 +55,10 @@ sections:
       With that, it's time to create our first endpoint! It would be quite
       useful to have one that, with a GET request, returns a JSON response with
       the `videosMetadata` array, as we can then use that in our client. We've
-      already given you the overall skeleton for this endpoint (i.e. below);
-      what can we return in our callback function to get the correct
-      information?
+      already given you the overall skeleton for this endpoint (i.e. below).
+
+
+      **Q1: What can we return in our callback function to get the correct information?**
 
 
       Hint: A certain method found in the Express API reference [here](https://expressjs.com/en/api.html#res) might be useful.
@@ -68,13 +71,39 @@ sections:
 
       ```
   - type: ps
-    paragraph: With that, let's switch over to our client so that we can visualize
-      our information! Inside the `client` folder, access `src/Home.js`. Recall
-      the `useState` hook; we've created `videos` which will represent video
+    paragraph: >-
+      With that, let's switch over to our client so that we can visualize our
+      information! Inside the `client` folder, access `src/Home.js`. Recall the
+      `useState` hook; we've created `videos` which will represent video
       metadata. However, its default value is an empty array. Not too useful in
       its current state! Luckily, we have an endpoint that can provide us with
-      this information.
+      this information. All we need to do is fetch from the `/videos` endpoint,
+      parsing the response to produce a JavaScript object, and finally updating
+      `videos` to this value.
+
+
+      **Q2: Implement the side effect so that videos stores the information returned by the `/videos` endpoint.**
   - type: ps
-    paragraph: "![Picture of the Cubstart Video app after implementing the previous
-      side effect.](/assets/images/hw6p2.png)"
+    paragraph: |-
+      
+
+      Congrats! If you've succeeded, you should see the below.
+
+      ![](/assets/images/hw6p2.png)
+  - type: phs
+    partheader: "Part 3: Playing Each Video"
+  - type: ps
+    paragraph: You've probably noticed that our link cards look a little broken as
+      their images are not displaying. Furthermore, clicking on a link brings
+      you to a buffering video player that doesn't load. This is expected! While
+      we have an endpoint that gives us information on all the videos, we don't
+      have any to get information about a single video or to stream the video
+      itself. Clearly, we need to implement more endpoints.
+  - type: ps
+    paragraph: >-
+      The next endpoint we'll be implementing is `/video/:id`. Recall, per the
+      [Express documentation](https://expressjs.com/en/guide/routing.html) that 
+
+
+      > Route parameters are named URL segments that are used to capture the values specified at their position in the URL. The captured values are populated in the `req.params` object, with the name of the route parameter specified in the path as their respective keys.
 ---
