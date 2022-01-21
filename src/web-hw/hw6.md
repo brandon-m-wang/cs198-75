@@ -139,10 +139,10 @@ sections:
       **Q3: Initialize `path `to the correct value.**
   - type: ps
     paragraph: >-
-      In our application, sending a GET request to `video/:id` should return the
-      video with file name `:id.mp4` piece by piece. We've taken care of the
-      more technical aspects of the callback function, but we need you to
-      initialize the constant `path` to the appropriate path for `:id.mp4`.
+      We also want to set up our `/video/:id/data` route, which will return the
+      information from `videoMetadata` for a single video (indicated by the
+      `:id` param). Based on our previous routes, you're ready to make your own
+      from scratch.
 
 
       **Q4: Create the `/video/:id/data` route.**
@@ -150,12 +150,24 @@ sections:
 
       Hint: How can we get an object from an array of objects by value of a property in JS? A Google search might help.
   - type: ps
-    paragraph: |-
-      With that, let's build out `Player.js`. 
+    paragraph: "With that, let's build out `Player.js`. The structure is quite
+      similar to `Home.js`! Note the use of the `useParams` hook:"
+  - type: cbs
+    codeblock:
+      code: const { videoID } = useParams();
+  - type: ps
+    paragraph: >-
+      which lets us access the `videoID` param that we specified in our React
+      Router route. With this, we have two steps left!
 
 
+      **Q5: Complete the side effect so that `videoData` will correspond to metadata of the video specified by `videoID`.**
 
-      Q5:
+
+      **Q6: Specify the source URL of the `videoID` video.**
+
+
+      Hint: Do we have an endpoint for streaming a video?
   - type: ps
     paragraph: Great! Now you should be able to watch the stream of any video.
       Notice that this works because in `Home.js`, each Link's location is
@@ -163,4 +175,32 @@ sections:
       enough, `videosMetadata` in `server/app.js`. Because of our route with a
       URL parameter in `client/src/App.js`, our client knows which video it
       wants to stream!
+  - type: ps
+    paragraph: Congrats! You now have a functional video player. It's now time to
+      make things pretty.
+  - type: phs
+    partheader: "Part 4: Finishing Touches"
+  - type: ps
+    paragraph: One thing that is still necessary is an route that can return a
+      thumbnail for a certain video. The method below can produce such a
+      thumbnail given the path to the video file.
+  - type: cbs
+    codeblock:
+      code: thumbsupply.generateThumbnail('FILE_PATH')
+  - type: ps
+    paragraph: >-
+      We'll make our endpoint `/video/:id/thumbnail` to align with what we set
+      the `thumbnail` field of the `videoMetadata` objects. After we produce the
+      thumbnail, we should then send the file over.
+
+
+      Q7: Implement the `/video/:id/thumbnail` route!
+
+
+      Hint: Another method found in the Express API reference [here](https://expressjs.com/en/api.html#res) might be useful.
+  - type: ps
+    paragraph: If you've succeeded in making this route, congrats! You've fully
+      implemented the required functionality for HW6! Feel free to customize the
+      CSS, add your own flair to the components, or anything else that comes to
+      mind.
 ---
