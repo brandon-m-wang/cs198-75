@@ -204,4 +204,26 @@ sections:
           return activity;
         }
       lang: javascript
+  - type: phs
+    partheader: "Part 8: Looping and Unpacking Objects in JS"
+  - type: ps
+    paragraph: "The card variable is referring to the card element in the DOM which
+      is where you want to display the information of the activity to the user.
+      First, you must clear any existing activity by replacing all the card's
+      children with nothing. Then, you can make use of your async function to
+      retrieve the data from the Bored API, and assign it to \"activity.\" To
+      loop over key, value pairs in a JavaScript object, you use the
+      <mark><code>Object.entries()</code></mark> method. This returns data from
+      the object in the format of: \\[[key0, value0], \\[key1, value1], \\[key2,
+      value2], ...]. To unpack the key and value and assign them to single
+      variables, you can unpack each individual entry with \\[key, value] and
+      assign them as such using the \"of\" syntax. Try to implement this and add
+      each activity data point into the card element!"
+  - type: cbs
+    codeblock:
+      code: |-
+        for (const [key, value] of Object.entries(activity)) {
+          //...
+        }
+      lang: javascript
 ---
