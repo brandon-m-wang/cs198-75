@@ -223,7 +223,17 @@ sections:
     codeblock:
       code: |-
         for (const [key, value] of Object.entries(activity)) {
-          //...
+          const detail = document.createElement("p");
+          detail.innerHTML = key + ": " + value;
+          card.appendChild(detail);
         }
       lang: javascript
+  - type: ps
+    paragraph: You can now try pressing the button and after a second or so it
+      should display the activity info next to the button :)
+  - type: phs
+    partheader: "Part 9: Creativity Requirement"
+  - type: ps
+    paragraph: Try to style things up with the Bored Button, and make the info card
+      look nice! You can access the styles in "./styles/bored.css."
 ---
