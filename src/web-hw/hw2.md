@@ -185,5 +185,23 @@ sections:
       portion of the project is already written, it's a simple section with a
       singular button.
   - type: ps
-    paragraph: Navigate to "./scripts/bored.js" and open the file.
+    paragraph: Navigate to "./scripts/bored.js" and open the file. You'll be using
+      the publicly available Bored API which gives a random activity when its
+      endpoint is called. To fetch data using a GET request (this is going to be
+      covered in next week's lecture, just think of it as fetching data), you
+      can use JS <mark><code>fetch()</code></mark>. Because fetching data
+      returns a promise that only resolves when all the data is retrieved, this
+      function needs to be asynchronous and "await" data from the fetch when
+      assigning the retrieved data into a response variable. From there, you can
+      read the data into a json, and store it as "activity," since it now
+      contains all the data pertaining to the fetched activity.
+  - type: cbs
+    codeblock:
+      code: |-
+        async function fetchActivity(){
+          const response = await fetch("https://www.boredapi.com/api/activity");
+          const activity = await response.json();
+          return activity;
+        }
+      lang: javascript
 ---
