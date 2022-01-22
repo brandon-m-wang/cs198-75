@@ -81,6 +81,19 @@ sections:
       :)
   - type: phs
     partheader: "Part 4: Building a Todo List"
+  - type: ps
+    paragraph: Now, you'll build a simple todo list. At first glance, you'll need to
+      make some kind of input field to hold text values of tasks to add to the
+      list, and some kind of empty list that holds the tasks, along with buttons
+      that allow you to actually submit tasks and clear the list. You should use
+      an HTML <mark><code>input</code></mark> element of type "text" to create a
+      space where a user can input text (i.e. the todo task). You can also use a
+      <mark><code>ul</code></mark> element which is an unordered list that can
+      hold <mark><code>li</code></mark> elements which are list item elements
+      that can contain text. Try to implement all the necessary DOM elements as
+      you see fit, but you can also use the code provided to you below. The div
+      with id "input-handlers" is simply for stylistic choice, where the buttons
+      can be displayed together.
   - type: cbs
     codeblock:
       code: |-
@@ -91,4 +104,42 @@ sections:
         </div>
         <ul id="tasks"></ul>
       lang: html
+  - type: phs
+    partheader: "Part 5: More DOM Targeting"
+  - type: ps
+    paragraph: Go back to the "playground.js" file. Again, declare and initialize
+      your JavaScript variables to manipulate the respective elements on the
+      DOM.
+  - type: cbs
+    codeblock:
+      code: |-
+        const taskName = document.getElementById("task-name");
+        const submitButton = document.getElementById("submit");
+        const clearButton = document.getElementById("clear");
+        const taskList = document.getElementById("tasks");
+      lang: javascript
+  - type: phs
+    partheader: "Part 6: Dynamic Element Creation"
+  - type: ps
+    paragraph: "This part will be more guided to allow you some explanation and
+      experience with some more complex JavaScript methods. Once again, you want
+      a list element to be added to the todo list when the submit button is
+      clicked. So you need an event listener on the submit button to do just
+      that. The logical flow of what to expect when carrying out this action is
+      as follows: if there is a valid task name in the text input field, then
+      create a <code><mark>li</mark></code> list item element and set its
+      innerHTML to be the text in the input field. Then add this element to the
+      enclosing <code><mark>ul</mark></code> parent element with
+      <mark><code>appendChild()</code></mark>."
+  - type: cbs
+    codeblock:
+      code: |-
+        submitButton.addEventListener("click", () => {
+          if (taskName.value != "") {
+            const task = document.createElement("li");
+            task.innerHTML = taskName.value;
+            taskList.appendChild(task);
+          }
+        });
+      lang: javascript
 ---
