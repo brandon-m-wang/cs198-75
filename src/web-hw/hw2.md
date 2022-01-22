@@ -214,11 +214,11 @@ sections:
       retrieve the data from the Bored API, and assign it to \"activity.\" To
       loop over key, value pairs in a JavaScript object, you use the
       <mark><code>Object.entries()</code></mark> method. This returns data from
-      the object in the format of: \\`\\[[key0, value0], \\[key1, value1],
-      \\[key2, value2], ...]\\`. To unpack the key and value and assign them to
-      single variables, you can unpack each individual entry with \\`\\[key,
-      value]\\` and assign them as such using the \"of\" syntax. Try to
-      implement this and add each activity data point into the card element!"
+      the object in the format of: [[key0, value0], [key1, value1], [key2,
+      value2], ...]. To unpack the key and value and assign them to single
+      variables, you can unpack each individual entry with [key, value] and
+      assign them as such using the \"of\" syntax. Try to implement this and add
+      each activity data point into the card element!"
   - type: cbs
     codeblock:
       code: |-
