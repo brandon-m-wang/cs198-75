@@ -32,4 +32,35 @@ sections:
         <button class="button" id="subtract">-</button>
         <button class="button" id="add">+</button>
       lang: html
+  - type: ps
+    paragraph: That's all the HTML you'll need for a counter. The logic is all
+      handled in JavaScript. The styles for the button are within the styles
+      folder, feel free to change the look of your application however you'd
+      like. Navigate to "./scripts/playground.js" and open the file.
+  - type: ps
+    paragraph: 'This is the JavaScript file that is linked to your playground HTML
+      file. As such, you are able to target DOM elements within
+      "playground.html" here. Recall that the syntax for targeting DOM elements
+      in JS is <mark><code>document.getElementById()</code></mark>. Because you
+      assigned ids to all the relevant elements in your counter, you can do so
+      and assign them to a variable that you can manipulate:'
+  - type: cbs
+    codeblock:
+      code: |-
+        const countDisplay = document.getElementById("count-display");
+        const subtractButton = document.getElementById("subtract");
+        const addButton = document.getElementById("add");
+      lang: javascript
+  - type: cbs
+    codeblock:
+      code: |-
+        addButton.addEventListener("click", () => {
+          count += 1;
+          countDisplay.innerHTML = count;
+        });
+        subtractButton.addEventListener("click", () => {
+          count -= 1;
+          countDisplay.innerHTML = count;
+        });
+      lang: javascript
 ---
