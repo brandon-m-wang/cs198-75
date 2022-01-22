@@ -37,6 +37,8 @@ sections:
       handled in JavaScript. The styles for the button are within the styles
       folder, feel free to change the look of your application however you'd
       like. Navigate to "./scripts/playground.js" and open the file.
+  - type: phs
+    partheader: "Part 2: Targeting DOM Elements"
   - type: ps
     paragraph: 'This is the JavaScript file that is linked to your playground HTML
       file. As such, you are able to target DOM elements within
@@ -51,6 +53,20 @@ sections:
         const subtractButton = document.getElementById("subtract");
         const addButton = document.getElementById("add");
       lang: javascript
+  - type: phs
+    partheader: "Part 3: Event Listeners"
+  - type: ps
+    paragraph: If you want something to happen when an element is clicked, in this
+      case your buttons, you want to use what's known as an event listener. An
+      event listener generally accepts 2 parameters, the first being the type of
+      event (e.g. "click"), and the second being the function that executes when
+      the event occurs on the associated element. In JavaScript, another way to
+      define anonymous functions is to use ES6 arrow syntax. <mark><code>() =>
+      {// function body here}</code></mark> where the parentheses are for
+      parameters and the braces indicate the function's body. Within this
+      function, you want to increment your count variable (pre-defined and
+      assigned to 0) and then update the contents of your counter display to be
+      the new count value!
   - type: cbs
     codeblock:
       code: |-
@@ -58,9 +74,7 @@ sections:
           count += 1;
           countDisplay.innerHTML = count;
         });
-        subtractButton.addEventListener("click", () => {
-          count -= 1;
-          countDisplay.innerHTML = count;
-        });
       lang: javascript
+  - type: ps
+    paragraph: Now implement this for the subtract button on your own!
 ---
