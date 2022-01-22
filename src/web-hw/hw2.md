@@ -217,7 +217,7 @@ sections:
       the object in the format of: \\\\[\\[key0, value0\\], \\\\[key1,
       value1\\], \\\\[key2, value2\\], ...\\]. To unpack the key and value and
       assign them to single variables, you can unpack each individual entry with
-      \\[key, value] and assign them as such using the \"of\" syntax. Try to
+      \\\\[key, value\\] and assign them as such using the \"of\" syntax. Try to
       implement this and add each activity data point into the card element!"
   - type: cbs
     codeblock:
