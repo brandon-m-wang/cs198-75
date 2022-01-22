@@ -76,5 +76,19 @@ sections:
         });
       lang: javascript
   - type: ps
-    paragraph: Now implement this for the subtract button on your own!
+    paragraph: Now implement this for the subtract button on your own! Try playing
+      around with your counter and you should see that it's now fully functional
+      :)
+  - type: phs
+    partheader: "Part 4: Building a Todo List"
+  - type: cbs
+    codeblock:
+      code: |-
+        <input type="text" id="task-name" />
+        <div id="input-handlers">
+          <button class="button" id="submit">Submit</button>
+          <button class="button" id="clear">Clear</button>
+        </div>
+        <ul id="tasks"></ul>
+      lang: html
 ---
