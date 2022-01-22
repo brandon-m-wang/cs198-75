@@ -142,4 +142,33 @@ sections:
           }
         });
       lang: javascript
+  - type: ps
+    paragraph: To clear the list, a way to achieve this is by simply replacing all
+      the children of your taskList with nothing. Then reset your input text to
+      be an empty string to reset the input text as well (so the user doesn't
+      have to manually delete it).
+  - type: cbs
+    codeblock:
+      code: |-
+        clearButton.addEventListener("click", () => {
+          taskList.replaceChildren();
+          taskName.value = "";
+        });
+      lang: javascript
+  - type: ps
+    paragraph: You'll notice there is another event listener on the taskName element
+      which listens on "input." This is an example of another event triggering a
+      function's execution. On "input" means every time the input field is
+      modified (e.g. typing a new letter). So you'll notice that whenever you
+      type the value "Cal Hacks" into your task input field, the count display
+      on your previous counter app turns blue!
+  - type: cbs
+    codeblock:
+      code: |
+        taskName.addEventListener("input", () => {
+          if (taskName.value == "Cal Hacks") {
+            countDisplay.style.color = "steelblue";
+          }
+        });
+      lang: javascript
 ---
