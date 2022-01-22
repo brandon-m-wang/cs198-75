@@ -13,9 +13,13 @@ sections:
   - type: phs
     partheader: "Part 1: Creating a Counter"
   - type: ps
-    paragraph: "In this part, you'll be creating a simple counter application with
-      three main features: a button to +1, a button to -1, and the number
-      displayed depending on the button presses."
+    paragraph: "Your HTML files are in the root directory of your application.
+      \"bored.html\" is going to be an application later on in the homework,
+      \"index.html\" is your landing page which just has two sections for your
+      to optionally explain what this project is and how you built it. Navigate
+      to \"playground.html.\" In this part, you'll be creating a simple counter
+      application with three main features: a button to +1, a button to -1, and
+      the number displayed depending on the button presses."
   - type: ps
     paragraph: First things first, you'll need to define the relevant elements in
       the DOM with HTML. Use an <mark><code>h1</code></mark> tag to hold the
