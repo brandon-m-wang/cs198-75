@@ -171,4 +171,15 @@ sections:
           }
         });
       lang: javascript
+  - type: phs
+    partheader: "Part 7: Building a Bored Button, Async, Await"
+  - type: ps
+    paragraph: The bored button you'll be building is essentially just a button that
+      gives the user some activity to do with details about the activity when
+      pressed. This will give you insight on how to handle promises and async
+      and await in JS, using loops, and unpacking data. The HTML file for this
+      portion of the project is already written, it's a simple section with a
+      singular button.
+  - type: ps
+    paragraph: Navigate to "./scripts/bored.js" and open the file.
 ---
