@@ -14,4 +14,18 @@ introduction: For this project, you'll be building a visualization of the
 setup: There are some dependencies you will need to install, but it will be
   covered in the first part of the homework.
 skeleton: https://github.com/brandon-m-wang/cubstart-hw5-skeleton.git
+sections:
+  - type: phs
+    partheader: "Part 1: Installing Dependencies"
+  - type: ps
+    paragraph: "The dependencies are already laid out in the
+      <mark><code>package.json</code></mark> file. They are all React.js
+      dependencies. As a general rule of thumb, to install all the dependencies
+      on your local machine so that you can run the project locally, you can
+      simply navigate to the project root directory in the terminal (or within
+      VSCode visit Terminal > New Terminal) and run:"
+  - type: cbs
+    codeblock:
+      code: npm install
+      lang: cpp
 ---
