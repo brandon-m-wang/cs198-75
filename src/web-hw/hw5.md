@@ -165,5 +165,5 @@ sections:
       Dijkstra's on a grid input, and
       <code><mark>getNodesInShortestPathOrder</mark></code> takes a finish point
       after running Dijkstra's and backtracks until the start Node to give an
-      in-order list of Nodes in the shortest path.
+      in-order list of Nodes in the shortest path. a
 ---
