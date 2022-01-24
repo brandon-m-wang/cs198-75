@@ -80,4 +80,29 @@ sections:
     codeblock:
       code: export default Node;
       lang: javascript
+  - type: ps
+    paragraph: This export statement allows you to access this Node component in
+      other parts of the project.
+  - type: ps
+    paragraph: "Beginning with the props of the Node component, recall what needs to
+      be considered again: whether or not the node itself is a wall, and whether
+      or not the user is clicking on a node (or more appropriately, dragging) to
+      convert the node. Some additional things to consider would be the node's
+      location, and whether or not the node is your start/end point for the
+      algorithm's execution. As such, implement the following props into your
+      Node functional component:"
+  - type: cbs
+    codeblock:
+      code: |-
+        {
+          col,
+          isFinish,
+          isStart,
+          isWall,
+          onMouseDown,
+          onMouseEnter,
+          onMouseUp,
+          row,
+        }
+      lang: javascript
 ---
