@@ -165,5 +165,22 @@ sections:
       Dijkstra's on a grid input, and
       <code><mark>getNodesInShortestPathOrder</mark></code> takes a finish point
       after running Dijkstra's and backtracks until the start Node to give an
-      in-order list of Nodes in the shortest path. a
+      in-order list of Nodes in the shortest path.
+  - type: ps
+    paragraph: Below, you can see there are four variables determining the
+      start/finish node positions. Because the current grid is hard-coded to be
+      a 20x50 grid, you'll position the start/finish nodes in opposite corners.
+  - type: ps
+    paragraph: "First things first, you'll need to define the states in your
+      visualizer by using the <code><mark>useState</mark></code> hook. Thinking
+      about this from a high-level perspective, you'll probably need something
+      to track the progression of your grid throughout the visualization, and
+      also something to check without or not the user's mouse is being held
+      down. Implement them as such:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const [grid, setGrid] = useState(getInitialGrid());
+        const [mouseIsPressed, setMouseIsPressed] = useState(false);
+      lang: javascript
 ---
