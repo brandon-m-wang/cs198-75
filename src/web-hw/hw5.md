@@ -199,8 +199,8 @@ sections:
       the parent component!
   - type: cbs
     codeblock:
-      code: |-2
-          const handleMouseDown = (row, col) => {
+      code: |-
+        const handleMouseDown = (row, col) => {
           const newGrid = getNewGridWithWallToggled(grid, row, col);
           setGrid(newGrid);
           setMouseIsPressed(true);
