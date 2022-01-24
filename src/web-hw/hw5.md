@@ -287,4 +287,11 @@ sections:
       the code block. Then, uncomment the commented out section in the JSX
       return value for this component. Try playing around with the tool on your
       local development server, and watch the magic happen :)
+  - type: phs
+    partheader: "Part 7: Creativity Requirement"
+  - type: ps
+    paragraph: "Try to implement one additional feature for this project of your own
+      choice. Some ideas would be: creating some user input to choose start/end
+      points, creating an interactive user interface (that looks better than the
+      current one), etc."
 ---
