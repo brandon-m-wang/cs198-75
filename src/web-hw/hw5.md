@@ -21,13 +21,13 @@ setup: Package/library dependencies in a React project are generally managed by
   packages. This folder is to be ignored by git as well, as the data in
   node_modules is large and contains tens of thousands of files, and could
   potentially be OS dependent or dependent on your machine architecture. You may
-  notice that you don't actually have a <mark><code>node_modules</code> folder
-  in the project files after pulling from the skeleton repo. This is because
-  <mark><code>node_modules</code> is ignored by git, as mentioned. Once you
-  install the necessary dependencies associated with this project, the
-  <mark><code>node_modules</code> folder will be created within your local
-  project as well. There are some dependencies you will need to install, but it
-  will be covered in the first part of the homework.
+  notice that you don't actually have a <mark><code>node_modules</code></mark>
+  folder in the project files after pulling from the skeleton repo. This is
+  because <mark><code>node_modules</code></mark> is ignored by git, as
+  mentioned. Once you install the necessary dependencies associated with this
+  project, the <mark><code>node_modules</code></mark> folder will be created
+  within your local project as well. There are some dependencies you will need
+  to install, but it will be covered in the first part of the homework.
 skeleton: https://github.com/brandon-m-wang/cubstart-hw5-skeleton.git
 sections:
   - type: phs
