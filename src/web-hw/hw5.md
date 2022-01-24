@@ -124,15 +124,6 @@ sections:
     paragraph: Now to handle the JSX in the return value of your Node component.
       Give the id of the div the position of the node, and the class name of the
       node depending on the criteria you defined previously.
-  - type: cbs
-    codeblock:
-      code: |-
-        id={`node-${row}-${col}`}
-        className={`node ${extraClassName}`}
-        onMouseDown={() => onMouseDown(row, col)}
-        onMouseEnter={() => onMouseEnter(row, col)}
-        onMouseUp={() => onMouseUp()}
-      lang: jsx
   - type: ps
     paragraph: Then you'll need to define the event handlers onMouseDown,
       onMouseEnter, and onMouseUp. What are these?? You'll implement the
@@ -147,4 +138,13 @@ sections:
       by passing down the functions to the child component (Node) you can induce
       changes onto the parent component from some event (click/drag) on the
       child!
+  - type: cbs
+    codeblock:
+      code: |-
+        id={`node-${row}-${col}`}
+        className={`node ${extraClassName}`}
+        onMouseDown={() => onMouseDown(row, col)}
+        onMouseEnter={() => onMouseEnter(row, col)}
+        onMouseUp={() => onMouseUp()}
+      lang: jsx
 ---
