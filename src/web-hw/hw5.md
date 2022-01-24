@@ -231,4 +231,60 @@ sections:
           setMouseIsPressed(false);
         };
       lang: javascript
+  - type: phs
+    partheader: "Part 6: Animating Dijkstra's"
+  - type: ps
+    paragraph: In this part, you'll be doing the actual animation of Dijkstra's
+      progression. Recall that the return value of the
+      <code><mark>dijkstras</mark></code> function is the visited nodes through
+      the runtime of Dijkstra's in order. Intuitively, when this is animated,
+      you'll have to highlight the nodes in the order in which they were visited
+      with some amount of delay between each. To set the delay between each
+      animation, you'll use the JavaScript
+      <mark><code>setTimeout()</code></mark> function which accepts some
+      function to be executed, along with a delay as parameters. Then, you'll
+      need to call the function to animate the shortest path after you visualize
+      every visited node. Implement all this within the "animateDijkstra"
+      function, which accepts the visited nodes in order, along with the nodes
+      in the shortest path in order as parameters. You'll need to loop through
+      each node in the visited nodes in order, animate them (by attaching a CSS
+      class name to change the appearance), and then upon completion, make a
+      call to a function "animateShortestPath" (which you'll implement
+      afterwards) with the parameter that includes the nodes in the shortest
+      path in order.
+  - type: cbs
+    codeblock:
+      code: |-
+        if (i === visitedNodesInOrder.length) {
+          setTimeout(() => {
+            animateShortestPath(nodesInShortestPathOrder);
+          }, 10 * i);
+          return;
+        }
+        setTimeout(() => {
+          const node = visitedNodesInOrder[i];
+          document.getElementById(`node-${node.row}-${node.col}`).className =
+            "node node-visited";
+        }, 10 * i);
+      lang: javascript
+  - type: ps
+    paragraph: Now to animate the shortest path, you do something similar. Simply
+      loop through the nodes in the provided list, and then change the class
+      name of that node which will create the CSS animation with a delay using
+      <code><mark>setTimeout()</mark></code>.
+  - type: cbs
+    codeblock:
+      code: |-
+        setTimeout(() => {
+          const node = nodesInShortestPathOrder[i];
+          document.getElementById(`node-${node.row}-${node.col}`).className =
+            "node node-shortest-path";
+        }, 50 * i);
+      lang: javascript
+  - type: ps
+    paragraph: Within the "visualizeDijkstra" function, assign "startNode" and
+      "finishNode" to the corresponding indices in the grid state, and uncomment
+      the code block. Then, uncomment the commented out section in the JSX
+      return value for this component. Try playing around with the tool on your
+      local development server, and watch the magic happen :)
 ---
