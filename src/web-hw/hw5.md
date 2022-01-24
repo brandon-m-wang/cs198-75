@@ -147,4 +147,23 @@ sections:
         onMouseEnter={() => onMouseEnter(row, col)}
         onMouseUp={() => onMouseUp()}
       lang: jsx
+  - type: phs
+    partheader: "Part 4: Understanding Helper Functions"
+  - type: ps
+    paragraph: 'Navigate to "./src/PathfindingVisualizer/PathfindingVisualizer.jsx"
+      and scroll to the bottom of the file. Try to read through the three helper
+      functions here and give a statement-by-statement explanation in the
+      comments on what they do. '
+  - type: phs
+    partheader: "Part 5: PathfindingVisualizer Component"
+  - type: ps
+    paragraph: This component is your top-level component (i.e. the parent to the
+      Node component). Notice at the top where your import statements are, that
+      you have imported your Node component along with some Dijkstra's
+      functions. You don't need to understand the Dijkstra's functions although
+      you can feel free to take a look. <code><mark>dijkstras</mark></code> runs
+      Dijkstra's on a grid input, and
+      <code><mark>getNodesInShortestPathOrder</mark></code> takes a finish point
+      after running Dijkstra's and backtracks until the start Node to give an
+      in-order list of Nodes in the shortest path.
 ---
