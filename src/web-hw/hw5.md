@@ -123,19 +123,7 @@ sections:
   - type: ps
     paragraph: Now to handle the JSX in the return value of your Node component.
       Give the id of the div the position of the node, and the class name of the
-      node depending on the criteria you defined previously. Then you'll need to
-      define the event handlers onMouseDown, onMouseEnter, and onMouseUp. What
-      are these?? You'll implement the functions associated with each prop later
-      in a parent component, but the purpose is to give the parent component a
-      connection to the Node component with these event handler functions, so
-      the Node component itself can update via a prop change from the parent
-      component. In other words, the parent component defines some function(s)
-      to change the overarching grid structure that Dijkstra's algorithm runs on
-      depending on what is and isn't a wall, or where the start/end points are.
-      However, these changes must be propagated when the user interacts with the
-      individual Node components. So by passing down the functions to the child
-      component (Node) you can induce changes onto the parent component from
-      some event (click/drag) on the child!
+      node depending on the criteria you defined previously.
   - type: cbs
     codeblock:
       code: |-
@@ -145,4 +133,18 @@ sections:
         onMouseEnter={() => onMouseEnter(row, col)}
         onMouseUp={() => onMouseUp()}
       lang: jsx
+  - type: ps
+    paragraph: Then you'll need to define the event handlers onMouseDown,
+      onMouseEnter, and onMouseUp. What are these?? You'll implement the
+      functions associated with each prop later in a parent component, but the
+      purpose is to give the parent component a connection to the Node component
+      with these event handler functions, so the Node component itself can
+      update via a prop change from the parent component. In other words, the
+      parent component defines some function(s) to change the overarching grid
+      structure that Dijkstra's algorithm runs on depending on what is and isn't
+      a wall, or where the start/end points are. However, these changes must be
+      propagated when the user interacts with the individual Node components. So
+      by passing down the functions to the child component (Node) you can induce
+      changes onto the parent component from some event (click/drag) on the
+      child!
 ---
