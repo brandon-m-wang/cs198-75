@@ -63,7 +63,7 @@ sections:
       code: npm start
       lang: cpp
   - type: phs
-    partheader: "Part 2: Node Component"
+    partheader: "Part 3: Node Component"
   - type: ps
     paragraph: The Node component is equivalent to a single tile on your 2D grid. As
       you saw in the demo, it can be either a wall or a valid space depending on
@@ -104,5 +104,20 @@ sections:
           onMouseUp,
           row,
         }
+      lang: javascript
+  - type: ps
+    paragraph: Now, implement some additional styling options depending on the what
+      the node type actually is; if it's a wall, it should be a darker tone, if
+      it's the start point, make it green, if it's the finish, make it red.
+  - type: cbs
+    codeblock:
+      code: |-
+        const extraClassName = isFinish
+          ? "node-finish"
+          : isStart
+          ? "node-start"
+          : isWall
+          ? "node-wall"
+          : "";
       lang: javascript
 ---
