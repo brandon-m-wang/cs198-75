@@ -183,4 +183,52 @@ sections:
         const [grid, setGrid] = useState(getInitialGrid());
         const [mouseIsPressed, setMouseIsPressed] = useState(false);
       lang: javascript
+  - type: ps
+    paragraph: It's time for the three event handler functions that you touched on
+      previously in the Node component. First up is to handle the behavior for
+      onMouseDown. When the mouse first goes down (i.e. click and hold), you
+      want to change the Node that it's clicking on to be the opposite of what
+      it used to be (i.e. wall -> not wall, or not wall -> wall). You have a
+      pre-defined helper function for this from part 4, so you can simply get
+      the updated grid and assign it to a variable "newGrid." Then use the
+      setter in your <mark><code>useState</code></mark> hook to set the updated
+      grid state, and set your mouseIsPressed state to be true. Recall that the
+      row, col parameters in this handler function are actually supplied by the
+      child component Node. This is why you pass the handler functions down to
+      the child as props, so that data from the child component can be lifted to
+      the parent component!
+  - type: cbs
+    codeblock:
+      code: |-2
+          const handleMouseDown = (row, col) => {
+          const newGrid = getNewGridWithWallToggled(grid, row, col);
+          setGrid(newGrid);
+          setMouseIsPressed(true);
+        };
+      lang: javascript
+  - type: ps
+    paragraph: "Second up is to handle the behavior for onMouseEnter. When the mouse
+      hovers over a Node (i.e. mouse enters), you should check for whether or
+      not the mouse is already being held down, and if so continue to change
+      those nodes being hovered over/entered as walls. The logic is similar, and
+      simple:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const handleMouseEnter = (row, col) => {
+          if (!mouseIsPressed) return;
+          const newGrid = getNewGridWithWallToggled(grid, row, col);
+          setGrid(newGrid);
+        };
+      lang: javascript
+  - type: ps
+    paragraph: "Lastly, the behavior for when onMouseUp. Simply change the state of
+      the mouse being held down to false:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const handleMouseUp = () => {
+          setMouseIsPressed(false);
+        };
+      lang: javascript
 ---
