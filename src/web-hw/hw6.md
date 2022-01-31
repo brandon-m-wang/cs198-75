@@ -132,7 +132,8 @@ sections:
       initialize the constant <mark><code>path</code></mark> to the appropriate
       path for <mark><code>:id.mp4</code></mark>.
   - type: ps
-    paragraph: "<b>Q3: Initialize `path `to the correct value.</b>"
+    paragraph: "<b>Q3: Initialize <mark><code>path</code></mark> to the correct
+      value.</b>"
   - type: ps
     paragraph: We also want to set up our <mark><code>/video/:id/data</code></mark>
       route, which will return the information from
@@ -158,7 +159,7 @@ sections:
   - type: ps
     paragraph: "<b>Q5: Complete the side effect so that
       <mark><code>videoData</code></mark> will correspond to metadata of the
-      video specified by `videoID</code></mark>.</b>"
+      video specified by <mark><code>videoID</code></mark>.</b>"
   - type: ps
     paragraph: >
       <b>Q6: Specify the source URL of the <mark><code>videoID</code></mark>
@@ -178,7 +179,7 @@ sections:
     paragraph: Congrats! You now have a functional video player. It's now time to
       make things pretty.
   - type: phs
-    partheader: "Part 4: Finishing Touches"
+    partheader: "Part 5: Finishing Touches"
   - type: ps
     paragraph: One thing that is still necessary is an route that can return a
       thumbnail for a certain video. The method below can produce such a
