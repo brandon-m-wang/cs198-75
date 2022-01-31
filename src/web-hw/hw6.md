@@ -81,7 +81,7 @@ sections:
       correct information?</b>"
   - type: ps
     paragraph: "Hint: A certain method found in the Express API reference <a
-      href=https://expressjs.com/en/api.html#res></a> might be useful."
+      href=https://expressjs.com/en/api.html#res>here</a> might be useful."
   - type: cbs
     codeblock:
       code: app.get('/videos', (req, res) => RETURN_SOMETHING );
