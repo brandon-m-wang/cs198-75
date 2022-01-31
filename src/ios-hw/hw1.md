@@ -261,4 +261,11 @@ sections:
 
 
       Be Creative!
+  - type: phs
+    partheader: SUBMISSION
+  - type: ps
+    paragraph: To submit this project, take a screen recording of your prototyping
+      of your Figma file. Click through all of the transitions so that all the
+      pages are shown and interacted with. Save this screen recording and submit
+      to Gradescope.
 ---
