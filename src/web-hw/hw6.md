@@ -9,7 +9,7 @@ introduction: Welcome to Homework 6! In this assignment, you'll be building your
   handle streaming the video and suppling other information. Second, we have a
   React client that will display the videos available and play a video selected.
 setup: Get started by pulling from the skeleton repository below.
-skeleton: https://github.com/brandon-m-wang/cubstart-hw1-skeleton.git
+skeleton: https://github.com/matthewlee626/cubstart-hw6-skeleton.git
 sections:
   - type: phs
     partheader: "Part 1: Setting Up our Parts"
@@ -64,7 +64,7 @@ sections:
       code: |-
         {
           id: ID of the video file. Corresponds to the file name.
-          thumbnail: Path to generate the thumbnail of the video/
+          thumbnail: Path to generate the thumbnail of the video.
           description: Short blurb about the video.
           name: Name of the video.
         }
