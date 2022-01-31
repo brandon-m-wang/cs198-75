@@ -117,21 +117,22 @@ sections:
       have any to get information about a single video or to stream the video
       itself. Clearly, we need to implement more endpoints.
   - type: ps
-    paragraph: >-
-      The next endpoint we'll be implementing is `/video/:id`. Recall, per the
-      [Express documentation](https://expressjs.com/en/guide/routing.html) that 
-
-
-      > Route parameters are named URL segments that are used to capture the values specified at their position in the URL. The captured values are populated in the `req.params` object, with the name of the route parameter specified in the path as their respective keys.
+    paragraph: The next endpoint we'll be implementing is
+      <mark><code>/video/:id</code></mark>. Recall, per the <a href=
+      https://expressjs.com/en/guide/routing.html>Express documentation</a> that
+      route parameters are named URL segments that are used to capture the
+      values specified at their position in the URL. The values are stored in
+      the <mark><code>req.params</code></mark> object, with the name of the
+      route parameter specified in the path as their respective keys.
   - type: ps
-    paragraph: >-
-      In our application, sending a GET request to `video/:id` should return the
-      video with file name `:id.mp4` piece by piece. We've taken care of the
+    paragraph: In our application, sending a GET request to
+      <mark><code>video/:id</code></mark> should return the video with file name
+      <mark><code>:id.mp4</code></mark> piece by piece. We've taken care of the
       more technical aspects of the callback function, but we need you to
-      initialize the constant `path` to the appropriate path for `:id.mp4`.
-
-
-      **Q3: Initialize `path `to the correct value.**
+      initialize the constant <mark><code>path</code></mark> to the appropriate
+      path for <mark><code>:id.mp4</code></mark>.
+  - type: ps
+    paragraph: "<b>Q3: Initialize `path `to the correct value.</b>"
   - type: ps
     paragraph: >-
       We also want to set up our `/video/:id/data` route, which will return the
