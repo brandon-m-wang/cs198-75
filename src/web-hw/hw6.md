@@ -43,6 +43,13 @@ sections:
       <mark><code>assets</code></mark> folder should look like the below. Feel
       free to play the videos with your own device's media player to check them
       out!
+  - type: cbs
+    codeblock:
+      code: |-
+        assets
+        |  fire.mp4
+        |  ocean.mp4
+        |  sky.mp4
   - type: ps
     paragraph: >-
       Now, we'll head over to `app.js`. The first thing you might notice is the
