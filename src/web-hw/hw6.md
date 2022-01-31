@@ -80,8 +80,8 @@ sections:
     paragraph: "<b>Q1: What can we return in our callback function to get the
       correct information?</b>"
   - type: ps
-    paragraph: "Hint: A certain method found in the Express API reference <a
-      href=https://expressjs.com/en/api.html#res>here</a> might be useful."
+    paragraph: "<i>Hint: A certain method found in the Express API reference <a
+      href=https://expressjs.com/en/api.html#res>here</a> might be useful.</i>"
   - type: cbs
     codeblock:
       code: app.get('/videos', (req, res) => RETURN_SOMETHING );
