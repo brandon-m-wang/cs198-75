@@ -20,6 +20,30 @@ skeleton: N/A
 sections:
   - type: phs
     partheader: "Part 1: Getting Started w/ Figma 🖍 "
+  - type: ps
+    paragraph: No real tasks here. Just make sure you are able to create an account
+      and familiarize yourself with the basic tools Figma has to offer. Feel
+      free to reference this section as you navigate the rest of the homework!
+  - type: ps
+    paragraph: >-
+      ## Creating an Account
+
+
+      * Go to this link: <https://www.figma.com/signup>
+
+      * Make an account with your BERKELEY email. Students get the PRO plan for free which just means you can have unlimited collaborators. But make sure to confirm your email!
+
+
+      ## Basics of Figma
+
+
+      I’ll go into the basics of Figma here that should be enough to get you started. A lot of it is pretty intuitive and gets easier with practice (as all things are). However, if you do get stuck or want to read more in depth on what you can do with Figma, I definitely recommend checking out this article: <https://uxplanet.org/figma-all-you-need-to-know-156b52b88e54>
+
+
+      ### Creating a New File
+
+
+      Your screen should look something like this! To create a new file, select “New design file”.
   - type: ibs
     imageblock: /assets/images/figmahome.png
   - type: ibs
@@ -53,9 +77,4 @@ sections:
 
 
       IGNORE THE SUBMISSION BELOW. THIS WILL BE USED ONLY FOR CODE RELATED HOMEWORKS.
-  - type: ps
-    paragraph: |-
-      ## Creating an Account
-
-      test
 ---
