@@ -26,8 +26,8 @@ sections:
   - type: ps
     paragraph: We'll also need to install FFmpeg, a tool for processing video and
       audio. This will be necessary later for generating thumbnails. For Windows
-      users, download the essentials build from
-      [here](https://github.com/GyanD/codexffmpeg/releases/tag/2022-01-19-git-dd17c86aa1).
+      users, download the essentials build from <a
+      href=https://github.com/GyanD/codexffmpeg/releases/tag/2022-01-19-git-dd17c86aa1>here</a>.
       For MacOS users, download the release build from
       [here](https://evermeet.cx/ffmpeg/). For Linux users, go to the [FFmpeg
       website](https://www.ffmpeg.org/download.html) and download the
