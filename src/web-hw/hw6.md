@@ -28,33 +28,21 @@ sections:
       audio. This will be necessary later for generating thumbnails. For Windows
       users, download the essentials build from <a
       href=https://github.com/GyanD/codexffmpeg/releases/tag/2022-01-19-git-dd17c86aa1>here</a>.
-      For MacOS users, download the release build from
-      [here](https://evermeet.cx/ffmpeg/). For Linux users, go to the [FFmpeg
-      website](https://www.ffmpeg.org/download.html) and download the
-      appropriate package for your distro. Once you've unzipped the download,
-      set your system's <mark><code>FFMPEG_PATH</code></mark> environment
-      variable to the path of the ffmpeg executable.
+      For MacOS users, download the release build from <a
+      href=https://evermeet.cx/ffmpeg/>here</a>. For Linux users, go to the <a
+      href=https://www.ffmpeg.org/download.html>FFmpeg website</a> and download
+      the appropriate package for your distro. Once you've unzipped the
+      download, set your system's <mark><code>FFMPEG_PATH</code></mark>
+      environment variable to the path of the ffmpeg executable.
   - type: phs
     partheader: "Part 2: Our First Endpoint"
   - type: ps
-    paragraph: >-
-      Before we work on `app.js` , let's take a look first at the structure of
-      our files in the `server` folder. Your `assets` folder should look like
-      the below. Feel free to play the videos with your own device's media
-      player to check them out!
-
-
-      ```
-
-      assets
-
-      |  fire.mp4
-
-      |  ocean.mp4
-
-      |  sky.mp4
-
-      ```
+    paragraph: Before we work on <mark><code>app.js</code></mark> , let's take a
+      look first at the structure of our files in the
+      <mark><code>server</code></mark> folder. Your
+      <mark><code>assets</code></mark> folder should look like the below. Feel
+      free to play the videos with your own device's media player to check them
+      out!
   - type: ps
     paragraph: >-
       Now, we'll head over to `app.js`. The first thing you might notice is the
