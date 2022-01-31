@@ -142,8 +142,8 @@ sections:
   - type: ps
     paragraph: "<b>Q4: Create the <mark><code>/video/:id/data</code></mark> route.</b>"
   - type: ps
-    paragraph: "Hint: How can we get an object from an array of objects by value of
-      a property in JS? A Google search might help."
+    paragraph: "<i>Hint: How can we get an object from an array of objects by value
+      of a property in JS? A Google search might help.</i>"
   - type: ps
     paragraph: "With that, let's build out `Player.js`. The structure is quite
       similar to `Home.js`! Note the use of the `useParams` hook:"
