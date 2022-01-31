@@ -100,9 +100,9 @@ sections:
       <mark><code>videos</code></mark> to this value.
 
   - type: ps
-    paragraph: "<b>Q2: Implement the side effect so that videos stores the
-      information returned by the <mark><code>/videos</code></mark>
-      endpoint.</b>"
+    paragraph: "<b>Q2: Implement the side effect so that
+      <mark><code>/videos</code></mark> stores the information returned by the
+      <mark><code>/videos</code></mark> endpoint.</b>"
   - type: ps
     paragraph: Congrats! If you've succeeded, you should see the below.
   - type: ibs
