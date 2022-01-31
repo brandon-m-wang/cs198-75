@@ -108,7 +108,7 @@ sections:
   - type: ibs
     imageblock: /assets/images/hw6p2.png
   - type: phs
-    partheader: "Part 3: Playing Each Video"
+    partheader: "Part 3: More Backend Features"
   - type: ps
     paragraph: You've probably noticed that our link cards look a little broken as
       their images are not displaying. Furthermore, clicking on a link brings
@@ -145,17 +145,18 @@ sections:
   - type: ps
     paragraph: "<i>Hint: How can we get an object from an array of objects by value
       of a property in JS? A Google search might help.</i>"
+  - type: phs
+    partheader: "Part 4: Playing Each Video"
   - type: ps
-    paragraph: "With that, let's build out <mark><code>Player.js</code></mark>. The
+    paragraph: >
+      With that, let's build out <mark><code>Player.js</code></mark>. The
       structure is quite similar to <mark><code>Home.js</code></mark>! Note the
-      use of the <mark><code>useParams</code></mark> hook:"
+      use of the <mark><code>useParams</code></mark> hook (displayed below),
+      which lets us access the <mark><code>videoID</code></mark> param that we
+      specified in our React Router route. With this, we have two steps left!
   - type: cbs
     codeblock:
       code: const { videoID } = useParams();
-  - type: ps
-    paragraph: >
-      which lets us access the <mark><code>videoID</code></mark> param that we
-      specified in our React Router route. With this, we have two steps left!
   - type: ps
     paragraph: "<b>Q5: Complete the side effect so that
       <mark><code>videoData</code></mark> will correspond to metadata of the
