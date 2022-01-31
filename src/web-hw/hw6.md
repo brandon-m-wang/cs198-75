@@ -167,11 +167,13 @@ sections:
     paragraph: "<i>Hint: Do we have an endpoint for streaming a video?</i>"
   - type: ps
     paragraph: Great! Now you should be able to watch the stream of any video.
-      Notice that this works because in `Home.js`, each Link's location is
-      `/player/${video.id}`, where `video.id` comes from, if you trace far back
-      enough, `videosMetadata` in `server/app.js`. Because of our route with a
-      URL parameter in `client/src/App.js`, our client knows which video it
-      wants to stream!
+      Notice that this works because in <mark><code>Home.js</code></mark>, each
+      Link's location is <mark><code>/player/${video.id}</code></mark>, where
+      <mark><code>video.id</code></mark> comes from, if you trace far back
+      enough, <mark><code>videosMetadata</code></mark> in
+      <mark><code>server/app.js</code></mark>. Because of our route with a URL
+      parameter in <mark><code>client/src/App.js</code></mark>, our client knows
+      which video it wants to stream!
   - type: ps
     paragraph: Congrats! You now have a functional video player. It's now time to
       make things pretty.
@@ -185,16 +187,16 @@ sections:
     codeblock:
       code: thumbsupply.generateThumbnail('FILE_PATH')
   - type: ps
-    paragraph: >-
-      We'll make our endpoint `/video/:id/thumbnail` to align with what we set
-      the `thumbnail` field of the `videoMetadata` objects. After we produce the
+    paragraph: We'll make our endpoint
+      <mark><code>/video/:id/thumbnail</code></mark> to align with what we set
+      the <mark><code>thumbnail</code></mark> field of the
+      <mark><code>videoMetadata</code></mark> objects. After we produce the
       thumbnail, we should then send the file over.
-
-
-      Q7: Implement the `/video/:id/thumbnail` route!
-
-
-      Hint: Another method found in the Express API reference [here](https://expressjs.com/en/api.html#res) might be useful.
+  - type: ps
+    paragraph: "Q7: Implement the <mark><code>/video/:id/thumbnail</code></mark> route!"
+  - type: ps
+    paragraph: "Hint: Another method found in the Express API reference <a
+      href=https://expressjs.com/en/api.html#res>here</a> might be useful."
   - type: ps
     paragraph: If you've succeeded in making this route, congrats! You've fully
       implemented the required functionality for HW6! Feel free to customize the
