@@ -15,11 +15,14 @@ sections:
     partheader: "Part 1: Setting Up our Parts"
   - type: ps
     paragraph: We'll first take care of the task of installing all our required
-      dependencies. Open a terminal and navigate to the `server` folder. Run
-      `npm i` to install the Node modules we need. Start up your server with
-      `npm run dev`. Then, do the same for the `client` folder. Start up your
-      client with `npm start`. Note that our server can be reached from
-      `localhost:4000` and our client from `localhost:3000`.
+      dependencies. Open a terminal and navigate to the
+      <mark><code>server</code></mark> folder. Run <mark><code>npm
+      i</code></mark> to install the Node modules we need. Start up your server
+      with <mark><code>npm run dev</code></mark>. Then, do the same for the
+      <mark><code>client</code></mark> folder. Start up your client with
+      <mark><code>npm start</code></mark>. Note that our server can be reached
+      from <mark><code>localhost:4000</code></mark> and our client from
+      <mark><code>localhost:3000</code></mark>.
   - type: ps
     paragraph: We'll also need to install FFmpeg, a tool for processing video and
       audio. This will be necessary later for generating thumbnails. For Windows
