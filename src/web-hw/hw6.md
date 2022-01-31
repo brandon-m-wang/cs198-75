@@ -32,8 +32,8 @@ sections:
       [here](https://evermeet.cx/ffmpeg/). For Linux users, go to the [FFmpeg
       website](https://www.ffmpeg.org/download.html) and download the
       appropriate package for your distro. Once you've unzipped the download,
-      set your system's `FFMPEG_PATH` environment variable to the path of the
-      ffmpeg executable.
+      set your system's <mark><code>FFMPEG_PATH</code></mark> environment
+      variable to the path of the ffmpeg executable.
   - type: phs
     partheader: "Part 2: Our First Endpoint"
   - type: ps
