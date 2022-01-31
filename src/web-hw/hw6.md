@@ -134,17 +134,16 @@ sections:
   - type: ps
     paragraph: "<b>Q3: Initialize `path `to the correct value.</b>"
   - type: ps
-    paragraph: >-
-      We also want to set up our `/video/:id/data` route, which will return the
-      information from `videoMetadata` for a single video (indicated by the
-      `:id` param). Based on our previous routes, you're ready to make your own
-      from scratch.
-
-
-      **Q4: Create the `/video/:id/data` route.**
-
-
-      Hint: How can we get an object from an array of objects by value of a property in JS? A Google search might help.
+    paragraph: We also want to set up our <mark><code>/video/:id/data</code></mark>
+      route, which will return the information from
+      <mark><code>videoMetadata</code></mark> for a single video (indicated by
+      the <mark><code>:id</code></mark> param). Based on our previous routes,
+      you're ready to make your own from scratch.
+  - type: ps
+    paragraph: "<b>Q4: Create the `/video/:id/data` route.</b>"
+  - type: ps
+    paragraph: "Hint: How can we get an object from an array of objects by value of
+      a property in JS? A Google search might help."
   - type: ps
     paragraph: "With that, let's build out `Player.js`. The structure is quite
       similar to `Home.js`! Note the use of the `useParams` hook:"
