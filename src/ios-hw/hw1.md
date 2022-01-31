@@ -88,8 +88,17 @@ sections:
       <h3 id="layers-groups">Layers &amp; Groups</h3>
 
       <p>Layers and groups appear on the left panel. Every element you add creates its own new layer. You can drag and drop layers in the left panel to change how the elements present themselves in respect to other elements. You can also group elements together so that they can be manipulated all at once. I would recommend getting comfortable with using layers and groups to keep your designs organized and manageable.</p>
-
-      <p>This is one of my old projects. As you can see, the frame “Home” has elements tiered below it. I made groups of “HomeNavBar”, “Ad”, “About Us”, and “How It Works”. Beneath each group title are the elements that are grouped within. One thing to note is the order in which elements are listed. You can see that “Log In” is listed above “Rectangle 12”. This is done so that the “Log In” text is shown on top of the rectangle (see below). If this were flipped, the “Log In” would be hidden behind the rectangle.</p>
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-01-30-at-8.49.45-pm.png
+  - type: ps
+    paragraph: <p>This is one of my old projects. As you can see, the frame “Home”
+      has elements tiered below it. I made groups of “HomeNavBar”, “Ad”, “About
+      Us”, and “How It Works”. Beneath each group title are the elements that
+      are grouped within. One thing to note is the order in which elements are
+      listed. You can see that “Log In” is listed above “Rectangle 12”. This is
+      done so that the “Log In” text is shown on top of the rectangle (see
+      below). If this were flipped, the “Log In” would be hidden behind the
+      rectangle.</p>
   - type: ibs
     imageblock: /assets/images/login.png
   - type: phs
