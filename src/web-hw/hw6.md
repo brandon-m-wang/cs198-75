@@ -145,24 +145,26 @@ sections:
     paragraph: "<i>Hint: How can we get an object from an array of objects by value
       of a property in JS? A Google search might help.</i>"
   - type: ps
-    paragraph: "With that, let's build out `Player.js`. The structure is quite
-      similar to `Home.js`! Note the use of the `useParams` hook:"
+    paragraph: "With that, let's build out <mark><code>Player.js</code></mark>. The
+      structure is quite similar to <mark><code>Home.js</code></mark>! Note the
+      use of the <mark><code>useParams</code></mark> hook:"
   - type: cbs
     codeblock:
       code: const { videoID } = useParams();
   - type: ps
-    paragraph: >-
-      which lets us access the `videoID` param that we specified in our React
-      Router route. With this, we have two steps left!
-
-
-      **Q5: Complete the side effect so that `videoData` will correspond to metadata of the video specified by `videoID`.**
-
-
-      **Q6: Specify the source URL of the `videoID` video.**
-
-
-      Hint: Do we have an endpoint for streaming a video?
+    paragraph: >
+      which lets us access the <mark><code>videoID</code></mark> param that we
+      specified in our React Router route. With this, we have two steps left!
+  - type: ps
+    paragraph: "<b>Q5: Complete the side effect so that
+      <mark><code>videoData</code></mark> will correspond to metadata of the
+      video specified by `videoID</code></mark>.</b>"
+  - type: ps
+    paragraph: >
+      <b>Q6: Specify the source URL of the <mark><code>videoID</code></mark>
+      video.</b>
+  - type: ps
+    paragraph: "<i>Hint: Do we have an endpoint for streaming a video?</i>"
   - type: ps
     paragraph: Great! Now you should be able to watch the stream of any video.
       Notice that this works because in `Home.js`, each Link's location is
