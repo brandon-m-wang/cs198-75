@@ -195,7 +195,8 @@ sections:
       <mark><code>videoMetadata</code></mark> objects. After we produce the
       thumbnail, we should then send the file over.
   - type: ps
-    paragraph: "Q7: Implement the <mark><code>/video/:id/thumbnail</code></mark> route!"
+    paragraph: "<b>Q7: Implement the <mark><code>/video/:id/thumbnail</code></mark>
+      route!</b>"
   - type: ps
     paragraph: "Hint: Another method found in the Express API reference <a
       href=https://expressjs.com/en/api.html#res>here</a> might be useful."
