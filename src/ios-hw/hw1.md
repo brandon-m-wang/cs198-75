@@ -25,25 +25,24 @@ sections:
       and familiarize yourself with the basic tools Figma has to offer. Feel
       free to reference this section as you navigate the rest of the homework!
   - type: ps
-    paragraph: >-
-      ## Creating an Account
+    paragraph: >
+      <h2 id="creating-an-account">Creating an Account</h2>
 
+      <ul>
 
-      * Go to this link: <https://www.figma.com/signup>
+      <li>Go to this link: <a href="https://www.figma.com/signup">https://www.figma.com/signup</a></li>
 
-      * Make an account with your BERKELEY email. Students get the PRO plan for free which just means you can have unlimited collaborators. But make sure to confirm your email!
+      <li>Make an account with your BERKELEY email. Students get the PRO plan for free which just means you can have unlimited collaborators. But make sure to confirm your email!</li>
 
+      </ul>
 
-      ## Basics of Figma
+      <h2 id="basics-of-figma">Basics of Figma</h2>
 
+      <p>I’ll go into the basics of Figma here that should be enough to get you started. A lot of it is pretty intuitive and gets easier with practice (as all things are). However, if you do get stuck or want to read more in depth on what you can do with Figma, I definitely recommend checking out this article: <a href="https://uxplanet.org/figma-all-you-need-to-know-156b52b88e54">https://uxplanet.org/figma-all-you-need-to-know-156b52b88e54</a></p>
 
-      I’ll go into the basics of Figma here that should be enough to get you started. A lot of it is pretty intuitive and gets easier with practice (as all things are). However, if you do get stuck or want to read more in depth on what you can do with Figma, I definitely recommend checking out this article: <https://uxplanet.org/figma-all-you-need-to-know-156b52b88e54>
+      <h3 id="creating-a-new-file">Creating a New File</h3>
 
-
-      ### Creating a New File
-
-
-      Your screen should look something like this! To create a new file, select “New design file”.
+      <p>Your screen should look something like this! To create a new file, select “New design file”.</p>
   - type: ibs
     imageblock: /assets/images/figmahome.png
   - type: ibs
