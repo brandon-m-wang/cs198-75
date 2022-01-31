@@ -140,7 +140,7 @@ sections:
       the <mark><code>:id</code></mark> param). Based on our previous routes,
       you're ready to make your own from scratch.
   - type: ps
-    paragraph: "<b>Q4: Create the `/video/:id/data` route.</b>"
+    paragraph: "<b>Q4: Create the <mark><code>/video/:id/data</code></mark> route.</b>"
   - type: ps
     paragraph: "Hint: How can we get an object from an array of objects by value of
       a property in JS? A Google search might help."
