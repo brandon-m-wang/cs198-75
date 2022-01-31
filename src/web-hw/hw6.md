@@ -69,43 +69,44 @@ sections:
           name: Name of the video.
         }
   - type: ps
-    paragraph: >-
+    paragraph: >+
       With that, it's time to create our first endpoint! It would be quite
       useful to have one that, with a GET request, returns a JSON response with
       the <mark><code>videosMetadata</code></mark> array, as we can then use
       that in our client. We've already given you the overall skeleton for this
       endpoint (i.e. below).
 
-
-      **Q1: What can we return in our callback function to get the correct information?**
-
-
-      Hint: A certain method found in the Express API reference <a href=https://expressjs.com/en/api.html#res></a> might be useful.
+  - type: ps
+    paragraph: "<b>Q1: What can we return in our callback function to get the
+      correct information?</b>"
+  - type: ps
+    paragraph: "Hint: A certain method found in the Express API reference <a
+      href=https://expressjs.com/en/api.html#res></a> might be useful."
   - type: cbs
     codeblock:
       code: app.get('/videos', (req, res) => RETURN_SOMETHING );
   - type: ps
-    paragraph: >-
+    paragraph: >+
       With that, let's switch over to our client so that we can visualize our
       information! Inside the <mark><code>client</code></mark> folder, access
-      `src/Home.js</code></mark>. Recall the <mark><code>useState</code></mark>
-      hook; we've created <mark><code>videos</code></mark> which will represent
-      video metadata. However, its default value is an empty array. Not too
-      useful in its current state! Luckily, we have an endpoint that can provide
-      us with this information. All we need to do is fetch from the
+      <mark><code>src/Home.js</code></mark>. Recall the
+      <mark><code>useState</code></mark> hook; we've created
+      <mark><code>videos</code></mark> which will represent video metadata.
+      However, its default value is an empty array. Not too useful in its
+      current state! Luckily, we have an endpoint that can provide us with this
+      information. All we need to do is fetch from the
       <mark><code>/videos</code></mark> endpoint, parsing the response to
       produce a JavaScript object, and finally updating
       <mark><code>videos</code></mark> to this value.
 
-
-      <b>Q2: Implement the side effect so that videos stores the information returned by the <mark><code>/videos</code></mark> endpoint.</b>
   - type: ps
-    paragraph: |-
-      
-
-      Congrats! If you've succeeded, you should see the below.
-
-      ![](/assets/images/hw6p2.png)
+    paragraph: "<b>Q2: Implement the side effect so that videos stores the
+      information returned by the <mark><code>/videos</code></mark>
+      endpoint.</b>"
+  - type: ps
+    paragraph: Congrats! If you've succeeded, you should see the below.
+  - type: ibs
+    imageblock: /assets/images/hw6p2.png
   - type: phs
     partheader: "Part 3: Playing Each Video"
   - type: ps
