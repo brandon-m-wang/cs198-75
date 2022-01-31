@@ -116,17 +116,13 @@ sections:
 
       <li>Click on the drop down arrow next to title and select “Duplicate to your drafts”</li>
 
+      <li>Open the duplicated draft, save it to your projects, and rename this file to whatever you’d like </li>
+
       </ol>
   - type: ibs
     imageblock: /assets/images/hw1template.png
   - type: ps
     paragraph: >
-      <ol>
-
-      <li>Open the duplicated draft, save it to your projects, and rename this file to whatever you’d like </li>
-
-      </ol>
-
       <h2 id="task-2-welcome-screen">Task 2: Welcome Screen</h2>
 
       <p>First, we want to build the “Welcome Screen” or “Title Screen”. This is the first page that comes up when you open the app. In our case, this page will simply have the title of the app, a logo, and some sort of prompt telling the user to continue.</p>
