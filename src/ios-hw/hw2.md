@@ -668,4 +668,12 @@ sections:
       encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   - type: ps
     paragraph: YAY! We are now finished! Hope you had fun with this homework 😎
+  - type: phs
+    partheader: Submission
+  - type: ps
+    paragraph: Navigate to your *`cubstart`* directory. In your terminal, stage your
+      changes, commit them, and push them to your remote cubstart GitHub
+      repository. Graders will review your most recent commit where the relevant
+      homework was modified. Be sure to submit your GitHub repo on gradescope in
+      the appropriate assignment.
 ---
