@@ -518,60 +518,57 @@ sections:
                    */
                   level += 1
                   currentLevel.text = String(level)
-                       
-          
-
-        			/*
-        			 * Similar to how we implemented the playAgain() function, we should reset
-        			 * the slider and generate a new random number for the user. 
-        			 *
-        			 * Unlike playAgain() however, we won't be able to use constant values and will instead
-        			 * have to rely on range.
-        			 *
-        			 * We can use range and divide it by 2 to determine a new value for the slider to be set to
-        			 * We can also use range to generate a new random number within the new range
-        			 *
-        			 * Note the type casting used below and how we added 1 to range when generating a new number
-        			 * because arc4random_uniform() returns a random number in between 0 and the input - 1
-        		     */
-                    numSlider.setValue(Float(range / 2), animated: false)
-                    randomNumber = Int(arc4random_uniform(UInt32(range + 1)))
-                    numLabel.text = String(randomNumber)
-        			// We should hide resultLabel since it's a new round!
-                    resultLabel.isHidden = true
+                  
+                  /*
+                   * Similar to how we implemented the playAgain() function, we should reset
+                   * the slider and generate a new random number for the user. 
+                   *
+                   * Unlike playAgain() however, we won't be able to use constant values and will instead
+                   * have to rely on range.
+                   *
+                   * We can use range and divide it by 2 to determine a new value for the slider to be set to
+                   * We can also use range to generate a new random number within the new range
+                   *
+                   * Note the type casting used below and how we added 1 to range when generating a new number
+                   * because arc4random_uniform() returns a random number in between 0 and the input - 1
+                   */
+                  numSlider.setValue(Float(range / 2), animated: false)
+                  randomNumber = Int(arc4random_uniform(UInt32(range + 1)))
+                  numLabel.text = String(randomNumber)
+                  // We should hide resultLabel since it's a new round!
+                  resultLabel.isHidden = true
                 } else {
-
-        			// Make sure to move this line of code to this else statement so we can only show "Play Again" when the user loses
-        			playAgainButton.isHidden = false
-                    resultLabel.text = "Whoops! You missed! Try again later"
-               }
-           }
-            else {
-        			if Int(numSlider.value) == randomNumber {
-                      resultLabel.text = "You were right on point! Bullseye!"
-                        
-                      // The code below is exactly the same as the code above ^.^
-
-        	          range += 50
-                      rangeLabel.text = String(range)
-                      numSlider.maximumValue = Float(range)
-                        
-                      level += 1
-                      currentLevel.text = String(level)
-                        
-                      numSlider.setValue(Float(range / 2), animated: false)
-                      randomNumber = Int(arc4random_uniform(UInt32(range + 1)))
-                      numLabel.text = String(randomNumber)
-                      resultLabel.isHidden = true
-                } else {
-
-                      // Make sure to move this line of code to this else statement so we can only show "Play Again" when the user loses
-                      playAgainButton.isHidden = false
-                      resultLabel.text = "Whoops! You missed! Try again later"
+                  
+                  // Make sure to move this line of code to this else statement so we can only show "Play Again" when the user loses
+                  playAgainButton.isHidden = false
+                  resultLabel.text = "Whoops! You missed! Try again later"
                 }
             }
-                
-            resultLabel.isHidden = false
+          else {
+            if Int(numSlider.value) == randomNumber {
+              resultLabel.text = "You were right on point! Bullseye!"
+              
+              // The code below is exactly the same as the code above ^.^
+              
+              range += 50
+              rangeLabel.text = String(range)
+              numSlider.maximumValue = Float(range)
+              
+              level += 1
+              currentLevel.text = String(level)
+              
+              numSlider.setValue(Float(range / 2), animated: false)
+              randomNumber = Int(arc4random_uniform(UInt32(range + 1)))
+              numLabel.text = String(randomNumber)
+              resultLabel.isHidden = true
+            } else {
+              // Make sure to move this line of code to this else statement so we can only show "Play Again" when the user loses
+              playAgainButton.isHidden = false
+              resultLabel.text = "Whoops! You missed! Try again later"
+            }
+          }
+          
+          resultLabel.isHidden = false
         }
       lang: swift
   - type: ps
