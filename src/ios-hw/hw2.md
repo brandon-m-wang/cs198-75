@@ -260,7 +260,7 @@ sections:
         override func viewDidLoad() {
                 super.viewDidLoad()
                 randomNumber = Int(arc4random_uniform(101))
-        				numLabel.text = String(randomNumber)
+        		numLabel.text = String(randomNumber)
         }
       lang: swift
   - type: ps
@@ -304,8 +304,8 @@ sections:
     codeblock:
       code: |-
         @IBAction func checkValue(_ sender: Any) {
-        				write your if statement here {
-        						...
+        		write your if statement here {
+        			...
                 }
             }
       lang: swift
