@@ -258,7 +258,7 @@ sections:
         override func viewDidLoad() {
                 super.viewDidLoad()
                 randomNumber = Int(arc4random_uniform(101))
-        		numLabel.text = String(randomNumber)
+                numLabel.text = String(randomNumber)
         }
       lang: swift
   - type: ps
@@ -289,12 +289,12 @@ sections:
       I will begin to write in pseudocode, because you have all the knowledge you need to write this :) Practice makes progress!
   - type: cbs
     codeblock:
-      code: |-
-        @IBAction func checkValue(_ sender: Any) {
-        		write your if statement here {
-        			...
-                }
-            }
+      code: |-2
+           @IBAction func checkValue(_ sender: Any) {
+              write your if statement here {
+                ...
+              }
+           }
       lang: swift
   - type: ps
     paragraph: |-
@@ -358,10 +358,10 @@ sections:
                     }
                 } else { //if exactSwitch.isOn is true
                     your if statement here {
-        		        set the text of your resultLabel to "Bullseye!"
-        		    } else {
-        		        set the resultLabel text to indicate the user missed
-        		    }
+                      set the text of your resultLabel to "Bullseye!"
+                    } else {
+                      set the resultLabel text to indicate the user missed
+                    }
                 }
             }
       lang: swift
@@ -387,12 +387,12 @@ sections:
       change the property at the end of the checkValue function.
   - type: cbs
     codeblock:
-      code: |-
-        @IBAction func checkValue(_ sender: Any) {
-                ...
-                resultLabel.isHidden = false //we'll come back to this
-        		playAgainButton.isHidden = false
-            }
+      code: |-2
+           @IBAction func checkValue(_ sender: Any) {
+             ...
+             resultLabel.isHidden = false //we'll come back to this
+             playAgainButton.isHidden = false
+           }
       lang: swift
   - type: ps
     paragraph: >-
@@ -456,16 +456,16 @@ sections:
       app!
   - type: cbs
     codeblock:
-      code: |-
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            randomNumber = Int(arc4random_uniform(101))
-        	numLabel.text = String(randomNumber)
-                
-            // Exercise 2E
-            rangeLabel.text = String(range)
-            currentLevel.text = String(level)
-        }
+      code: |-2
+           override func viewDidLoad() {
+             super.viewDidLoad()
+             randomNumber = Int(arc4random_uniform(101))
+             numLabel.text = String(randomNumber)
+             
+             // Exercise 2E
+             rangeLabel.text = String(range)
+             currentLevel.text = String(level)
+           }
       lang: swift
   - type: ps
     paragraph: "Your app should now look like this:"
