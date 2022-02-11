@@ -486,41 +486,38 @@ sections:
         @IBAction func checkValue(_ sender: Any) {
             if exactSwitch.isOn == false {
                 if randomNumber - 3 <= Int(numSlider.value) && randomNumber + 3 >= Int(numSlider.value) {
-                    resultLabel.text = "You were right on point! Bullseye!"
-                        
-                    /*
-                     * We should first update the range variable in order to update rangeLabel
-                     * In this implementation I increased range by 50 but this is up to the developer!
-                     */
-                    range += 50
-
-        			/* 
-                     * Since range is an int we would need to type cast it into a String 
-                     * to be able to assign it to rangeLabel.text
-                     */
-                    rangeLabel.text = String(range)
-        						
-
-
-        			/* 
-                     * To have the correct implementation we would also need to update the max
-        			 * value of the slider as we are increasing range
-        			 * 
-        			 * Since range is an int we would need to type cast it into a Float 
-                     * to be able to assign it to numSlider.maximumValue
-                     */
-                    numSlider.maximumValue = Float(range)
-                        
-
-        					
-        			/*
-                     * When the user hits a bullseye we want to increment the level the user is currently on
-        			 * 
-        			 * We can simply increment the level variable and assign it to currentLevel.text
-        			 * like we did for range!
-        		     */
-                    level += 1
-                    currentLevel.text = String(level)
+                  resultLabel.text = "You were right on point! Bullseye!"
+                  
+                  /*
+                   * We should first update the range variable in order to update rangeLabel
+                   * In this implementation I increased range by 50 but this is up to the developer!
+                   */
+                  
+                  range += 50
+                  
+                  /* 
+                   * Since range is an int we would need to type cast it into a String 
+                   * to be able to assign it to rangeLabel.text
+                   */
+                  rangeLabel.text = String(range)
+                  
+                  /* 
+                   * To have the correct implementation we would also need to update the max
+                   * value of the slider as we are increasing range
+                   * 
+                   * Since range is an int we would need to type cast it into a Float 
+                   * to be able to assign it to numSlider.maximumValue
+                   */
+                  numSlider.maximumValue = Float(range)
+                  
+                  /*
+                   * When the user hits a bullseye we want to increment the level the user is currently on
+                   * 
+                   * We can simply increment the level variable and assign it to currentLevel.text
+                   * like we did for range!
+                   */
+                  level += 1
+                  currentLevel.text = String(level)
                        
           
 
