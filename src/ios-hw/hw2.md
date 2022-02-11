@@ -3,8 +3,8 @@ title: hw2
 header: "Project 2: Bullseye w/ Storyboard"
 due: Fri, 2/18
 introduction: >-
-  **Today we will be implementing the logic of Bullseye!** This homework builds
-  off of the knowledge from the lecture, but we will recap the basic concepts so
+  Today we will be implementing the logic of Bullseye! This homework builds off
+  of the knowledge from the lecture, but we will recap the basic concepts so
   don't worry if you forgot anything. For this homework we have implemented the
   UI for you using storyboards so you can focus solely on practicing swift.
 
@@ -162,10 +162,7 @@ sections:
 
       If we run again, we see the values are between 1 and 100 but are decimals! How do we fix this?
   - type: ps
-    paragraph: |-
-      
-
-      **Fix + String Interpolation**
+    paragraph: Fix + String Interpolation
   - type: ps
     paragraph: <iframe width="560" height="315"
       src="https://www.youtube.com/embed/3RH8gd-Vr3k" title="YouTube video
@@ -206,7 +203,7 @@ sections:
     imageblock: /assets/images/screen_shot_2020-08-17_at_5.47.31_pm.png
   - type: ps
     paragraph: Then create an IB outlet called exactSwitch for it. We set it as an
-      outlet and not an action, because the "Check?" button will check the
+      outlet and not an action, because the `Check?` button will check the
       property of the switch to see if it is on or off.
   - type: ps
     paragraph: |-
@@ -214,10 +211,10 @@ sections:
 
       <h3 id="other-labels">Other Labels</h3>
   - type: ps
-    paragraph: The “High Score”, “Current Level”, and “Result Label” labels were
+    paragraph: The `High Score`, `Current Level`, and `Result Label` labels were
       added and connected to the code using the same method as shown above. The
-      UI of the code when run should initially look like this except “Result
-      Label” will be invisible on your screen and you will see why soon!
+      UI of the code when run should initially look like this except `Result
+      Label` will be invisible on your screen and you will see why soon!
   - type: ibs
     imageblock: /assets/images/screen-shot-2022-01-18-at-6.47.08-pm.png
   - type: ps
@@ -225,21 +222,17 @@ sections:
   - type: phs
     partheader: "Part 2: Adding the Logic 🔢"
   - type: ps
-    paragraph: "First, navigate to “Main” to view the storyboard. All of the UI
-      should be completed and should appear as shown except for “Result Label”:"
+    paragraph: "First, navigate to `Main` to view the storyboard. All of the UI
+      should be completed and should appear as shown except for `Result Label`:"
   - type: ibs
     imageblock: /assets/images/screen-shot-2022-01-21-at-2.24.17-am.png
   - type: ps
     paragraph: >-
-      Note that “Result Label” will be invisible (empty text) on your screen.
+      Note that `Result Label` will be invisible (empty text) on your screen.
       This was purposely done and you will see why soon!
 
 
-
-
       Remember, the core concept of Bullseye is that given a random number, you're supposed to move the slider to try to match the number, and the application will tell you if you're right!
-
-
 
 
       **NOTE:**
@@ -269,25 +262,22 @@ sections:
                 randomNumber = Int(arc4random_uniform(101))
         				numLabel.text = String(randomNumber)
         }
+      lang: swift
   - type: ps
     paragraph: >-
-      Imported from Foundation, arc4random gives us a decimal number *under*
-      101, and wrapping it in Int converts it to an integer by rounding down to
-      the nearest whole number, similar to the rounding we did to the slider
-      number. We then set the random number in our viewDidLoad function.
+      Imported from Foundation, arc4random gives us a decimal number under 101,
+      and wrapping it in Int converts it to an integer by rounding down to the
+      nearest whole number, similar to the rounding we did to the slider number.
+      We then set the random number in our viewDidLoad function.
 
 
-      *Notice how we used string interpolation to evaluate randomNumber within the text!*
-
-
+      Notice how we used string interpolation to evaluate randomNumber within the text!
 
 
       Why is var randomNumber = 0 outside the function block rather than inside it?
 
 
       This has to do with a concept called scoping. By declaring the variable outside viewDidLoad(), other functions are able to access and modify randomNumber as well. If randomNumber were declared inside of viewDidLoad(), the variable would not be accessible inside other functions.
-
-
 
 
       Your application should now look like this:
@@ -306,10 +296,10 @@ sections:
       This is when we will begin to use the IB action function, checkValue.
 
 
-      Our goal is to check if the randomNumber we generated is equal to the number of the slider, and if the number matches, we will have a label that says "Bullseye!"
+      Our goal is to check if the randomNumber we generated is equal to the number of the slider, and if the number matches, we will have a label that says `Bullseye!`
 
 
-      *I will begin to write in pseudocode, because you have all the knowledge you need to write this :) Practice makes progress!*
+      I will begin to write in pseudocode, because you have all the knowledge you need to write this :) Practice makes progress!
   - type: cbs
     codeblock:
       code: |-
@@ -318,11 +308,11 @@ sections:
         						...
                 }
             }
+      lang: swift
   - type: ps
     paragraph: |-
-      *Hint: make sure to round your numSlider value to an integer!*
-
-      *Hint2: to compare two values you can use ==*
+      <p>Hint: make sure to round your numSlider value to an integer!</p>
+      <p>Hint2: to compare two values you can use ==</p>
   - type: cbs
     codeblock:
       code: |-
@@ -333,6 +323,7 @@ sections:
                     set the resultLabel text to indicate the user missed
                 }
             }
+      lang: swift
   - type: ps
     paragraph: Run, and your app should now look like this. Don't worry if the
       spacing is a little off! This could be fixed with something called
@@ -344,8 +335,8 @@ sections:
       player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
       encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   - type: ps
-    paragraph: Notice how the result label displays text after clicking “check”. We
-      could not show text before the user clicked “check” which is why we
+    paragraph: Notice how the result label displays text after clicking `check`. We
+      could not show text before the user clicked `check` which is why we
       initialized result label to be an empty string!
   - type: ps
     paragraph: |-
@@ -361,15 +352,13 @@ sections:
       This is where the exact switch comes in! If the exact game mode is off, then we will have a range that is ±3 so it will be a little easier to get a bullseye.
 
 
-
-
       We will use this exactSwitch condition in our checkValue function:
 
 
-      if  exactSwitch.isOn is **false**, we run this set of statements based on the ±3 range
+      if  exactSwitch.isOn is false, we run this set of statements based on the ±3 range
 
 
-      if exactSwitch.isOn is **true**, we run our original if else statements where it decides based on if randomNumber = numSlider.value
+      if exactSwitch.isOn is true, we run our original if else statements where it decides based on if randomNumber = numSlider.value
   - type: cbs
     codeblock:
       code: >-
@@ -388,6 +377,7 @@ sections:
         		        }
                 }
             }
+      lang: swift
   - type: ps
     paragraph: |-
       
@@ -399,9 +389,7 @@ sections:
       make sense so let's go ahead and add that functionality.
 
 
-
-
-      The “Play Again” button shouldn't show up unless we have already played a round, so the property of the Hidden property of the button was initially set to true.
+      The *`Play Again`* button shouldn't show up unless we have already played a round, so the property of the Hidden property of the button was initially set to true.
   - type: ps
     paragraph: <iframe width="560" height="315"
       src="https://www.youtube.com/embed/KRs-2crje1g" title="YouTube video
