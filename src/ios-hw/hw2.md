@@ -90,8 +90,6 @@ sections:
     paragraph: |-
       <h2 id="Implementing-the-UI">\[OPTIONAL] Implementing the UI</h2>
 
-
-
       <h3 id="adding-the-elements">Adding the Elements</h3>
   - type: ps
     paragraph: >-
