@@ -371,10 +371,10 @@ sections:
                     }
                 } else { //if exactSwitch.isOn is true
                     your if statement here {
-        		            set the text of your resultLabel to "Bullseye!"
-        		        } else {
-        		            set the resultLabel text to indicate the user missed
-        		        }
+        		        set the text of your resultLabel to "Bullseye!"
+        		    } else {
+        		        set the resultLabel text to indicate the user missed
+        		    }
                 }
             }
       lang: swift
