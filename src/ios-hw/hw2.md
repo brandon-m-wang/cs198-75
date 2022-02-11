@@ -403,7 +403,7 @@ sections:
       code: |-
         @IBAction func checkValue(_ sender: Any) {
                 ...
-        		resultLabel.isHidden = false //we'll come back to this
+                resultLabel.isHidden = false //we'll come back to this
         		playAgainButton.isHidden = false
             }
       lang: swift
@@ -473,7 +473,7 @@ sections:
         override func viewDidLoad() {
             super.viewDidLoad()
             randomNumber = Int(arc4random_uniform(101))
-        		numLabel.text = String(randomNumber)
+        	numLabel.text = String(randomNumber)
                 
             // Exercise 2E
             rangeLabel.text = String(range)
@@ -502,7 +502,7 @@ sections:
                     resultLabel.text = "You were right on point! Bullseye!"
                         
                     /*
-        			`* We should first update the range variable in order to update rangeLabel
+                     * We should first update the range variable in order to update rangeLabel
                      * In this implementation I increased range by 50 but this is up to the developer!
                      */
                     range += 50
