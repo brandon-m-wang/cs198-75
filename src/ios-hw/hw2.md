@@ -396,24 +396,33 @@ sections:
       player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
       encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   - type: ps
-    paragraph: After you check your slider value, "Play Again" should appear, so
+    paragraph: After you check your slider value, `Play Again` should appear, so
       change the property at the end of the checkValue function.
   - type: cbs
     codeblock:
       code: |-
         @IBAction func checkValue(_ sender: Any) {
                 ...
-        				resultLabel.isHidden = false //we'll come back to this
-        				playAgainButton.isHidden = false
+        		resultLabel.isHidden = false //we'll come back to this
+        		playAgainButton.isHidden = false
             }
+      lang: swift
   - type: ps
-    paragraph: |-
-      Many things have to happen when the "Play Again" button is tapped:
+    paragraph: >-
+      <p>Many things have to happen when the &quot;Play Again&quot; button is
+      tapped:</p>
 
-      * The slider has to move back to the middle.
-      * The random number should be reset to another.
-      * Hide the result label from the previous round
-      * Hide the play again label
+      <ul>
+
+      <li>The slider has to move back to the middle.</li>
+
+      <li>The random number should be reset to another.</li>
+
+      <li>Hide the result label from the previous round</li>
+
+      <li>Hide the play again label</li>
+
+      </ul>
   - type: cbs
     codeblock:
       code: >-
@@ -424,6 +433,7 @@ sections:
                 resultLabel.isHidden = true //must reappear next time it is checked ^
                 playAgainButton.isHidden = true
             }
+      lang: swift
   - type: ps
     paragraph: "This is how your app should look now:"
   - type: ps
@@ -444,13 +454,14 @@ sections:
       We will introduce the concept of levels. Users will start at level 1 and progress through increasingly harder levels as they hit the bullseye.
 
 
-      To implement this functionality we will need to initially create new variables and initialize new labels in the viewDidLoad() function. Below your “randomNumber” variable, create two new variables. The “range” variable will allow us to keep track of the max range of the slider and the “level” variable will allow us to keep track of what level the user is on!
+      To implement this functionality we will need to initially create new variables and initialize new labels in the viewDidLoad() function. Below your `randomNumber` variable, create two new variables. The `range` variable will allow us to keep track of the max range of the slider and the `level` variable will allow us to keep track of what level the user is on!
   - type: cbs
     codeblock:
       code: |-
         var range = 100
             
         var level = 1
+      lang: swift
   - type: ps
     paragraph: In the viewDidLoad() function we will be assigning these variables
       above to the text of their respective label so it can be displayed to the
@@ -468,6 +479,7 @@ sections:
             rangeLabel.text = String(range)
             currentLevel.text = String(level)
         }
+      lang: swift
   - type: ps
     paragraph: "Your app should now look like this:"
   - type: ps
@@ -476,8 +488,8 @@ sections:
       player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
       encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   - type: ps
-    paragraph: "You might notice that we aren’t actually changing the “Current
-      Level” or “Range” labels as the user advances in levels. To do this we
+    paragraph: "You might notice that we aren’t actually changing the `Current
+      Level` or `Range` labels as the user advances in levels. To do this we
       should add code in the checkValue() function since this function is called
       whenever the user wants to check for bullseye. When the user hits the
       bullseye we can update the values like how I did below:"
@@ -490,93 +502,94 @@ sections:
                     resultLabel.text = "You were right on point! Bullseye!"
                         
                     /*
-        						 * We should first update the range variable in order to update rangeLabel
-        						 * In this implementation I increased range by 50 but this is up to the developer!
-        						 */
+        			`* We should first update the range variable in order to update rangeLabel
+                     * In this implementation I increased range by 50 but this is up to the developer!
+                     */
                     range += 50
 
-        						/* 
-        						 * Since range is an int we would need to type cast it into a String 
-        					   * to be able to assign it to rangeLabel.text
+        			/* 
+                     * Since range is an int we would need to type cast it into a String 
+                     * to be able to assign it to rangeLabel.text
                      */
                     rangeLabel.text = String(range)
         						
 
 
-        						/* 
+        			/* 
                      * To have the correct implementation we would also need to update the max
-        						 * value of the slider as we are increasing range
-        						 * 
-        					   * Since range is an int we would need to type cast it into a Float 
-        					   * to be able to assign it to numSlider.maximumValue
+        			 * value of the slider as we are increasing range
+        			 * 
+        			 * Since range is an int we would need to type cast it into a Float 
+                     * to be able to assign it to numSlider.maximumValue
                      */
                     numSlider.maximumValue = Float(range)
                         
 
         					
-        						/*
-        					   * When the user hits a bullseye we want to increment the level the user is currently on
-        						 * 
-        						 * We can simply increment the level variable and assign it to currentLevel.text
-        					   * like we did for range!
-        		         */
+        			/*
+                     * When the user hits a bullseye we want to increment the level the user is currently on
+        			 * 
+        			 * We can simply increment the level variable and assign it to currentLevel.text
+        			 * like we did for range!
+        		     */
                     level += 1
                     currentLevel.text = String(level)
                        
           
 
-        						/*
-        					   * Similar to how we implemented the playAgain() function, we should reset
-        						 * the slider and generate a new random number for the user. 
-        						 *
-        						 * Unlike playAgain() however, we won't be able to use constant values and will instead
-        						 * have to rely on range.
-        						 *
-        						 * We can use range and divide it by 2 to determine a new value for the slider to be set to
-        						 * We can also use range to generate a new random number within the new range
-        						 *
-        						 * Note the type casting used below and how we added 1 to range when generating a new number
-        					   * because arc4random_uniform() returns a random number in between 0 and the input - 1
-        		         */
+        			/*
+        			 * Similar to how we implemented the playAgain() function, we should reset
+        			 * the slider and generate a new random number for the user. 
+        			 *
+        			 * Unlike playAgain() however, we won't be able to use constant values and will instead
+        			 * have to rely on range.
+        			 *
+        			 * We can use range and divide it by 2 to determine a new value for the slider to be set to
+        			 * We can also use range to generate a new random number within the new range
+        			 *
+        			 * Note the type casting used below and how we added 1 to range when generating a new number
+        			 * because arc4random_uniform() returns a random number in between 0 and the input - 1
+        		     */
                     numSlider.setValue(Float(range / 2), animated: false)
                     randomNumber = Int(arc4random_uniform(UInt32(range + 1)))
                     numLabel.text = String(randomNumber)
-        						// We should hide resultLabel since it's a new round!
+        			// We should hide resultLabel since it's a new round!
                     resultLabel.isHidden = true
                 } else {
 
-        						// Make sure to move this line of code to this else statement so we can only show "Play Again" when the user loses
-        						playAgainButton.isHidden = false
+        			// Make sure to move this line of code to this else statement so we can only show "Play Again" when the user loses
+        			playAgainButton.isHidden = false
                     resultLabel.text = "Whoops! You missed! Try again later"
                }
            }
             else {
-        				if Int(numSlider.value) == randomNumber {
-                    resultLabel.text = "You were right on point! Bullseye!"
+        			if Int(numSlider.value) == randomNumber {
+                      resultLabel.text = "You were right on point! Bullseye!"
                         
-                    // The code below is exactly the same as the code above ^.^
+                      // The code below is exactly the same as the code above ^.^
 
         	          range += 50
-                    rangeLabel.text = String(range)
-                    numSlider.maximumValue = Float(range)
+                      rangeLabel.text = String(range)
+                      numSlider.maximumValue = Float(range)
                         
-                    level += 1
-                    currentLevel.text = String(level)
+                      level += 1
+                      currentLevel.text = String(level)
                         
-                    numSlider.setValue(Float(range / 2), animated: false)
-                    randomNumber = Int(arc4random_uniform(UInt32(range + 1)))
-                    numLabel.text = String(randomNumber)
-                    resultLabel.isHidden = true
+                      numSlider.setValue(Float(range / 2), animated: false)
+                      randomNumber = Int(arc4random_uniform(UInt32(range + 1)))
+                      numLabel.text = String(randomNumber)
+                      resultLabel.isHidden = true
                 } else {
 
-        						// Make sure to move this line of code to this else statement so we can only show "Play Again" when the user loses
-        						playAgainButton.isHidden = false
-                    resultLabel.text = "Whoops! You missed! Try again later"
+                      // Make sure to move this line of code to this else statement so we can only show "Play Again" when the user loses
+                      playAgainButton.isHidden = false
+                      resultLabel.text = "Whoops! You missed! Try again later"
                 }
             }
                 
             resultLabel.isHidden = false
         }
+      lang: swift
   - type: ps
     paragraph: "Your app should now look like this:"
   - type: ps
