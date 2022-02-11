@@ -55,7 +55,7 @@ sections:
   - type: ps
     paragraph: In this course we will not be directly working with storyboards and
       will be working with SwiftUI instead. If you ever want to use storyboards
-      you can change the “interface” setting to “storyboard” when creating a new
+      you can change the `interface` setting to `storyboard` when creating a new
       project.
   - type: ibs
     imageblock: /assets/images/screen-shot-2022-01-13-at-8.43.23-pm.png
@@ -145,6 +145,7 @@ sections:
         @IBAction func sliderValueChanged(_ sender: Any) {
                 print(numSlider.value)
             }
+      lang: swift
   - type: ps
     paragraph: >-
       You will see the values between 0 and 1 printed in your terminal...that's
