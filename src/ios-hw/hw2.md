@@ -276,17 +276,6 @@ sections:
 
 
       This has to do with a concept called scoping. By declaring the variable outside viewDidLoad(), other functions are able to access and modify randomNumber as well. If randomNumber were declared inside of viewDidLoad(), the variable would not be accessible inside other functions.
-
-
-      Your application should now look like this:
-  - type: ps
-    paragraph: <iframe width="560" height="315"
-      src="https://www.youtube.com/embed/yUbkrc3XIpU" title="YouTube video
-      player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-      encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  - type: ps
-    paragraph: We do not need the view to update when moving the slider, so go ahead
-      and remove the code from sliderValueChanged.
   - type: ps
     paragraph: '<h2 id="exercise-2B-the-check-button">Exercise 2B: The Check Button</h2>'
   - type: ps
