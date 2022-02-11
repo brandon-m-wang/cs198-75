@@ -138,10 +138,10 @@ sections:
       code below (Cmd R).
   - type: cbs
     codeblock:
-      code: |-
-        @IBAction func sliderValueChanged(_ sender: Any) {
-                print(numSlider.value)
-            }
+      code: |-2
+           @IBAction func sliderValueChanged(_ sender: Any) {
+             print(numSlider.value)
+           }
       lang: swift
   - type: ps
     paragraph: >-
@@ -302,14 +302,14 @@ sections:
       <p>Hint2: to compare two values you can use ==</p>
   - type: cbs
     codeblock:
-      code: |-
-        @IBAction func checkValue(_ sender: Any) {
-                your if statement here {
-                    set the text of your resultLabel to "Bullseye!"
-                } else {
-                    set the resultLabel text to indicate the user missed
-                }
-            }
+      code: |-2
+           @IBAction func checkValue(_ sender: Any) {
+             your if statement here {
+               set the text of your resultLabel to "Bullseye!"
+             } else {
+               set the resultLabel text to indicate the user missed
+             }
+           }
       lang: swift
   - type: ps
     paragraph: Run, and your app should now look like this. Don't worry if the
@@ -412,14 +412,14 @@ sections:
       </ul>
   - type: cbs
     codeblock:
-      code: >-
-        @IBAction func playAgain(_ sender: Any) {
-                numSlider.setValue(50.0, animated: false)
-                randomNumber = Int(arc4random_uniform(101))
-                numLabel.text = String(randomNumber)
-                resultLabel.isHidden = true //must reappear next time it is checked ^
-                playAgainButton.isHidden = true
-            }
+      code: >-2
+           @IBAction func playAgain(_ sender: Any) {
+             numSlider.setValue(50.0, animated: false)
+             randomNumber = Int(arc4random_uniform(101))
+             numLabel.text = String(randomNumber)
+             resultLabel.isHidden = true //must reappear next time it is checked ^
+             playAgainButton.isHidden = true
+           }
       lang: swift
   - type: ps
     paragraph: "This is how your app should look now:"
@@ -444,10 +444,10 @@ sections:
       To implement this functionality we will need to initially create new variables and initialize new labels in the viewDidLoad() function. Below your `randomNumber` variable, create two new variables. The `range` variable will allow us to keep track of the max range of the slider and the `level` variable will allow us to keep track of what level the user is on!
   - type: cbs
     codeblock:
-      code: |-
-        var range = 100
-            
-        var level = 1
+      code: |-2
+           var range = 100
+
+           var level = 1
       lang: swift
   - type: ps
     paragraph: In the viewDidLoad() function we will be assigning these variables
