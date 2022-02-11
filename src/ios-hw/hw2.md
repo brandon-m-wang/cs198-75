@@ -90,6 +90,8 @@ sections:
     paragraph: |-
       <h2 id="Implementing-the-UI">\[OPTIONAL] Implementing the UI</h2>
 
+
+
       <h3 id="adding-the-elements">Adding the Elements</h3>
   - type: ps
     paragraph: >-
@@ -97,7 +99,7 @@ sections:
       UI was implemented, but this section is purely optional!
 
 
-      First, navigate to “Main”. Then add a label, a button, and a slider!
+      First, navigate to `Main`. Then add a label, a button, and a slider!
 
 
       You can either press the + button at the top right or use the shortcut Cmd+Shift+L to search for the elements.
@@ -111,20 +113,17 @@ sections:
       Controller</h3>
   - type: ps
     paragraph: >-
-      To connect the elements to your controller, Ctrl click from elements in
-      “Main” to your View controller text file. I added the following:
+      <p>To connect the elements to your controller, Ctrl click from elements in
+      <code>Main</code> to your View controller text file. I added the
+      following:</p>
 
+      <p>Label as an Outlet: numLabel</p>
 
-      Label as an Outlet: numLabel
+      <p>Button as an Action: checkValue</p>
 
+      <p>Slider as an Outlet: numSlider</p>
 
-      Button as an Action: checkValue
-
-
-      Slider as an Outlet: numSlider
-
-
-      Slider as an Action: sliderValueChanged
+      <p>Slider as an Action: sliderValueChanged</p>
   - type: ps
     paragraph: <iframe width="560" height="315"
       src="https://www.youtube.com/embed/Oz3aS82ZJcs" title="YouTube video
