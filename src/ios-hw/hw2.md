@@ -599,9 +599,9 @@ sections:
       encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   - type: ps
     paragraph: There is one more function we have to edit. You might’ve noticed that
-      when I missed the bullseye in the video above and pressed “Play Again”,
+      when I missed the bullseye in the video above and pressed *`Play Again`*,
       the current level was still 2 and the range was still 150. We should add
-      code so that when a user “loses”, the level will reset to 1 and the range
+      code so that when a user loses, the level will reset to 1 and the range
       will reset to 100.
   - type: cbs
     codeblock:
@@ -622,13 +622,9 @@ sections:
             level = 1
             currentLevel.text = String(level)
         }
+      lang: swift
   - type: ps
     paragraph: "Your app should now look like this:"
-  - type: ps
-    paragraph: <iframe width="560" height="315"
-      src="https://www.youtube.com/embed/0pX9ufn74GQ" title="YouTube video
-      player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-      encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   - type: ps
     paragraph: |-
       
@@ -636,32 +632,29 @@ sections:
       <h2 id="exercise-2F-high-score">Exercise 2F: High score</h2>
   - type: ps
     paragraph: >-
-      In this last exercise we will be implementing the high score
+      <p>In this last exercise we will be implementing the high score
       functionality! I will not be showing you the code for this exercise, but
-      will leave you with lots of hints.
+      will leave you with lots of hints.</p>
 
+      <p>Note that implementing this is very similar and far less complicated than implementing levels.</p>
 
-      Note that implementing this is very similar and far less complicated than implementing levels.
+      <p>Hint 1: I created a new variable “x” (name it however you want) to keep track of the high score similar to “range” and “level”</p>
 
+      <p>Hint 2: I initialized highScore.text to the “x” in viewDidLoad()</p>
 
-      Hint 1: I created a new variable “x” (name it however you want) to keep track of the high score similar to “range” and “level”
+      <p>Hint 3: Whenever the playAgain() function was called I had an if statement with 2 conditions</p>
 
+      <ol>
 
-      Hint 2: I initialized highScore.text to the “x” in viewDidLoad()
+      <li>I checked if the current level was greater than the high score</li>
 
+      <li>I also checked if the current level wasn’t equal to 1 since if the current level was equal to 1 that would mean that the user wasn’t able to pass the first level</li>
 
-      Hint 3: Whenever the playAgain() function was called I had an if statement with 2 conditions
+      </ol>
 
+      <p>Hint 4: Inside the if statement I assigned the “x” to be the current level and reassigned this to highScore.text</p>
 
-      1. I checked if the current level was greater than the high score
-
-      2. I also checked if the current level wasn’t equal to 1 since if the current level was equal to 1 that would mean that the user wasn’t able to pass the first level
-
-
-      Hint 4: Inside the if statement I assigned the “x” to be the current level and reassigned this to highScore.text
-
-
-      Your app should look like this!
+      <p>Your app should look like this!</p>
   - type: ps
     paragraph: <iframe width="560" height="315"
       src="https://www.youtube.com/embed/6xRIInTmreQ" title="YouTube video
@@ -669,12 +662,4 @@ sections:
       encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   - type: ps
     paragraph: YAY! We are now finished! Hope you had fun with this homework 😎
-  - type: phs
-    partheader: Submission
-  - type: ps
-    paragraph: Navigate to your *`cubstart`* directory. In your terminal, stage your
-      changes, commit them, and push them to your remote cubstart GitHub
-      repository. Graders will review your most recent commit where the relevant
-      homework was modified. Be sure to submit your GitHub repo on gradescope in
-      the appropriate assignment.
 ---
