@@ -115,9 +115,10 @@ sections:
       code: const obj = await net.detect(img);
       lang: javascript
   - type: ps
-    paragraph: Notice that the return value of this method is a JavaScript object!
-      You can save this into a variable after awaiting its detection output.
-      This object now stores the list of predicted objects in the user's image.
+    paragraph: Notice that the return value of this method is a JavaScript object
+      (an array)! You can save this into a variable after awaiting its detection
+      output. This object now stores the list of predicted objects in the user's
+      image.
   - type: phs
     partheader: "Part 6: Drawing on the HTML Canvas"
   - type: ps
@@ -145,9 +146,21 @@ sections:
   - type: ps
     paragraph: Now, you'll be working under a function called
       <mark><code>getCaptions</code></mark>. This function takes in a
-      predictions object (which you may have noticed
+      predictions array object (which you may have noticed
       <mark><code>obj</code></mark> being passed into it in the previous
       function earlier), and will process each prediction by generating a
       relevant sentence for the caption along with some decorative things like
       hashtags and emojis if available.
+  - type: ps
+    paragraph: "A neat array method that you can utilize to iterate through each
+      element in the array is <mark><code>Array.forEach</code></mark>. This
+      method takes in a function as a parameter which defines what to do for
+      each element. Pretty intuitive. "
+  - type: cbs
+    codeblock:
+      code: |-
+        predictions.forEach(async (prediction) => {
+
+        })
+      lang: javascript
 ---
