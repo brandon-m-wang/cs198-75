@@ -302,4 +302,23 @@ sections:
             })
         }
       lang: javascript
+  - type: phs
+    partheader: "Part 8: Event Listener on Upload Image Input"
+  - type: ps
+    paragraph: In the HTML, you can see that there is an input field (the labels
+      surrounding it are purely for cosmetic purposes) that accepts images. This
+      is where the user inputted image that gets processed by all the functions
+      that you defined in the previous parts comes from. You want to be able to
+      execute these functions on the provided image once the user uploads the
+      image.
+  - type: ps
+    paragraph: To do so, you'll utilize the JavaScript event listener. You want to
+      listen for a change in the input (i.e. user uploads a photo from their
+      computer), and then run a function that acts on it. In this case, the
+      function will accept a parameter "event," which is a JavaScript object
+      that contains information about the triggered event. In this case, you can
+      access important information about where to access the uploaded file to
+      assign it to the <code><mark>img</mark></code> element's
+      <mark><code>src</code></mark> attribute in order for it to display on the
+      webpage! Fix the provided code under PART 8 according to the comments.
 ---
