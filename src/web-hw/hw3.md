@@ -57,4 +57,28 @@ sections:
 
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
       lang: html
+  - type: phs
+    partheader: "Part 3: Initializing the TensorFlow Neural Net"
+  - type: ps
+    paragraph: "Now, to write your driver function for all functionality of the
+      application. In order to detect objects on an image input, you need to
+      initialize something called a \"neural net,\" which for the purposes of
+      this class you can understand to be something that processes images and
+      can recognize and classify entities. As stated earlier, you'll be using
+      the COCO model from TensorFlow. This function is defined as
+      <code><mark>runCoco</mark></code>, and notice how it's asynchronous.
+      Loading in the neural net is an asynchronous process -- it takes time to
+      load in, and JavaScript will ignore it and continue to the next line if
+      you don't specify the program to await:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const net = await cocoSsd.load();
+        console.log("Some text here");
+        detect(net);
+      lang: javascript
+  - type: ps
+    paragraph: "What is <mark><code>detect(net)</code></mark>? You haven't defined
+      this function behavior yet, but it will take in the neural net you now
+      initialized as a parameter and use it to power the web application. "
 ---
