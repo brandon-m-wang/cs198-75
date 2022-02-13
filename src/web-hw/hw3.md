@@ -163,4 +163,31 @@ sections:
 
         })
       lang: javascript
+  - type: ps
+    paragraph: Again, you may have noticed that the anonymous function passed into
+      the forEach method is asynchronous. This is because you want to make a
+      request to an API to generate your caption, which is an asynchronous
+      process. The function parameter in this case refers to each element in
+      your predictions array object.
+  - type: ps
+    paragraph: "For each prediction you'll need to access the HTML div which will
+      contain all individual caption sentences. You'll also need to get the
+      entity associated with each prediction (i.e. if TensorFlow sees two
+      objects in the image, for instance in the demo where there was a car and
+      motorcycle, then iterating through you need to get each associated
+      predicted object: car, motorcycle)."
+  - type: cbs
+    codeblock:
+      code: |-
+        const caption = document.getElementById("caption");
+        const entity = prediction["class"];
+      lang: javascript
+  - type: ps
+    paragraph: "It's time to make your GET request to the OwlBot API. The OwlBot API
+      is a dictionary service that provides word definitions and also example
+      sentences. In this web app, you want to first check to see if there's an
+      example sentence available for a detected object. In the rare occasion
+      that there's not, then simply provide the definition of the word. You need
+      to wrap this in a try-catch block in case the API fails to deliver a
+      successful response for any reason. "
 ---
