@@ -140,4 +140,14 @@ sections:
     codeblock:
       code: const ctx = canvas.getContext("2d");
       lang: javascript
+  - type: phs
+    partheader: "Part 7: Generating Captions using OwlBot API"
+  - type: ps
+    paragraph: Now, you'll be working under a function called
+      <mark><code>getCaptions</code></mark>. This function takes in a
+      predictions object (which you may have noticed
+      <mark><code>obj</code></mark> being passed into it in the previous
+      function earlier), and will process each prediction by generating a
+      relevant sentence for the caption along with some decorative things like
+      hashtags and emojis if available.
 ---
