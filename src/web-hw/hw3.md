@@ -130,7 +130,7 @@ sections:
       a means to access drawing capabilities on the canvas, not super important
       that you understand the inner workings of HTML canvases, unless you want
       to regularly use canvases in your projects of course). With this in mind,
-      you can write another helper function to take in these two parameters and
+      you can use another helper function to take in these two parameters and
       draw the actual bounding boxes onto the image. This function is named
       <mark><code>drawRect</code></mark>, and it's already been implemented for
       you, since it's a lot of meaningless busy work (instructions defining
