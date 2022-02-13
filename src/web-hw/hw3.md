@@ -132,12 +132,12 @@ sections:
       to regularly use canvases in your projects of course). With this in mind,
       you can write another helper function to take in these two parameters and
       draw the actual bounding boxes onto the image. This function is named
-      <mark><code>drawRect</code></mark>, and you'll implement this in the next
-      step. For now, implement this as follows:"
+      <mark><code>drawRect</code></mark>, and it's already been implemented for
+      you, since it's a lot of meaningless busy work (instructions defining
+      drawing stroke behavior). For now, just get the canvas's 2D context to
+      pass into <mark><code>drawRect</code></mark>:"
   - type: cbs
     codeblock:
-      code: |-
-        const ctx = canvas.getContext("2d");
-        drawRect(obj, ctx);
+      code: const ctx = canvas.getContext("2d");
       lang: javascript
 ---
