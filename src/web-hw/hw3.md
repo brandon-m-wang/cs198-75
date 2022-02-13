@@ -201,7 +201,7 @@ sections:
       href="https://owlbot.info/" target="_blank">here</a>. Again, because HTTP
       requests are asynchronous, you want to await the completion of the
       request. The OwlBot API response looks something like this for any given
-      word:'
+      word (in this case, your predicted entity from TensorFlow):'
   - type: ibs
     imageblock: https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/cubstart/image.png
   - type: cbs
@@ -219,4 +219,46 @@ sections:
     paragraph: "Now, how can you break down the response to just the first (most
       common) entry of a word? You can use dot notation to navigate through the
       response object as such:"
+  - type: cbs
+    codeblock:
+      code: |-
+        // Retrieve the data portion of the response
+        const data = response.data;
+        // From the data, get the first entry of the definitions
+        const entry = data.definitions[0];
+      lang: javascript
+  - type: ps
+    paragraph: "Then, you can use the <code><mark>let</mark></code> keyword to
+      declare a variable to hold either the example sentence if it's available,
+      or the definition (if the example sentence is not available). Recall that
+      you must use the let keyword here, as const is not reassignable and
+      therefore must be initialized when it is declared. Then, if there is an
+      emoji given to you by the API response for the given word, include it in
+      the caption as well :). Finally, append a hashtag followed by the entity:"
+  - type: cbs
+    codeblock:
+      code: |-
+        if (entry.example) {
+            lineText = entry.example;
+        } else {
+            lineText = entry.definition;
+        }
+        if (entry.emoji) {
+            lineText += " " + entry.emoji;
+        }
+        lineText += " #" + entity;
+      lang: javascript
+  - type: ps
+    paragraph: Lastly, you want to add each sentence as a
+      <mark><code>p</code></mark> tag to the display card. Recall that you can
+      generate HTML elements using the <mark><code>createElement</code></mark>
+      method on the DOM. Setting its innerText to be the generated sentence and
+      then adding it to the caption container should do it.
+  - type: cbs
+    codeblock:
+      code: |-
+        const line = document.createElement("p");
+        line.innerText = lineText;
+        caption.appendChild(line);
+      lang: javascript
 ---
