@@ -328,4 +328,10 @@ sections:
       Artificial Intelligence (TensorFlow) and APIs (OwlBot API). Give it a try
       with the sample images provided for you in the
       <mark><code>test-images</code></mark> folder.
+  - type: phs
+    partheader: "Part 10: Creativity Requirement"
+  - type: ps
+    paragraph: Do something creative! Change up how you generate the captions (maybe
+      instead of using a dictionary service, use MORE AI/ML to generate funny ad
+      libbed sentences?), or just make it prettier.
 ---
