@@ -85,20 +85,59 @@ sections:
   - type: phs
     partheader: "Part 4: HTML Canvas"
   - type: ps
-    paragraph: "In order to achieve the bounding box effect on the user's image, you
-      need to utilize something called an HTML canvas. A canvas is essentially a
-      space on your webpage where you can define drawing patterns through code
-      (e.g. creating a square or rectangle at certain x, y coordinates). The way
-      you'll implement the canvas in this web app is to overlay the canvas on
-      top of the image, and draw the boxes to match up with the detected objects
-      in the image. Naturally, this means that the canvas must be the same size
-      as your image. Implement this. Retrieving the image's height and width has
-      already been implemented for you as follows:"
+    paragraph: "Moving onto the implementation of the
+      <mark><code>detect</code></mark> function. In order to achieve the
+      bounding box effect on the user's image, you need to utilize something
+      called an HTML canvas. A canvas is essentially a space on your webpage
+      where you can define drawing patterns through code (e.g. creating a square
+      or rectangle at certain x, y coordinates). The way you'll implement the
+      canvas in this web app is to overlay the canvas on top of the image, and
+      draw the boxes to match up with the detected objects in the image.
+      Naturally, this means that the canvas must be the same size as your image.
+      Implement this. Retrieving the image's height and width has already been
+      implemented for you as follows:"
   - type: cbs
     codeblock:
       code: |-
         const img = document.getElementById("img")
         const imgWidth = img.width;
         const imgHeight = img.height;
+      lang: javascript
+  - type: phs
+    partheader: "Part 5: Predicting Image Objects"
+  - type: ps
+    paragraph: "To detect objects from an image, TensorFlow simplifies this for you
+      with a very simple method of the neural net (that you pass into this
+      function as <mark><code>net</code></mark>). Implement this in the
+      indicated space:"
+  - type: cbs
+    codeblock:
+      code: const obj = await net.detect(img);
+      lang: javascript
+  - type: ps
+    paragraph: Notice that the return value of this method is a JavaScript object!
+      You can save this into a variable after awaiting its detection output.
+      This object now stores the list of predicted objects in the user's image.
+  - type: phs
+    partheader: "Part 6: Drawing on the HTML Canvas"
+  - type: ps
+    paragraph: "Now, think about what information you need in order to draw the
+      bounding boxes on the image. You'd need the predictions, first and
+      foremost. Each prediction includes data on the type of object (e.g. car,
+      bird, plane), and also its bounding box coordinates. You have these
+      predictions stored in <mark><code>obj</code></mark>. You'll also need the
+      canvas itself, more specifically, its 2D context (think of this as simply
+      a means to access drawing capabilities on the canvas, not super important
+      that you understand the inner workings of HTML canvases, unless you want
+      to regularly use canvases in your projects of course). With this in mind,
+      you can write another helper function to take in these two parameters and
+      draw the actual bounding boxes onto the image. This function is named
+      <mark><code>drawRect</code></mark>, and you'll implement this in the next
+      step. For now, implement this as follows:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const ctx = canvas.getContext("2d");
+        drawRect(obj, ctx);
       lang: javascript
 ---
