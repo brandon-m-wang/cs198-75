@@ -261,4 +261,45 @@ sections:
         line.innerText = lineText;
         caption.appendChild(line);
       lang: javascript
+  - type: ps
+    paragraph: "ALl in all, your <mark><code>getCaption</code></mark> function
+      should look something like this:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const getCaption = (predictions) => {
+            predictions.forEach(async (prediction) => {
+                const caption = document.getElementById("caption");
+                const entity = prediction["class"];
+                try {
+                    // Access token provided
+                    const accessToken = "YOUR TOKEN HERE";
+                    // Store the response from GET request
+                    const response = await axios.get(
+                    `https://owlbot.info/api/v4/dictionary/${entity}`,
+                    { headers: { Authorization: `Token ${accessToken}` } }
+                    );
+                    // Retrieve the data portion of the response
+                    const data = response.data;
+                    // From the data, get the first entry of the definitions
+                    const entry = data.definitions[0];
+                    let lineText;
+                    if (entry.example) {
+                        lineText = entry.example;
+                    } else {
+                        lineText = entry.definition;
+                    }
+                    if (entry.emoji) {
+                        lineText += " " + entry.emoji;
+                    }
+                    lineText += " #" + entity;
+                    const line = document.createElement("p");
+                    line.innerText = lineText;
+                    caption.appendChild(line);
+                } catch (error) {
+                    console.log(error);
+                }
+            })
+        }
+      lang: javascript
 ---
