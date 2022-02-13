@@ -82,4 +82,23 @@ sections:
       What is <mark><code>detect(net)</code></mark>? You haven't defined this
       function behavior yet, but it will take in the neural net you now
       initialized as a parameter and use it to power the web application. "
+  - type: phs
+    partheader: "Part 4: HTML Canvas"
+  - type: ps
+    paragraph: "In order to achieve the bounding box effect on the user's image, you
+      need to utilize something called an HTML canvas. A canvas is essentially a
+      space on your webpage where you can define drawing patterns through code
+      (e.g. creating a square or rectangle at certain x, y coordinates). The way
+      you'll implement the canvas in this web app is to overlay the canvas on
+      top of the image, and draw the boxes to match up with the detected objects
+      in the image. Naturally, this means that the canvas must be the same size
+      as your image. Implement this. Retrieving the image's height and width has
+      already been implemented for you as follows:"
+  - type: cbs
+    codeblock:
+      code: |-
+        const img = document.getElementById("img")
+        const imgWidth = img.width;
+        const imgHeight = img.height;
+      lang: javascript
 ---
