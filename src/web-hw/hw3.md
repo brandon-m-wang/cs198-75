@@ -78,7 +78,8 @@ sections:
         detect(net);
       lang: javascript
   - type: ps
-    paragraph: "What is <mark><code>detect(net)</code></mark>? You haven't defined
-      this function behavior yet, but it will take in the neural net you now
+    paragraph: "Give the log statement a meaningful message for debugging purposes.
+      What is <mark><code>detect(net)</code></mark>? You haven't defined this
+      function behavior yet, but it will take in the neural net you now
       initialized as a parameter and use it to power the web application. "
 ---
