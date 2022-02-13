@@ -26,7 +26,7 @@ setup: All external libraries needed will be covered in the homework parts.
 skeleton: https://github.com/brandon-m-wang/cubstart-hw3-skeleton.git
 sections:
   - type: phs
-    partheader: Familiarize Yourself with the HTML and CSS
+    partheader: "Part 1: Familiarize Yourself with the HTML and CSS"
   - type: ps
     paragraph: Just take a quick second to skim through the provided HTML and CSS in
       the skeleton. Because this homework is focused on helping you get used to
