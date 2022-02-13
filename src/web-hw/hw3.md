@@ -321,4 +321,11 @@ sections:
       assign it to the <code><mark>img</mark></code> element's
       <mark><code>src</code></mark> attribute in order for it to display on the
       webpage! Fix the provided code under PART 8 according to the comments.
+  - type: phs
+    partheader: "Part 9: Testing"
+  - type: ps
+    paragraph: Congrats! You've now completed a web application that utilizes
+      Artificial Intelligence (TensorFlow) and APIs (OwlBot API). Give it a try
+      with the sample images provided for you in the
+      <mark><code>test-images</code></mark> folder.
 ---
