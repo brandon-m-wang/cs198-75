@@ -190,4 +190,33 @@ sections:
       that there's not, then simply provide the definition of the word. You need
       to wrap this in a try-catch block in case the API fails to deliver a
       successful response for any reason. "
+  - type: ps
+    paragraph: 'Within the try block, you want to make your request. Do this using
+      axios, which simplifies the process of making HTTP requests greatly. The
+      first parameter is the accessed endpoint, and the second parameter is any
+      additional HTTP headers in the form of a JavaScript object. Because the
+      OwlBot API requires an access token, it will need to be added as an
+      Authentication header to the HTTP request. You need to use your own token,
+      and you can get one for free by providing your e-mail <a
+      href="https://owlbot.info/" target="_blank">here</a>. Again, because HTTP
+      requests are asynchronous, you want to await the completion of the
+      request. The OwlBot API response looks something like this for any given
+      word:'
+  - type: ibs
+    imageblock: https://calhacks-sierra.s3.us-west-2.amazonaws.com/assets/cubstart/image.png
+  - type: cbs
+    codeblock:
+      code: |-2
+         // Access token provided
+        const accessToken = "YOUR TOKEN HERE";
+        // Store the response from GET request
+        const response = await axios.get(
+        `https://owlbot.info/api/v4/dictionary/${entity}`,
+        { headers: { Authorization: `Token ${accessToken}` } }
+        );
+      lang: javascript
+  - type: ps
+    paragraph: "Now, how can you break down the response to just the first (most
+      common) entry of a word? You can use dot notation to navigate through the
+      response object as such:"
 ---
