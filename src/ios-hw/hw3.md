@@ -391,11 +391,13 @@ sections:
 
       <p>The Slider and Toggle elements are elements we&#39;ve never seen before.</p>
 
-      <p>Slider takes in two arguments. The first argument (value) is for the value that the slider is initially on and the second argument (in) is for the range that the slider can be moved across. In this case we want the value to be 50 and the range to be from 0 to 100. </p>
+      <ul>
 
-      <p>Toggle also takes in two arguments. The first argument is the text that is displayed before the toggle button and the second argument (isOn) is a boolean that displays whether the toggle button is on or off. </p>
+      <li>Slider takes in two arguments. The first argument (value) is for the value that the slider is initially on and the second argument (in) is for the range that the slider can be moved across. In this case we want the value to be 50 and the range to be from 0 to 100.</li>
 
-      <p>Hint #1: We can hide the text of a toggle element using a certain property</p>
+      <li>Toggle also takes in two arguments. The first argument is the text that is displayed before the toggle button and the second argument (isOn) is a boolean that displays whether the toggle button is on or off.</li>
+
+      </ul>
   - type: ps
     paragraph: "Hint #2: Also remember that you'll have to create spacing. As a hint
       I used Spacer() one more time and used two .padding() properties for the
@@ -408,13 +410,23 @@ sections:
       <p>Hint #4: You can initialize these two variables outside of the body to
       use for the Slider and Toggle elements. &quot;Num&quot; would be used for
       the value argument for Slider and &quot;toggle&quot; would be used for the
-      isOn argument for Toggle. </p>
+      isOn argument for Toggle.</p>
 
-      <p>You can check out these links to see how arguments are passed into Slider and Toggle:</p>
+      <ul>
 
-      <p><a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-toggle-switch">https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-toggle-switch</a></p>
+      <li><p>You can check out these links to see how arguments are passed into Slider and Toggle:</p>
 
-      <p><a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-slider-and-read-values-from-it">https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-slider-and-read-values-from-it</a></p>
+      <ul>
+
+      <li><a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-toggle-switch">https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-toggle-switch</a></li>
+
+      <li><a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-slider-and-read-values-from-it">https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-slider-and-read-values-from-it</a></li>
+
+      </ul>
+
+      </li>
+
+      </ul>
   - type: cbs
     codeblock:
       lang: swift
