@@ -337,6 +337,8 @@ sections:
   - type: ibs
     imageblock: /assets/images/screen-shot-2022-02-17-at-2.06.06-am.png
   - type: ps
+    paragraph: <h3>"Other Components"</h3>
+  - type: ps
     paragraph: We've basically covered everything that's needed to complete the rest
       of the UI. I'll leave the rest of the UI to you but I'll cover any
       concepts that I haven't explained and I'll give a lot of hints along the
