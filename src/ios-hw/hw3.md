@@ -97,7 +97,7 @@ sections:
   - type: phs
     partheader: "Part 1: Implementing the UI 🎨"
   - type: ps
-    paragraph: <h3>"High Score and Current Level Labels"</h3>
+    paragraph: <h3>High Score and Current Level Labels</h3>
   - type: ps
     paragraph: Let's break down the UI into separate components starting with the
       "High Score" and "Current Level" labels on the top right and left corners.
@@ -337,7 +337,7 @@ sections:
   - type: ibs
     imageblock: /assets/images/screen-shot-2022-02-17-at-2.06.06-am.png
   - type: ps
-    paragraph: <h3>"Other Components"</h3>
+    paragraph: <h3>Other Components</h3>
   - type: ps
     paragraph: We've basically covered everything that's needed to complete the rest
       of the UI. I'll leave the rest of the UI to you but I'll cover any
@@ -382,6 +382,8 @@ sections:
       </ol>
 
       <p>These elements are in order of how they should be coded and all of these elements are within the outermost VStack and below the last Spacer() we used.</p>
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-02-17-at-3.26.32-am.png
   - type: ps
     paragraph: >-
       <p>Before we continue there are a few concepts that we haven&#39;t yet
