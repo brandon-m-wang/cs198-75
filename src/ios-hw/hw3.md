@@ -395,15 +395,15 @@ sections:
 
       <p>Hint #1: We can hide the text of a toggle element using a certain property</p>
   - type: ps
-    paragraph: Also remember that you'll have to create spacing. As a hint I used
-      Spacer() one more time and used two .padding() properties for the Slider
-      element.
+    paragraph: "Hint #2: Also remember that you'll have to create spacing. As a hint
+      I used Spacer() one more time and used two .padding() properties for the
+      Slider element."
   - type: ps
-    paragraph: 'Hint #2: I changed the font of the first two Text elements to 30 by
+    paragraph: 'Hint #3: I changed the font of the first two Text elements to 30 by
       using ".font(.system(size: 30))"'
   - type: ps
     paragraph: >-
-      <p>Hint #3: You can initialize these two variables outside of the body to
+      <p>Hint #4: You can initialize these two variables outside of the body to
       use for the Slider and Toggle elements. &quot;Num&quot; would be used for
       the value argument for Slider and &quot;toggle&quot; would be used for the
       isOn argument for Toggle. </p>
