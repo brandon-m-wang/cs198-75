@@ -2,16 +2,9 @@
 title: hw3
 header: "Project 3: Bullseye w/ SwiftUI"
 due: Fri, 2/25
-introduction: >-
-  Today we will be implementing only the UI of Bullseye using SwiftUI! This
-  homework builds off of the knowledge from the lecture, but we will recap the
-  basic concepts so don't worry if you forgot anything.
-
-
-  Here is an example of the finished product:
-
-
-  ![](/assets/images/screen-shot-2022-02-17-at-2.34.00-am.png)
+introduction: Today we will be implementing only the UI of Bullseye using
+  SwiftUI! This homework builds off of the knowledge from the lecture, but we
+  will recap the basic concepts so don't worry if you forgot anything.
 setup: >-
   In homework 1 if you ran the command "git clone
   https://github.com/tonyhong007/bullseye_with_storyboard-skeleton", please run
