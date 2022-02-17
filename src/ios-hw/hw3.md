@@ -3,12 +3,9 @@ title: hw3
 header: "Project 3: Bullseye w/ SwiftUI"
 due: Fri, 2/25
 introduction: >-
-  Today we will be implementing the UI of Bullseye using SwiftUI and some of its
-  functionality! This homework builds off of the knowledge from the lecture, but
-  we will recap the basic concepts so don't worry if you forgot anything.
-
-
-  Remember that the core concept of it is that given a random number, you will try to move the slider to match the number, and the application will tell you if you're right or even close!
+  Today we will be implementing only the UI of Bullseye using SwiftUI! This
+  homework builds off of the knowledge from the lecture, but we will recap the
+  basic concepts so don't worry if you forgot anything.
 
 
   Here is an example of the finished product:
@@ -346,4 +343,103 @@ sections:
       <p>Please add three additional .padding() properties!</p>
   - type: ibs
     imageblock: /assets/images/screen-shot-2022-02-17-at-2.06.06-am.png
+  - type: ps
+    paragraph: We've basically covered everything that's needed to complete the rest
+      of the UI. I'll leave the rest of the UI to you but I'll cover any
+      concepts that I haven't explained and I'll give a lot of hints along the
+      way. I strongly believe in learning by doing and learning how to use
+      SwiftUI will come from making mistakes and searching through Google!
+  - type: ps
+    paragraph: Your app should look like this by the time you finish this homework
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-02-17-at-2.34.00-am.png
+  - type: ps
+    paragraph: >-
+      <p>Let&#39;s start by listing what additional components we&#39;ll need.
+      </p>
+
+      <ol>
+
+      <li><p>We&#39;ll need a Text element for &quot;Move the slider to:&quot; </p>
+
+      </li>
+
+      <li><p>We&#39;ll need a Text element for &quot;25&quot;</p>
+
+      </li>
+
+      <li><p>We&#39;ll need a Slider element</p>
+
+      </li>
+
+      <li><p>We&#39;ll need a Button element for &quot;Check&quot;</p>
+
+      </li>
+
+      <li><p>We&#39;ll need a Text element for &quot;Exact Mode?&quot;</p>
+
+      </li>
+
+      <li><p>We&#39;ll need a Toggle element</p>
+
+      </li>
+
+      </ol>
+
+      <p>These elements are in order of how they should be coded and all of these elements are within the outermost VStack and below the last Spacer() we used.</p>
+  - type: ps
+    paragraph: >-
+      <p>Before we continue there are a few concepts that we haven&#39;t yet
+      covered in this homework.</p>
+
+      <p>The Slider and Toggle elements are elements we&#39;ve never seen before.</p>
+
+      <p>Slider takes in two arguments. The first argument (value) is for the value that the slider is initially on and the second argument (in) is for the range that the slider can be moved across. In this case we want the value to be 50 and the range to be from 0 to 100. </p>
+
+      <p>Toggle also takes in two arguments. The first argument is the text that is displayed before the toggle button and the second argument (isOn) is a boolean that displays whether the toggle button is on or off. </p>
+
+      <p>Hint #1: We can hide the text of a toggle element using a certain property</p>
+  - type: ps
+    paragraph: Also remember that you'll have to create spacing. As a hint I used
+      Spacer() one more time and used two .padding() properties for the Slider
+      element.
+  - type: ps
+    paragraph: 'Hint #2: I changed the font of the first two Text elements to 30 by
+      using ".font(.system(size: 30))"'
+  - type: ps
+    paragraph: >-
+      <p>Hint #3: You can initialize these two variables outside of the body to
+      use for the Slider and Toggle elements. &quot;Num&quot; would be used for
+      the value argument for Slider and &quot;toggle&quot; would be used for the
+      isOn argument for Toggle. </p>
+
+      <p>You can check out these links to see how arguments are passed into Slider and Toggle:</p>
+
+      <p><a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-toggle-switch">https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-toggle-switch</a></p>
+
+      <p><a href="https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-slider-and-read-values-from-it">https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-slider-and-read-values-from-it</a></p>
+  - type: cbs
+    codeblock:
+      lang: swift
+      code: |-
+        @State var num: Double = 50
+            
+        @State var toggle = false
+  - type: ps
+    paragraph: Notice how these two variables have "@State" attached to it. @State
+      is used for variables that often change while an app is running. Let's say
+      that we have a name variable initialized to "Tony". If we wanted to change
+      this variable to "Jordan" while the app is running, we would need to add
+      the @State wrapper to the name variable in order to have it automatically
+      be changed and displayed on the app in real time. Without the @State
+      wrapper, we would not be able to modify "Tony" at all and it surely
+      wouldn't instantly update to "Jordan" on the app. We need to use @State on
+      these variables because the value of the slider can change if the user
+      interacts with the slider and the toggle button can also toggle on and off
+      based on how the user interacts with it. We want these updates to
+      instantly show up on the app which is why we use the @State wrapper.
+  - type: ps
+    paragraph: You should now have all the information you need to complete this
+      app. Feel free to come to lab if you have any questions or make a piazza
+      post!
 ---
