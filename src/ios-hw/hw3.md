@@ -6,16 +6,32 @@ introduction: Today we will be implementing only the UI of Bullseye using
   SwiftUI! This homework builds off of the knowledge from the lecture, but we
   will recap the basic concepts so don't worry if you forgot anything.
 setup: >-
-  In homework 1 if you ran the command "git clone
-  https://github.com/tonyhong007/bullseye_with_storyboard-skeleton", please run
-  the command "git rm 'your cubstart folder name'/hw2/.git" before running the
-  command below.
+  <p>In homework 1 if you ran the command &quot;git clone <a
+  href="https://github.com/tonyhong007/bullseye_with_storyboard-skeleton">https://github.com/tonyhong007/bullseye_with_storyboard-skeleton</a>&quot;
+  and didn&#39;t yet remove the .git file through the &quot;Git Reminder&quot;
+  piazza post, please follow these steps before using the command below:</p>
 
+  <p>Step to delete the .git file:</p>
 
-  To pull the skeleton code for bullseye, type this command below into your terminal on the directory you want the folder in.
+  <ol>
 
+  <li><p><strong>cd</strong> into your hw2 directory</p>
 
-  To open the project, open Xcode → Open a Project or File → Navigate to Bullseye
+  </li>
+
+  <li><p>run command <strong>ls -a</strong> to make sure you have the .git file</p>
+
+  </li>
+
+  <li><p>run command <strong>rm -rf .</strong>git </p>
+
+  </li>
+
+  </ol>
+
+  <p>To pull the skeleton code for bullseye, type this command below into your terminal on the directory you want the folder in.</p>
+
+  <p>To open the project, open Xcode → Open a Project or File → Navigate to Bullseye</p>
 skeleton: https://github.com/tonyhong007/bullseye_with_swiftui-skeleton
 sections:
   - type: phs
