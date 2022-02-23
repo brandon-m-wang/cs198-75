@@ -273,7 +273,111 @@ sections:
 
       <p><strong>This is all you need! Currently, I have here a simple white arrow as the custom back button but I invite you to customize this yourself and mess around with other looks. And with that, we have completed the UI Navigation part of this project! Good job :))</strong></p>
 
-      <p><a href="https://youtu.be/KfXUtbptD0k">https://youtu.be/KfXUtbptD0k</a>
+      <p><a href="https://youtu.be/KfXUtbptD0k">https://youtu.be/KfXUtbptD0k</a></p>
 
-      This is what you should be able to do! We have already provided the UI for ResultView.</p>
+
+  - type: phs
+    partheader: "Part 4: Calculation Functionality"
+  - type: ps
+    paragraph: >
+      <p>Now that we have a UI, it’s time to work on making this app actually
+      function. Our goal here is to be able to accept inputs of class size and
+      waitlist place, and then spit out the percentage chance the user will get
+      into their class</p>
+
+      <h2 id="task-1-calculateprobability">Task 1: calculateProbability</h2>
+
+      <p>Head on over to the calculateProbability function and fill in with the following:</p>
+
+      <p>For our calculation, we are using the following very simple (and almost certainly inaccurate) function to calculate the probability of getting off the waitlist as a function of the current waitlist position and the total size of the course. The following equation describes how we will be calculating probability. $p$ is the waitlist position, $s$ is the size of the class, and $P$ is the probability that the user gets off the waitlist.</p>
+
+      <p>$$
+
+      P(p, s) = \begin{cases}<br>100\%,&amp; \text{if } p\leq 0.1s\<br>0\%, &amp; \text{if } p &gt; 0.2s \    100\% - \frac{p - 0.1s}{0.1s}, &amp; \text{otherwise}
+
+      \end{cases}
+
+      $$</p>
+
+      <p><strong>HINT: Use the given variables in ContentView to figure out what variables you might want to use in your equation</strong></p>
+
+      <pre><code class="lang-swift">func calculateProbability(waitlistPlace: Int, classSize: Int) {
+              <span class="hljs-built_in">let</span> <span class="hljs-built_in">tenth</span> = classSize / <span class="hljs-number">10</span>
+              <span class="hljs-keyword">if</span>  (waitlistPlace &lt;= <span class="hljs-built_in">tenth</span>) {
+                  probability = <span class="hljs-number">100</span>
+              } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (waitlistPlace &gt; <span class="hljs-built_in">tenth</span> * <span class="hljs-number">2</span>) {
+                  probability = <span class="hljs-number">0</span>
+              } <span class="hljs-keyword">else</span> {
+                  probability = <span class="hljs-number">100</span> - Int(((Float(waitlistPlace - <span class="hljs-built_in">tenth</span>) / Float(<span class="hljs-built_in">tenth</span>))*<span class="hljs-number">100</span>))
+              }
+
+          }
+      </code></pre>
+
+      <p>Once you have done this, you are going to want to call calculateProbability when the calculate button is pressed. Think about where and how you would do this...</p>
+
+      <p><strong>CONGRATS! Your app is fully functioning now and should look a little something like this:</strong></p>
+
+      <p><a href="https://youtu.be/P26z-SStNbA">https://youtu.be/P26z-SStNbA</a></p>
+
+      <p>NOTE: Try plugging in the same numbers and make sure you get the same results before continuing on!</p>
+  - type: phs
+    partheader: "Part 5: TabView"
+  - type: ps
+    paragraph: >
+      <p>Last part! For the sake of learning and fun, we are also going to
+      implement a TabView in Waitlist Helper. </p>
+
+      <h2 id="task-1-tabview">Task 1: TabView</h2>
+
+      <ol>
+
+      <li>First, let’s create the actual TabView. You are going to want to wrap the original ZStack in the TabView but keep the TabView within the NavigationView. This is to not mess up the formatting of our UI elements.</li>
+
+      <li><p>After creating the TabView, not much will have changed because we have yet to declare Tab Items. To do this, uncomment the following:</p>
+
+      <pre><code class="lang-swift"> <span class="hljs-selector-class">.tabItem</span>{
+                 <span class="hljs-selector-tag">Image</span>(<span class="hljs-attribute">systemName</span>: <span class="hljs-string">"house.fill"</span>)
+                 <span class="hljs-selector-tag">Text</span>(<span class="hljs-string">"Home"</span>)
+             }
+      </code></pre>
+
+      <p> This creates a tab item within the Tab Bar. It’ll look like this:</p>
+
+      </li>
+
+      </ol>
+  - type: ibs
+    imageblock: /assets/images/untitled-7.png
+  - type: ps
+    paragraph: >
+      <h2 id="task-2-diy-view">Task 2: DIY View</h2>
+
+      <p>Your final task is to create your own view and TabItem! Come up with something different and fun that you think would add something to this app. Give it it’s own tab bar item as well.</p>
+
+      <p><strong>You will do this within the content view after the “tab item” code you just put in. This spot is marked in the file. To give you some inspiration, I have provided the code I wrote for my DIY View below as well as a video showing how the Tab Bar should work! Good Luck. Happy Coding!</strong></p>
+
+      <p>//DIY VIEW GOES HERE//
+
+      ZStack {
+          Image(&quot;calculate_background&quot;)
+              .resizable()
+              .aspectRatio(contentMode: .fill)
+              .ignoresSafeArea()
+          VStack {
+              HStack {
+                  Text(&quot;MY \nCLASSES&quot;)
+                      .font(.system(size: 40, weight: .bold))
+                      .foregroundColor(Color.black)
+                      .padding()
+                  Spacer()
+              } .padding()</p>
+      <pre><code>    Spacer<span class="hljs-comment">()</span>
+          }
+      </code></pre><p>}
+          .tabItem {
+              Image(systemName: &quot;person.crop.circle&quot;)
+              Text(&quot;Profile&quot;)
+          }</p>
+      <p><a href="https://youtu.be/o3ad4VbJdRU">https://youtu.be/o3ad4VbJdRU</a></p>
 ---
