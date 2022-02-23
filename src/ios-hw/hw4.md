@@ -18,4 +18,35 @@ skeleton: https://github.com/jy73/waitlisthelper-skeleton
 sections:
   - type: phs
     partheader: "Part 1: Concept Review"
+  - type: ps
+    paragraph: >-
+      <p>No real tasks here. Just give this a read real fast to review concepts
+      from last lecture!</p>
+
+      <h2 id="navigationview-navigationlink">NavigationView &amp; NavigationLink</h2>
+
+      <p><em>From Apple’s official documentation...</em></p>
+
+      <p><strong>NavigationView</strong> - A view for presenting a stack of views that represents a visible path in a navigation hierarchy</p>
+  - type: cbs
+    codeblock:
+      code: "struct NavigationView<Content> where Content : View"
+  - type: ps
+    paragraph: >-
+      <p>A NavigationView essentially allows you to push a view on top of
+      another via some sort of action. This is often used for any sort of
+      cause-effect relationship. In the case of this project, we will use
+      NavigationView to navigate from the page where the user inputs in values
+      to the page that displays the calculation results.</p>
+
+      <p><strong>NavigationLink</strong> - A view that controls a navigation presentation</p>
+  - type: cbs
+    codeblock:
+      code: "struct NavigationLink<Label, Destination> where Label : View, Destination
+        : View"
+  - type: ps
+    paragraph: >
+      <p>The NavigationLink is the actual code that controls the NavigationView.
+      Using the NavigationLink gives you the ability to customize when and where
+      the page changes, as well as how the transition is triggered.</p>
 ---
