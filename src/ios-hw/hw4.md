@@ -49,4 +49,40 @@ sections:
       <p>The NavigationLink is the actual code that controls the NavigationView.
       Using the NavigationLink gives you the ability to customize when and where
       the page changes, as well as how the transition is triggered.</p>
+  - type: ps
+    paragraph: >
+      <h2 id="tabview-tabitem">TabView &amp; TabItem</h2>
+
+      <p><em>From Apple’s official documentation...</em></p>
+
+      <p><strong>TabView</strong> - A view that switches between multiple child views using interactive user interface elements</p>
+  - type: cbs
+    codeblock:
+      code: "struct TabView<SelectionValue, Content> where Selection Value: Hashable,
+        Content : View"
+  - type: ps
+    paragraph: >-
+      <p>The TabView is used to create a TabBar at the bottom of the screen and
+      easily navigate to other views that may be more stand alone from each
+      other.</p>
+
+      <p><strong>tabItem(_:)</strong> - Sets the tab bar item associated with this view</p>
+
+      <p>Tab Items are the actual icons in the tab bar that are tapped on to switch the views</p>
+  - type: phs
+    partheader: "Part 2: Main Page UI"
+  - type: ps
+    paragraph: >
+      <p>Time to get coding! Okay, let’s open up that skeleton code and make
+      your way over to ContentView. All the code we will be doing will be in
+      here. I have marked the general spots where your code should be so just
+      follow the numbers and you’ll be just fine.</p>
+
+      <p>Before we get into the nitty gritty of NavigationViews, TabViews, and Swift functionality, we need to build the UI! As you can see, I’ve provided you with a blank slate :)). It&#39;s your job to change that.</p>
+
+      <p><em>NOTE: I will add in “.padding” a lot in the solution/guidance code I provide. This just adds a little more space between elements and makes things look a little cleaner.</em> </p>
+
+      <h2 id="task-1-app-background-header">Task 1: App Background + Header</h2>
+
+      <p>First up, we have to make a background and header! As always, I will provide screenshots of my end result so you know what you are aiming for.</p>
 ---
