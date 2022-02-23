@@ -357,27 +357,32 @@ sections:
 
       <p><strong>You will do this within the content view after the “tab item” code you just put in. This spot is marked in the file. To give you some inspiration, I have provided the code I wrote for my DIY View below as well as a video showing how the Tab Bar should work! Good Luck. Happy Coding!</strong></p>
 
-      <p>//DIY VIEW GOES HERE//
 
-      ZStack {
-          Image(&quot;calculate_background&quot;)
-              .resizable()
-              .aspectRatio(contentMode: .fill)
-              .ignoresSafeArea()
-          VStack {
-              HStack {
-                  Text(&quot;MY \nCLASSES&quot;)
-                      .font(.system(size: 40, weight: .bold))
-                      .foregroundColor(Color.black)
-                      .padding()
-                  Spacer()
-              } .padding()</p>
-      <pre><code>    Spacer<span class="hljs-comment">()</span>
-          }
-      </code></pre><p>}
-          .tabItem {
-              Image(systemName: &quot;person.crop.circle&quot;)
-              Text(&quot;Profile&quot;)
-          }</p>
       <p><a href="https://youtu.be/o3ad4VbJdRU">https://youtu.be/o3ad4VbJdRU</a></p>
+  - type: cbs
+    codeblock:
+      code: |-
+        //DIY VIEW GOES HERE//
+        ZStack {
+            Image("calculate_background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea()
+            VStack {
+                HStack {
+                    Text("MY \nCLASSES")
+                        .font(.system(size: 40, weight: .bold))
+                        .foregroundColor(Color.black)
+                        .padding()
+                    Spacer()
+                } .padding()
+
+                Spacer()
+                }
+
+        }
+            .tabItem {
+                Image(systemName: "person.crop.circle")
+                Text("Profile")
+            }
 ---
