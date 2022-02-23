@@ -250,4 +250,53 @@ sections:
         NavigationLink(destination: ResultView(prob: $probability, 
         feedback: $text), isActive: $calculate) { EmptyView() } 
         .padding()
+  - type: ps
+    paragraph: >
+      <p>This code essentially does three things when the variable calculate is
+      set to true (done when the calculate button is clicked):</p>
+
+      <ol>
+
+      <li>Transitions to the ResultView</li>
+
+      <li>Binds the probability variable to the prob variable in ResultView and the text variable to the feedback variable in ResultView (You will learn about bindings in a couple weeks. Pretty much we are just sending values from view to view)</li>
+
+      <li>Does not bring any element into the UI (EmptyView()) so that we can control this link with a button of our own instead</li>
+
+      </ol>
+
+      <p><a href="https://youtu.be/5ZYtLWatNuc">https://youtu.be/5ZYtLWatNuc</a></p>
+
+      <p>This is what you should be able to do! We have already provided the UI for ResultView.</p>
+
+      <h2 id="task-3-custom-back-button">Task 3: Custom Back Button</h2>
+
+      <p>The NavigationView and Link provide you with a basic default back button that works just fine, but in my opinion, it is much more fun to have a custom back button! So, real quick, I’ll walk you through making your own. </p>
+
+      <ol>
+
+      <li><p>First, we must set up the environment and put the view into presentation mode. You will go more in depth on this when you get to bindings, but essentially what we are doing is making it so a button can programmatically “dismiss” the current view and default to the home view. Uncomment this code at the top of ResultView:</p>
+
+      <pre><code class="lang-swift"> <span class="hljs-meta">@Environment(\.presentationMode)</span> <span class="hljs-keyword">var</span> presentation: Binding&lt;PresentationMode&gt;
+
+      </code></pre>
+
+      </li>
+
+      <li><p>Next, we need to create the actual button to perform the action. Create a button within the HStack provided. The code should be as follows:</p>
+
+      <pre><code class="lang-swift"> <span class="hljs-selector-tag">Button</span>(<span class="hljs-attribute">action</span>: {
+                       <span class="hljs-selector-tag">self</span><span class="hljs-selector-class">.presentation</span><span class="hljs-selector-class">.wrappedValue</span><span class="hljs-selector-class">.dismiss</span>()
+                     }) {
+                     <span class="hljs-selector-tag">Image</span>(<span class="hljs-attribute">systemName</span>: <span class="hljs-string">"arrow.left"</span>)
+                         <span class="hljs-selector-class">.foregroundColor</span>(.white)
+                     }
+                     <span class="hljs-selector-class">.navigationBarHidden</span>(true)
+      </code></pre>
+
+      </li>
+
+      </ol>
+
+      <p><strong>This is all you need! Currently, I have here a simple white arrow as the custom back button but I invite you to customize this yourself and mess around with other looks. And with that, we have completed the UI Navigation part of this project! Good job :))</strong></p>
 ---
