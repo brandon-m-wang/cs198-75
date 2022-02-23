@@ -224,7 +224,7 @@ sections:
       <p>In our case, we want to do this a little more programmatically so we can utilize the nice custom button we created earlier. Uncomment the following code in the file to get your navigation link going.</p>
 
   - type: ps
-    paragraph: >
+    paragraph: >+
       <p>This code essentially does three things when the variable calculate is
       set to true (done when the calculate button is clicked):</p>
 
@@ -272,4 +272,8 @@ sections:
       </ol>
 
       <p><strong>This is all you need! Currently, I have here a simple white arrow as the custom back button but I invite you to customize this yourself and mess around with other looks. And with that, we have completed the UI Navigation part of this project! Good job :))</strong></p>
+
+      <p><a href="https://youtu.be/KfXUtbptD0k">https://youtu.be/KfXUtbptD0k</a>
+
+      This is what you should be able to do! We have already provided the UI for ResultView.</p>
 ---
