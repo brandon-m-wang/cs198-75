@@ -279,7 +279,7 @@ sections:
   - type: phs
     partheader: "Part 4: Calculation Functionality"
   - type: ps
-    paragraph: >
+    paragraph: >+
       <p>Now that we have a UI, it’s time to work on making this app actually
       function. Our goal here is to be able to accept inputs of class size and
       waitlist place, and then spit out the percentage chance the user will get
@@ -289,17 +289,14 @@ sections:
 
       <p>Head on over to the calculateProbability function and fill in with the following:</p>
 
-      <p>For our calculation, we are using the following very simple (and almost certainly inaccurate) function to calculate the probability of getting off the waitlist as a function of the current waitlist position and the total size of the course. The following equation describes how we will be calculating probability. $p$ is the waitlist position, $s$ is the size of the class, and $P$ is the probability that the user gets off the waitlist.</p>
+      <p>For our calculation, we are using the following very simple (and almost certainly inaccurate) function to calculate the probability of getting off the waitlist as a function of the current waitlist position and the total size of the course. The following equation describes how we will be calculating probability. p is the waitlist position, s is the size of the class, and P is the probability that the user gets off the waitlist.</p>
 
-      <p>$$
-
-      P(p, s) = \begin{cases}<br>100\%,&amp; \text{if } p\leq 0.1s\<br>0\%, &amp; \text{if } p &gt; 0.2s \    100\% - \frac{p - 0.1s}{0.1s}, &amp; \text{otherwise}
-
-      \end{cases}
-
-      $$</p>
-
-      <p><strong>HINT: Use the given variables in ContentView to figure out what variables you might want to use in your equation</strong></p>
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-02-22-at-9.47.10-pm.png
+  - type: ps
+    paragraph: >-
+      <p><strong>HINT: Use the given variables in ContentView to figure out what
+      variables you might want to use in your equation</strong></p>
 
       <pre><code class="lang-swift">func calculateProbability(waitlistPlace: Int, classSize: Int) {
               <span class="hljs-built_in">let</span> <span class="hljs-built_in">tenth</span> = classSize / <span class="hljs-number">10</span>
