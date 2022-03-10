@@ -82,6 +82,7 @@ sections:
         io.on('connection', (socket) => {
           console.log("a new user has connected!");
         });
+      lang: javascript
   - type: ps
     paragraph: >-
       A very quick explanation of what is happening here: we tell this io object
@@ -116,6 +117,7 @@ sections:
             socket.broadcast.emit('message', `${username} just joined the chat!`);
           });
         });
+      lang: javascript
   - type: ps
     paragraph: >-
       Go ahead and run this!! And end up being a little underwhelmed... because
@@ -137,6 +139,7 @@ sections:
   - type: cbs
     codeblock:
       code: socket.emit('join', name);
+      lang: javascript
   - type: ps
     paragraph: >
       Let's connect a couple moving parts here. 
@@ -165,6 +168,7 @@ sections:
         socket.on('message', (msg) => {
             $('#messages').append($('<li>').text(msg));
         });
+      lang: javascript
   - type: ps
     paragraph: "We're hopefully getting a little familiar with the `on` syntax by
       now. Instead, let's talk about what the callback function is doing --
@@ -203,6 +207,7 @@ sections:
             // Your Code Here
           }
         });
+      lang: javascript
   - type: ps
     paragraph: >-
       Your task: edit this function to handle disconnects properly. A couple
