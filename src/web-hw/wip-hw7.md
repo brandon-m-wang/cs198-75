@@ -29,7 +29,7 @@ sections:
       Second, `index.html`. This file defines everything that gets displayed on your screen, in plain HTML. Notice the `<script>` section at the very beginning right after the font links: this asks the user to enter their name on page load and saves it in the "name" variable, for future use! This is the name that will be displayed on sending messages in the IRC.
 
 
-      If you go to the very bottom, you'll notice another script tag that connects this HTML page to `index.js`. Let's navigate to that now.
+      If you go to the very bottom, you'll notice another script tag that connects this HTML page to `index.js`. Let's navigate to that now. Currently, what `index.js` does is wait for the user to fill out the form -- that is, type out a message and hit enter. Then, it adds the message to our displayed list of messages, and blanks out the input bar for the next message. 
   - type: ps
     paragraph: >-
       Now, let's boot up our project. Navigate to your terminal and run `npm i`.
@@ -67,4 +67,49 @@ sections:
       Using these two ideas, let's start writing some code!
   - type: phs
     partheader: "Part 2: Starting with Socket.io"
+  - type: ps
+    paragraph: >-
+      The core power behind socket.io is the `io` object, that we've already set
+      up for you. Think of it as a person that sits around, constantly waiting
+      to be given an instruction. Let's go ahead and set up this sitting around
+      first, before we start coding in any instructions to give to this person.
+
+
+      Navigate to our `app.js` file, and under our massive pile of TODOs, let's start with opening a connection:
+  - type: cbs
+    codeblock:
+      code: |-
+        io.on('connection', (socket) => {
+          console.log("a new user has connected!");
+        });
+  - type: ps
+    paragraph: >-
+      A very quick explanation of what is happening here: we tell this io object
+      to wait for the server to boot up (Note how we pass the server to the io
+      object definition in Line 7). When the server boots up, a "connection" has
+      been opened, and a socket can be created, from this user to any other
+      users that may be in the chat. This is encapsulated by the callback
+      function that is the second argument.
+
+
+      This callback function accepts a `socket` object, and can now do whatever we want with that socket! We'll table that for just a second, and instead just log that a new user was found.
+  - type: ps
+    paragraph: "Go ahead and try this out! You'll notice in the terminal you run
+      `npm run startdev` will also have the \"new user is connected!\" log
+      statement. Our code is working, whoo! "
+  - type: phs
+    partheader: "Part 3: Defining Socket Events: Joining"
+  - type: ps
+    paragraph: "Now, let's go ahead and try to define what we'd do when a person
+      joins the IRC. Our patient socket will finally have something to do.
+      Here's the first step: we wait for a \"join\" event to happen, and the
+      moment we observe it, we tell everyone else in the relay chat about it.
+      Here's how we implement this (added in `app.js` INSIDE our connection
+      callback function: "
+  - type: cbs
+    codeblock:
+      code: >-2
+          socket.on('join', (username) => {
+            socket.broadcast.emit('message', `${username} just joined the chat!`);
+          });
 ---
