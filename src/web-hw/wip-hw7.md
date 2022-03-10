@@ -1,5 +1,5 @@
 ---
-title: "[WIP] hw7"
+title: hw7
 header: "Project 7: Real-Time Chat App"
 due: Fri, 2/18
 introduction: >-
