@@ -1,7 +1,7 @@
 ---
 title: hw7
 header: "Project 7: Real-Time Chat App"
-due: Fri, 2/18
+due: Fri, 3/25
 introduction: >-
   Welcome to Homework 7! In this assignment, we'll build a real-time chat app,
   inspired by the [Internet Relay
