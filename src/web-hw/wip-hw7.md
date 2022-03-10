@@ -108,8 +108,124 @@ sections:
       callback function: "
   - type: cbs
     codeblock:
-      code: >-2
+      code: >-
+        io.on('connection', (socket) => {
+          console.log("a new user has connected!");
+          
           socket.on('join', (username) => {
             socket.broadcast.emit('message', `${username} just joined the chat!`);
           });
+        });
+  - type: ps
+    paragraph: >-
+      Go ahead and run this!! And end up being a little underwhelmed... because
+      nothing happens. Why did nothing happen? This is because our server now
+      knows how to announce when someone joins, and that's great! But there's
+      still two missing pieces:
+
+      1. The client (AKA the user AKA you AKA `index.js`) never announce when they join. 
+
+      2. The client doesn't know how to receive a message from someone else.
+
+
+      Let's tackle the first one first.
+  - type: ps
+    paragraph: >
+      When does a user send a join message through their socket? Whenever the
+      webpage boots up! So, we go to our `index.js` and right at the top, we add
+      an emission line for our socket:
+  - type: cbs
+    codeblock:
+      code: socket.emit('join', name);
+  - type: ps
+    paragraph: >
+      Let's connect a couple moving parts here. 
+
+      - Where's `name` from? That's the tiny `input` script that we'd added at the top of `index.html`. 
+
+      - What's this emit thing doing? Announcing to every connected socket that `name` has joined the chat, by sending over a `join` event?
+
+      - Who receives this "join" announcement? The server, which, on joining, fires a callback function that accepts a `username`. Hopefully, you see now that `name` and `username` are equivalent :) 
+
+      - What does `socket.emit.broadcast` do? It tells every other socket in the system to display the message that you, the user, with the name `username` has joined this chat.
+  - type: ps
+    paragraph: >-
+      Wow, look how much a single line of code can do. Let's boot up our system
+      again, aaaaand still nothing. This is getting a bit repetitive, so let's
+      add one more thing and get this working! At this point, the
+      `socket.emit.broadcast` call correctly sends the `message` event to
+      everyone else. The last step is to teach every user how to receive this
+      `message` event! And where do we handle users? In `index.js` of course! 
+
+
+      In `index.js` let's go to the very bottom, with our todo for when chat messages "come in". This is it, they are coming in now! Let's add a tiny bit of code here to handle incoming messages:
+  - type: cbs
+    codeblock:
+      code: |-
+        socket.on('message', (msg) => {
+            $('#messages').append($('<li>').text(msg));
+        });
+  - type: ps
+    paragraph: "We're hopefully getting a little familiar with the `on` syntax by
+      now. Instead, let's talk about what the callback function is doing --
+      we're accepting the message as the `msg` variable in our callback
+      function. Inside the callback, we're wrapping the text of the message in
+      an `<li>` element, then adding the `<li>` element to our list of messages
+      with id `#messages`. Do not be concerned if the JQuery syntax here is
+      confusing -- just try to grasp the big picture :) "
+  - type: ps
+    paragraph: Alright, let's fire it up! Do me a favor and open two windows with
+      `localhost:3000` in your browser -- and give the user different names.
+      Viola! You notice that the first window now has a join message announcing
+      that the second browser has joined! AMAZING!
+  - type: phs
+    partheader: "Part 4: Defining Socket Events: Leaving"
+  - type: ps
+    paragraph: >-
+      He who joins the IRC is doomed to one day leave it. Let's give the people
+      who're about to leave the IRC a fond goodbye by displaying "{name} has
+      left the chat" for everyone else.
+
+
+      This is done in a manner extremely similar to the join. There's one difference -- remember how, in `join`, one of our problems was that we had to make the client announce ("emit") a message whenever someone joined? In `leave`, we don't need to make such an announcement from the client side, we can just wait for the server to be closed. We have a built-in in socket.io for this!
+  - type: cbs
+    codeblock:
+      code: >-
+        io.on('connection', (socket) => {
+          console.log("a new user has connected!");
+          name = "";
+          
+          socket.on('join', (username) => {
+            socket.broadcast.emit('message', `${username} just joined the chat!`);
+          });
+          
+          socket.on('disconnect', () => {
+            // Your Code Here
+          }
+        });
+  - type: ps
+    paragraph: >-
+      Your task: edit this function to handle disconnects properly. A couple
+      things to keep in mind: Notice how we can't pass in "username" into
+      disconnect, because we don't define how and when it's called. How can we
+      display the name of the person disconnecting, then? 
+
+
+      The core insight: The person who sends the "join" request will be the person sending the "disconnect" request, which means `username` will be the disconnector as well. 
+
+
+      How can we access username in "disconnect"? The `name` variable added on Line 3 is a tiny hint ;)
+  - type: phs
+    partheader: "Part 5: Defining Socket Events: Messaging"
+  - type: ps
+    paragraph: >-
+      Finally, we define our core functionality for this messaging app -- the
+      messaging! For this, we need to make two changes:
+
+      1. In our server in `app.js`, we need to set up a listener for "message", exactly the way we do for "join". The argument to the callback function would be our message to be displayed, `msg`.
+
+      2. In our client in `index.js`, whenever the form listener is fired - that is, inside the `.submit` function, we need to announce (emit) to our socket that we have a 'message', and pass in the message `displayMsg`. 
+
+
+      And that's it! With those two additions, our real time chat app is complete. Congratulations!
 ---
