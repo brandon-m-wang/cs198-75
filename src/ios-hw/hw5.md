@@ -217,13 +217,11 @@ sections:
 
       BUT!! There's a twist because suddenly you feel the urge to want the app to split your shopping list into different categories (fruits, vegetables, etc.)
   - type: ps
-    paragraph: >-
-      Add at least 4 more items to the shopping list and sort all items into at
-      least 3 sections by wrapping elements within a List{} with Section(header:
-      Text("category name")){}
-
-
-      Here is an example:
+    paragraph: 'Add at least 4 more items to the shopping list and sort all items
+      into at least 3 sections by wrapping elements within a List{} with
+      Section(header: Text("category name")){}.'
+  - type: ps
+    paragraph: "Here is an example:"
   - type: ibs
     imageblock: /assets/images/carbon-10-.png
   - type: ps
