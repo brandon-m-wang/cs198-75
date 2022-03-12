@@ -166,4 +166,16 @@ sections:
       cell struct in a different struct (content view). In this case we are
       calling the CustomCell struct inside the ContentView struct so the custom
       cells can ultimately be displayed on the screen.
+  - type: ps
+    paragraph: >-
+      Now that we know what custom cells really are we can get started with
+      coding up the CustomCell struct!
+
+
+      Notice that when calling CustomCell we passed in 3 arguments. We need to make sure that these 3 arguments can be initialized inside CustomCell. We can do this by simply declaring the three variables above the body.
+  - type: ibs
+    imageblock: /assets/images/carbon-8-.png
+  - type: ps
+    paragraph: This will allow us to now use imageName, itemName, and quantity
+      inside CustomCell!
 ---
