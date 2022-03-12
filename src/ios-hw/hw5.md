@@ -217,7 +217,18 @@ sections:
 
       BUT!! There's a twist because suddenly you feel the urge to want the app to split your shopping list into different categories (fruits, vegetables, etc.)
   - type: ps
-    paragraph: 'Add at least 4 more items to the shopping list and sort all items
-      into at least 3 sections by wrapping elements within a list with
-      Section(header: Text("category name")){}'
+    paragraph: >-
+      Add at least 4 more items to the shopping list and sort all items into at
+      least 3 sections by wrapping elements within a List{} with Section(header:
+      Text("category name")){}
+
+
+      Here is an example:
+  - type: ibs
+    imageblock: /assets/images/carbon-10-.png
+  - type: ps
+    paragraph: Note that this code looks a little different from the code used
+      previously in that I'm now using a ForEach statement inside the list. I
+      would recommend creating an array for each individual section and
+      iterating through each section's array separately.
 ---
