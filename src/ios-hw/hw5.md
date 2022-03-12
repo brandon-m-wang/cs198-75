@@ -137,4 +137,14 @@ sections:
       "itemName", and "quantity"
   - type: ibs
     imageblock: /assets/images/carbon-6-.png
+  - type: ps
+    paragraph: >-
+      This new line of code tells SwiftUI that we want to display whatever UI
+      elements are returned from the CustomCell struct on the arguments
+      provided.
+
+
+      Note that we are passing in the arguments using dot notation. The code should also be erroring but this is fine because we haven't yet built the CustomCell struct!
+  - type: phs
+    partheader: "Part 2: Creating the CustomCell struct"
 ---
