@@ -114,7 +114,25 @@ sections:
 
       The question now is what UI elements will we use for each item?
   - type: ps
-    paragraph: Notice how each entry of the shopping list would be structured very
+    paragraph: >-
+      Note:
+
+
+      You might see this error: "Initializer 'init(_:rowContent:)' requires that 'Items' conform to 'Identifiable'"
+
+
+      This means that we need to call "Identifiable" in the Items class in order for SwiftUI to uniquely identify every item when referencing it inside the list.
+  - type: ibs
+    imageblock: /assets/images/carbon-5-.png
+  - type: ps
+    paragraph: >-
+      Notice how each entry of the shopping list would be structured very
       similarly. The only difference between each entry are the texts and images
-      of each item.
+      of each item. 
+
+
+      This means that we can use a custom cell that we can repeatedly call on each item in the array. This would ultimately allow us to efficiently add more entries to the shopping list when needed and we don't have to hard code anything!
+  - type: ps
+    paragraph: For now you can call Custom Cell with the arguments "imageName",
+      "itemName", and "quantity"
 ---
