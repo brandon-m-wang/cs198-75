@@ -144,7 +144,26 @@ sections:
       provided.
 
 
-      Note that we are passing in the arguments using dot notation. The code should also be erroring but this is fine because we haven't yet built the CustomCell struct!
+      Note that we are passing in the arguments using dot notation. The code might also be erroring but this is fine because we haven't finished building the CustomCell struct!
   - type: phs
     partheader: "Part 2: Creating the CustomCell struct"
+  - type: ps
+    paragraph: >-
+      In order to not clump up our different structs and classes too much, we
+      should build our CustomCell struct in our CustomCell file.
+
+
+      The code in the CustomCell file should initially look like this:
+  - type: ibs
+    imageblock: /assets/images/carbon-7-.png
+  - type: ps
+    paragraph: Before we start adding code to the CustomCell file, let's quickly
+      review what custom cells are. Custom cells aren't necessarily built into
+      the swiftUI framework but are instead built by the user. They are super
+      useful when you are building an application where you are displaying
+      multiple elements that might be structured exactly the same but just with
+      different contents. Just like any struct in swift, you can call a custom
+      cell struct in a different struct (content view). In this case we are
+      calling the CustomCell struct inside the ContentView struct so the custom
+      cells can ultimately be displayed on the screen.
 ---
