@@ -146,7 +146,7 @@ sections:
 
       Note that we are passing in the arguments using dot notation. The code might also be erroring but this is fine because we haven't finished building the CustomCell struct!
   - type: phs
-    partheader: "Part 2: Creating the CustomCell struct"
+    partheader: "Part 2: Creating the CustomCell Struct"
   - type: ps
     paragraph: >-
       In order to not clump up our different structs and classes too much, we
@@ -178,4 +178,46 @@ sections:
   - type: ps
     paragraph: This will allow us to now use imageName, itemName, and quantity
       inside CustomCell!
+  - type: ps
+    paragraph: "We can now add UI elements to the body of CustomCell to create
+      something like this:"
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-03-12-at-4.00.16-am.png
+  - type: ps
+    paragraph: If you run the code as is you should just see "Hello World" in each
+      cell. How can we change CustomCell to match the image above? I'll leave
+      this exercise to you!
+  - type: ps
+    paragraph: >-
+      Now that we have the structure down we can mess around a little bit. Let's
+      try adding a title to this list. To do this we can wrap the List{} element
+      inside a NavigationView{}. We can then use the property
+      ".navigationTitle("Shopping List") on the List{} to display a title
+
+
+      Your code should now look like this:
+  - type: ibs
+    imageblock: /assets/images/carbon-9-.png
+  - type: ps
+    paragraph: "Your app should now look like this:"
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-03-12-at-4.11.49-am.png
+  - type: ps
+    paragraph: Note that we're not really doing anything with the NavigationView
+      besides using the property, but it might be useful if we were to expand
+      the app later on!
+  - type: phs
+    partheader: "Part 3: Expanding the Shopping List"
+  - type: ps
+    paragraph: >-
+      Our shopping list looks a little plain. Let's expand it to make the
+      shopping trip more worth it! Your last task is to add at least 4 more
+      items to the shopping list.
+
+
+      BUT!! There's a twist because suddenly you feel the urge to want the app to split your shopping list into different categories (fruits, vegetables, etc.)
+  - type: ps
+    paragraph: 'Add at least 4 more items to the shopping list and sort all items
+      into at least 3 sections by wrapping elements within a list with
+      Section(header: Text("category name")){}'
 ---
