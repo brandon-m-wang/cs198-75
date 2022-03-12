@@ -98,4 +98,23 @@ sections:
     paragraph: Your code should now look something like this excluding the Items class.
   - type: ibs
     imageblock: /assets/images/carbon-3-.png
+  - type: ps
+    paragraph: We can now start placing each item of the array into List{}. Our goal
+      is to iterate through each item of the array with something similar to a
+      ForEach() statement. In this case we can take advantage of our List{}
+      element to iterate through each item of the array.
+  - type: ibs
+    imageblock: /assets/images/carbon-4-.png
+  - type: ps
+    paragraph: >-
+      This block of code essentially tells swiftUI to iterate through each item
+      in "list" and set each item at hand to "i". We can then use "i" to
+      reference each item when displaying them individually.
+
+
+      The question now is what UI elements will we use for each item?
+  - type: ps
+    paragraph: Notice how each entry of the shopping list would be structured very
+      similarly. The only difference between each entry are the texts and images
+      of each item.
 ---
