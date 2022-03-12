@@ -135,4 +135,6 @@ sections:
   - type: ps
     paragraph: For now you can call Custom Cell with the arguments "imageName",
       "itemName", and "quantity"
+  - type: ibs
+    imageblock: /assets/images/carbon-6-.png
 ---
