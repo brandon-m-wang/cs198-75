@@ -74,7 +74,7 @@ sections:
       will leave as an exercise for you.
 
 
-      Create a class for each entry in the shopping list called "Items". The class should have 3 attributes: imageName (String), itemName (String), and quantity (String) and an init() function to initialize all 3 attributes
+      Create a class for each entry in the shopping list called "Items". The class should have 3 attributes: imageName (String), itemName (String), and quantity (String) and an init() function to initialize all 3 attributes, You can create the class above the content view struct and they must be separate from one another.
 
 
       Hint: The structure of this class is identical to the fruit class shown above!
@@ -92,6 +92,10 @@ sections:
   - type: ibs
     imageblock: /assets/images/carbon-2-.png
   - type: ps
-    paragraph: Note that the image name must match because we want to use the image
-      name to display the images in our "Assets" folder.
+    paragraph: "Note: please don't make changes to the image name String or else you
+      won't be able to retrieve the right image from the \"Assets\" folder."
+  - type: ps
+    paragraph: Your code should now look something like this excluding the Items class.
+  - type: ibs
+    imageblock: /assets/images/carbon-3-.png
 ---
