@@ -229,4 +229,10 @@ sections:
       previously in that I'm now using a ForEach statement inside the list. I
       would recommend creating an array for each individual section and
       iterating through each section's array separately.
+  - type: ps
+    paragraph: "The code above looks like this:"
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-03-12-at-4.38.57-am.png
+  - type: ps
+    paragraph: That's it for homework 5!! Great job for finishing :DD
 ---
