@@ -17,7 +17,7 @@ sections:
   - type: phs
     partheader: "Part 1: Understanding the Skeleton"
   - type: ps
-    paragraph: >
+    paragraph: >-
       Take a moment to look through the code in the skeleton. Here, we only care
       about two files: `app.js` (our server) and `public/index.js` (our client).
       We'll only need to make changes to these two files. 
@@ -29,7 +29,7 @@ sections:
       Second, `index.html`. This file defines everything that gets displayed on your screen, in plain HTML. Notice the `<script>` section at the very beginning right after the font links: this asks the user to enter their name on page load and saves it in the "name" variable, for future use! This is the name that will be displayed on sending messages in the IRC.
 
 
-      If you go to the very bottom, you'll notice another script tag that connects this HTML page to `index.js`. Let's navigate to that now. Currently, what `index.js` does is wait for the user to fill out the form -- that is, type out a message and hit enter. Then, it adds the message to our displayed list of messages, and blanks out the input bar for the next message. 
+      If you go to the very bottom, you'll notice another script tag that connects this HTML page to `index.js`. Let's navigate to that now. Currently, what `index.js` does is wait for the user to fill out the form -- that is, type out a message and hit enter. Then, it adds the message to our displayed list of messages, and blanks out the input bar for the next message.
   - type: ps
     paragraph: >-
       Now, let's boot up our project. Navigate to your terminal and run `npm i`.
