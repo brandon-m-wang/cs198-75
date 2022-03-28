@@ -99,6 +99,52 @@ sections:
   - type: phs
     partheader: "Part 2: Updating the Shopping List"
   - type: ps
-    paragraph: The main idea of this section is to trigger a function when the user
-      presses the "Add Item" button that adds the new data into "list". We
+    paragraph: "<h2>Exercise 2A: Implementing the Helper Function</h2>"
+  - type: ps
+    paragraph: 'The main idea of this section is to trigger a function that adds the
+      new data into "list" when the user presses the "Add Item" button. We want
+      to update the state of the app after we add a new item so we can start by
+      wrapping the list variable with a @State wrapper:'
+  - type: ibs
+    imageblock: /assets/images/carbon-16-.png
+  - type: ps
+    paragraph: If you look at what our code is currently doing at a high level, we
+      can see that every time we add a new element to the list we rerun the body
+      where the ForEach statement is displaying every element in the list
+      including any new elements we just added. We can create a helper function
+      to append any new data to the list when the "Add Item" button is pressed.
+  - type: ibs
+    imageblock: /assets/images/carbon-17-.png
+  - type: ps
+    paragraph: Note that we also want to clear the tempItemName and tempQuantity
+      variables to empty strings so the user isn't able to spam the button on
+      one piece of data.
+  - type: ibs
+    imageblock: /assets/images/carbon-18-.png
+  - type: ps
+    paragraph: Try running your app and adding multiple items to the shopping list
+      to verify that the implementation works!
+  - type: ps
+    paragraph: "<h2>Exercise 2B: Implementing an Edge Case</h2>"
+  - type: ps
+    paragraph: You might've noticed that when a user clicks the button without
+      writing anything into the text fields the app starts to generate blank
+      cells. Try adding an if statement in the button element that will prevent
+      the user from generating blank cells if either textfield is empty.
+  - type: ps
+    paragraph: "Hint: Both tempItemName and tempQuantity are initialized to \"\"
+      when the user hasn't typed in anything."
+  - type: phs
+    partheader: "Part 3: Deleting Entries from the Shopping List"
+  - type: ps
+    paragraph: Your last task is to allow the user to delete the most recent entry
+      in the shopping list. For example, if a user adds apples to the shopping
+      list it should reflect this change on the app. If the user immediately
+      presses the delete button, it will remove apples from the list and this
+      change should be reflected on the app.  If the user presses delete again,
+      it will remove the entry that was added right before apples.
+  - type: ps
+    paragraph: 'Hint 1: Add another button below the "Add New Item" button that
+      calls a helper function. The helper function should remove the last
+      element inside "list" using removeLast().'
 ---
