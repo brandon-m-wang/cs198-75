@@ -144,7 +144,9 @@ sections:
       change should be reflected on the app.  If the user presses delete again,
       it will remove the entry that was added right before apples.
   - type: ps
-    paragraph: 'Hint 1: Add another button below the "Add New Item" button that
-      calls a helper function. The helper function should remove the last
-      element inside "list" using removeLast().'
+    paragraph: 'Hint: Add another button below the "Add New Item" button that calls
+      a helper function. The helper function should remove the last element
+      inside "list" using removeLast().'
+  - type: ps
+    paragraph: That's it for homework 6!! Great job for finishing :DD
 ---
