@@ -570,4 +570,148 @@ sections:
       the Card View Model now instead of just the Card View. The ForEach
       statement is iterating over the array of CardViewModels and creating a
       CardView for each one so that they are displayed in your view.</p>
+  - type: phs
+    partheader: "Part 4: Updating Cards"
+  - type: ps
+    paragraph: >
+      <p>Another aspect of this app that we want to put in place is the ability
+      to mark if you got an answer right or wrong. This way you can see if your
+      studying is working!</p>
+
+      <p><strong>Card ID</strong></p>
+
+      <p>Change Card.swift to look like this:</p>
+  - type: cbs
+    codeblock:
+      code: |-
+        import Foundation
+        import FirebaseFirestoreSwift
+
+        struct Card: Identifiable, Codable {
+          @DocumentID var id: String?
+          var question: String
+          var answer: String
+          var successful: Bool = true
+          var userId: String?
+        }
+      lang: swift
+  - type: ps
+    paragraph: >
+      <p>This code just makes sure that, when we convert documents to Cards, we
+      map the id from the Cloud Firestore to an id in our code.</p>
+
+      <p><strong>Updating Cards</strong></p>
+
+      <p>In CardRepository.swift add in the following function:</p>
+  - type: cbs
+    codeblock:
+      code: >-
+        func update(_ card: Card) {
+            guard let cardId = card.id else { return }
+
+            do {
+              try store.collection(path).document(cardId).setData(from: card)
+            } catch {
+              fatalError("Unable to update card: \(error.localizedDescription).")
+            }
+          }
+      lang: swift
+  - type: ps
+    paragraph: >
+      <p>This function first checks that <code>card.id</code> has a value. Then
+      using <code>path</code> and <code>cardId</code>, it gets a reference to
+      the document in the cards collection, then updates the fields by passing
+      <code>card</code> to <code>setData(from:encoder:completion:)</code></p>
+
+      <p>You also need to update the view model now. Go to CardViewModel.swift and add the method below:</p>
+  - type: cbs
+    codeblock:
+      code: |-
+        func update(card: Card) {
+            cardRepository.update(card)
+          }
+      lang: swift
+  - type: ps
+    paragraph: >
+      <p><strong>Updating CardView</strong></p>
+
+      <p>In CardView, add in the following code after the second Spacer() in frontView:</p>
+  - type: cbs
+    codeblock:
+      code: |-
+        if !cardViewModel.card.successful {
+                Text("You answered this one incorrectly before")
+                  .foregroundColor(.white)
+                  .font(.system(size: 11.0))
+                  .fontWeight(.bold)
+                  .padding()
+              }
+      lang: swift
+  - type: ps
+    paragraph: |
+      <p>Add the following methods to CardView as well:</p>
+  - type: cbs
+    codeblock:
+      code: |-
+        private func markCardAsUnsuccesful() {
+            var updatedCard = cardViewModel.card
+            updatedCard.successful = false
+            update(card: updatedCard)
+          }
+
+          private func markCardAsSuccesful() {
+            var updatedCard = cardViewModel.card
+            updatedCard.successful = true
+            update(card: updatedCard)
+          }
+
+          func update(card: Card) {
+            cardViewModel.update(card: card)
+            showContent.toggle()
+          }
+      lang: swift
+  - type: ps
+    paragraph: >
+      <p>This methods take care of successful answer cases, unsuccessful answer
+      cases, and updating the card.</p>
+
+      <p>Now, replace the backView with the following:</p>
+  - type: cbs
+    codeblock:
+      code: |-
+        var backView: some View {
+            VStack {
+              // 1
+              Spacer()
+              Text(cardViewModel.card.answer)
+                .foregroundColor(.white)
+                .font(.body)
+                .padding(20.0)
+                .multilineTextAlignment(.center)
+                .animation(.easeInOut)
+              Spacer()
+              // 2
+              HStack(spacing: 40) {
+                Button(action: markCardAsSuccesful) {
+                  Image(systemName: "hand.thumbsup.fill")
+                    .padding()
+                    .background(Color.green)
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .clipShape(Circle())
+                }
+                Button(action: markCardAsUnsuccesful) {
+                  Image(systemName: "hand.thumbsdown.fill")
+                    .padding()
+                    .background(Color.blue)
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .clipShape(Circle())
+                }
+              }
+              .padding()
+            }
+            .rotation3DEffect(.degrees(180), axis: (x: 0.0, y: 1.0, z: 0.0))
+          }
+      lang: swift
 ---
