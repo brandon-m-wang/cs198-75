@@ -714,4 +714,230 @@ sections:
             .rotation3DEffect(.degrees(180), axis: (x: 0.0, y: 1.0, z: 0.0))
           }
       lang: swift
+  - type: phs
+    partheader: "Part 5: Removing Cards"
+  - type: ps
+    paragraph: >
+      <p>We will cover the process of removing a card here.</p>
+
+      <p><strong>Deleting the Card from Firestore</strong></p>
+
+      <p>Go to CardRepository.swift and add in the remove method at the bottom (within the CardRepository class):</p>
+  - type: cbs
+    codeblock:
+      code: |-
+        func remove(_ card: Card) {
+            guard let cardId = card.id else { return }
+
+            store.collection(path).document(cardId).delete { error in
+              if let error = error {
+                print("Unable to remove card: \(error.localizedDescription)")
+              }
+            }
+          }
+      lang: swift
+  - type: ps
+    paragraph: >
+      <p>This method accesses the collection in our Firestore database by the
+      path passed in. It then finds the card with the cardID and attempts to
+      delete the document associated with it, printing an error if it can’t.</p>
+
+      <p>In your CardViewModel.swift, add in the remove method:</p>
+  - type: cbs
+    codeblock:
+      code: |-
+        func remove() {
+            cardRepository.remove(card)
+          }
+      lang: swift
+  - type: ps
+    paragraph: |
+      <p>Finally, update the Alert in CardView.swift so it looks like this:</p>
+  - type: cbs
+    codeblock:
+      code: |-
+        Alert(
+                  title: Text("Remove Card"),
+                  message: Text("Are you sure you want to remove this card?"),
+                  primaryButton: .destructive(Text("Remove")) {
+                    cardViewModel.remove()
+                  },
+                  secondaryButton: .cancel())
+      lang: swift
+  - type: ps
+    paragraph: >
+      <p>Together, this code calls the remove method on the cardViewModel and
+      executes the logic to remove the card from the Firestore database. The
+      cards are removed by dragging them to the top of the screen and clicking
+      remove when the alert pops up.</p>
+  - type: phs
+    partheader: "Part 6: Security and Authentication"
+  - type: ps
+    paragraph: >
+      <h2 id="anonymous-authentication">Anonymous Authentication</h2>
+
+      <p>To provide security to our app, we will take advantage of Firebase’s Anonymous Authentication which lets users authenticate into the app.</p>
+
+      <p><strong>Activating Authentication Mode</strong></p>
+
+      <ol>
+
+      <li>Go to Firebase Console</li>
+
+      <li>Select Authentication on the side bar</li>
+
+      <li>Select Sign-in method</li>
+
+      <li>Go to the bottom of the Providers List</li>
+
+      <li>Select Anonymous and enable it</li>
+
+      <li>Click Save</li>
+
+      </ol>
+
+      <h2 id="creating-an-authentication-service">Creating an Authentication Service</h2>
+
+      <p>In AuthenticationService.swift add the following code:</p>
+  - type: cbs
+    codeblock:
+      code: >-
+        import Foundation
+
+        import Firebase
+
+
+        class AuthenticationService: ObservableObject {
+          @Published var user: User?
+          private var authenticationStateHandler: AuthStateDidChangeListenerHandle?
+
+          init() {
+            addListeners()
+          }
+
+          static func signIn() {
+            if Auth.auth().currentUser == nil {
+              Auth.auth().signInAnonymously()
+            }
+          }
+
+          private func addListeners() {
+            if let handle = authenticationStateHandler {
+              Auth.auth().removeStateDidChangeListener(handle)
+            }
+
+            authenticationStateHandler = Auth.auth()
+              .addStateDidChangeListener { _, user in
+                self.user = user
+              }
+          }
+        }
+      lang: swift
+  - type: ps
+    paragraph: |
+      <p>In “Quizlet-ishApp” file, after FIrebaseApp.configure(), add:</p>
+  - type: cbs
+    codeblock:
+      code: AuthenticationService.signIn()
+      lang: swift
+  - type: ps
+    paragraph: >
+      <p>In CardRepository.swift, at the top of the class, add the following
+      properties:</p>
+  - type: cbs
+    codeblock:
+      code: |-
+        var userId = ""
+        private let authenticationService = AuthenticationService()
+        private var cancellables: Set<AnyCancellable> = []
+      lang: swift
+  - type: ps
+    paragraph: |
+      <p>Change init() and add() to the following:</p>
+  - type: cbs
+    codeblock:
+      code: |-
+        init() {
+            authenticationService.$user
+              .compactMap { user in
+                user?.uid
+              }
+              .assign(to: \.userId, on: self)
+              .store(in: &cancellables)
+
+            authenticationService.$user
+              .receive(on: DispatchQueue.main)
+              .sink { [weak self] _ in
+                self?.get()
+              }
+              .store(in: &cancellables)
+          }
+      lang: swift
+  - type: cbs
+    codeblock:
+      code: |-
+        func add(_ card: Card) {
+            do {
+              var newCard = card
+              newCard.userId = userId
+              _ = try store.collection(path).addDocument(from: newCard)
+            } catch {
+              fatalError("Unable to add card: \(error.localizedDescription).")
+            }
+          }
+      lang: swift
+  - type: ps
+    paragraph: |
+      <p>Finally, before .addSnapshotListener in get(), add the following:</p>
+  - type: cbs
+    codeblock:
+      code: '.whereField("userId", isEqualTo: userId)'
+      lang: swift
+  - type: ps
+    paragraph: |
+      <h2 id="security-rules">Security Rules</h2>
+      <ol>
+      <li>Go to Firebase console</li>
+      <li>Go to Cloud Firestore</li>
+      <li>Click Rules</li>
+      <li>Replace the code with the following:</li>
+      </ol>
+  - type: cbs
+    codeblock:
+      code: |-
+        rules_version = '2';
+        service cloud.firestore {
+          match /databases/{database}/documents {
+            match /{document=**} {
+              allow read, write: if request.auth != null;
+            }
+          }
+        }
+      lang: javascript
+  - type: ps
+    paragraph: >
+      <p>Click Publish. That’s it! All done! Now you can demo the project. The
+      screenshots below show what the workflow should look like. Check your
+      Firestore Database to make sure that you are storing the data as shown
+      below and that the data is removed when you remove a card.</p>
+  - type: phs
+    partheader: "Part 7: Demo Screenshots"
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-04-06-at-12.50.08-am.png
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-04-06-at-12.50.43-am.png
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-04-06-at-12.50.51-am.png
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-04-06-at-12.51.13-am.png
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-04-06-at-12.51.40-am.png
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-04-06-at-12.51.44-am.png
+  - type: ibs
+    imageblock: /assets/images/screen-shot-2022-04-06-at-12.51.50-am.png
+  - type: ps
+    paragraph: >
+      <p>Here are the solutions: <a
+      href="https://github.com/jy73/quizlet-ish">https://github.com/jy73/quizlet-ish</a></p>
 ---
