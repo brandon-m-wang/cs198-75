@@ -16,7 +16,8 @@ setup: >
   clone. You will be starting from scratch because I want you to be able to go
   through the full setup of Firebase and Firestore. Don’t worry. I will still be
   providing most of the code and will also link my GitHub link to the solutions
-  at the end of the project. Ignore the git commands below. </p>
+  at the end of the project. Ignore the git commands below. There is no git
+  cloning for this project</p>
 
   <ol>
 
@@ -32,11 +33,9 @@ setup: >
 
   <li>Interface should be SwiftUI and the language should be Swift. Leave the boxes unchecked. (see below) Write down the bundle identifier somewhere. You will need it in a later part.</li>
 
-  <li>Hit Next and then on the next page, make sure the selected folder at the top is your cubstart directory that you normally clone into. This is important. Otherwise, you won’t be able to push your code to GitHub and submit to Gradescope. Check the git repo option. See below</li>
+  <li>Hit Next and then on the next page, make sure the selected folder at the top is your cubstart directory that you normally clone into. This is important. Otherwise, you won’t be able to push your code to GitHub and submit to Gradescope. Don't create a repo since your cubstart directory is a git repo already. The image shows it checked but do not check it.</li>
 
   <li>Click create</li>
-
-  <li>Now we want to add a remote repo to your project. Click on the Source Control navigator on the top left (see below for the icon). Open up the Quizlet-ish drop down. Right click Remotes. Select “New “Quizlet-ish” remote”. Hit create.</li>
 
   </ol>
 skeleton: N/A
@@ -45,8 +44,6 @@ sections:
     imageblock: /assets/images/pic1.png
   - type: ibs
     imageblock: /assets/images/pic2.png
-  - type: ibs
-    imageblock: /assets/images/pic3.png
   - type: phs
     partheader: "Part 1: Setting Up Firebase and Firestore"
   - type: ps
